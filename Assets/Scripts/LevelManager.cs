@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq; // Para usar LINQ y simplificar verificaciones
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,14 +10,55 @@ public class LevelManager : MonoBehaviour
     public string levelPrefix = "Level_";    // Prefijo común en los nombres de niveles
     private int currentLevelIndex;           // Índice actual del nivel
 
+    public Color targetColor; // El color que debe alcanzar toda la cuadrícula para ganar
+
     void Start()
     {
-        // Obtener el índice del nivel actual a partir del nombre de la escena
         string currentSceneName = SceneManager.GetActiveScene().name;
 
         if (currentSceneName.StartsWith(levelPrefix))
         {
             int.TryParse(currentSceneName.Replace(levelPrefix, ""), out currentLevelIndex);
+
+            // Asignar el color objetivo basado en el nivel
+            switch (currentLevelIndex)
+            {
+                case 1:
+                    targetColor = Color.red;
+                    break;
+                case 2:
+                    targetColor = Color.yellow;
+                    break;
+                case 3:
+                    targetColor = Color.yellow;
+                    break;
+                case 4:
+                    targetColor = Color.blue;
+                    break;
+                case 5:
+                    targetColor = Color.red;
+                    break;
+
+                default:
+                    targetColor = Color.yellow; // Color predeterminado
+                    break;
+            }
+        }
+    }
+
+
+    public void CheckVictoryCondition()
+    {
+        // Obtener todas las celdas en la cuadrícula
+        GridCell[] allCells = FindObjectsOfType<GridCell>();
+
+        // Comprobar si todas las celdas tienen el mismo color que `targetColor`
+        bool allCellsMatch = allCells.All(cell => cell.cellColor == targetColor);
+
+        if (allCellsMatch)
+        {
+            Debug.Log("¡Nivel completado!");
+            CompleteLevel();
         }
     }
 

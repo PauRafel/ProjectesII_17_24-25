@@ -41,6 +41,13 @@ public class GridCell : MonoBehaviour
     {
         cellColor = newColor;
         spriteRenderer.color = cellColor;
+
+        // Notificar al LevelManager para verificar la condición de victoria
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        if (levelManager != null)
+        {
+            levelManager.CheckVictoryCondition();
+        }
     }
 
     IEnumerator PropagateColorGradually(Color newColor)
