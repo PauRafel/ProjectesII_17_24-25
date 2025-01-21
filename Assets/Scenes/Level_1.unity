@@ -558,6 +558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuSceneName: MainMenu
   levelPrefix: Level_
+  targetColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &267740230
 Transform:
   m_ObjectHideFlags: 0
@@ -1886,7 +1887,7 @@ GameObject:
   - component: {fileID: 1121383987}
   - component: {fileID: 1121383986}
   m_Layer: 5
-  m_Name: Moves
+  m_Name: AttemptsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1932,7 +1933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Remaining Moves: X'
+  m_text: '"Intentos restantes: 10"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2465,6 +2466,9 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
+  maxAttempts: 1
+  remainingAttempts: 1
+  attemptsText: {fileID: 1121383986}
 --- !u!1 &2109247585
 GameObject:
   m_ObjectHideFlags: 0

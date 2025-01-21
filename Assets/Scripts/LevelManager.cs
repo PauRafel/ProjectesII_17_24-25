@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    public void CheckVictoryCondition()
+    public bool CheckVictoryCondition()
     {
         // Obtener todas las celdas en la cuadrícula
         GridCell[] allCells = FindObjectsOfType<GridCell>();
@@ -59,8 +59,14 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("¡Nivel completado!");
             CompleteLevel();
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
+
 
     public void CompleteLevel()
     {

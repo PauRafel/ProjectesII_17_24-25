@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Necesario para manejar escenas
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GridManager : MonoBehaviour
 {
@@ -11,12 +12,104 @@ public class GridManager : MonoBehaviour
     public float cellSpacing = 0.001f;
     public Color[] levelColors; // Colores personalizados para el nivel actual
 
+    public int maxAttempts = 10; // Número máximo de intentos por nivel
+    public int remainingAttempts;
+    public TextMeshProUGUI attemptsText; // Referencia al texto del contador de intentos
+    private int activePropagations = 0; // Contador de propagaciones activas
+
+    private bool isCheckingRestart = false;
+
     void Start()
     {
         string levelName = SceneManager.GetActiveScene().name; // Obtiene el nombre de la escena activa
         SetLevelColors(levelName); // Asigna los colores en función del nombre del nivel
         GenerateGrid(); // Genera la cuadrícula
+
+        remainingAttempts = maxAttempts; // Inicializar los intentos restantes
+        UpdateAttemptsUI(); // Actualizar el texto del UI
     }
+
+    public void UseAttempt()
+    {
+        if (remainingAttempts > 0)
+        {
+            remainingAttempts--;
+            UpdateAttemptsUI();
+
+            if (remainingAttempts <= 0)
+            {
+                StartCoroutine(CheckAndRestartLevel());
+            }
+        }
+    }
+
+
+    // Comprueba las condiciones y reinicia el nivel si no se ha ganado
+    IEnumerator CheckAndRestartLevel()
+    {
+        if (isCheckingRestart)
+        {
+            Debug.Log("[CheckAndRestartLevel] Ya en ejecución, saliendo...");
+            yield break;
+        }
+
+        isCheckingRestart = true; // Marca que ya está en ejecución
+        Debug.Log("[CheckAndRestartLevel] Iniciando comprobación...");
+
+        // Esperar hasta que todas las propagaciones terminen
+        while (activePropagations > 0)
+        {
+            Debug.Log($"[CheckAndRestartLevel] Esperando propagaciones activas: {activePropagations}");
+            yield return null; // Esperar al siguiente frame
+        }
+
+        Debug.Log("[CheckAndRestartLevel] No hay propagaciones activas. Verificando victoria...");
+
+        // Verificar la condición de victoria
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        if (levelManager != null)
+        {
+            bool victory = levelManager.CheckVictoryCondition();
+            Debug.Log($"[CheckAndRestartLevel] Condición de victoria: {victory}");
+
+            if (!victory)
+            {
+                Debug.Log("[CheckAndRestartLevel] Condición de victoria no cumplida. Reiniciando nivel...");
+                yield return new WaitForSeconds(1f); // Pequeño retraso antes de reiniciar
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else
+            {
+                Debug.Log("[CheckAndRestartLevel] Nivel completado con éxito.");
+            }
+        }
+
+        isCheckingRestart = false; // Reinicia el flag
+    }
+
+
+    // Actualiza el texto del contador de intentos
+    void UpdateAttemptsUI()
+    {
+        if (attemptsText != null)
+        {
+            attemptsText.text = $"Intentos restantes: {remainingAttempts}";
+        }
+    }
+
+    public void StartPropagation()
+    {
+        activePropagations++;
+        Debug.Log($"[GridManager] StartPropagation. Propagaciones activas: {activePropagations}");
+    }
+
+    public void EndPropagation()
+    {
+        activePropagations = Mathf.Max(0, activePropagations - 1); // Evitar valores negativos
+        Debug.Log($"[GridManager] EndPropagation. Propagaciones activas: {activePropagations}");
+    }
+
+
 
     void GenerateGrid()
     {

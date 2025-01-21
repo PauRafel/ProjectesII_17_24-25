@@ -24,17 +24,25 @@ public class GridCell : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Obtener el color seleccionado del GameManager
-        Color selectedColor = GameManager.Instance.GetSelectedColor();
-
-        // Si ya es del color seleccionado, no hacemos nada
-        if (cellColor == selectedColor)
+        // Verificar si quedan intentos
+        GridManager gridManager = FindObjectOfType<GridManager>();
+        if (gridManager != null && gridManager.remainingAttempts > 0)
         {
-            return;
-        }
+            // Obtener el color seleccionado del GameManager
+            Color selectedColor = GameManager.Instance.GetSelectedColor();
 
-        // Comienza la propagación con retraso
-        StartCoroutine(PropagateColorGradually(selectedColor));
+            // Si ya es del color seleccionado, no hacemos nada
+            if (cellColor == selectedColor)
+            {
+                return;
+            }
+
+            // Resta un intento
+            gridManager.UseAttempt();
+
+            // Comienza la propagación con retraso
+            StartCoroutine(PropagateColorGradually(selectedColor));
+        }
     }
 
     public void ChangeColor(Color newColor)
@@ -52,41 +60,53 @@ public class GridCell : MonoBehaviour
 
     IEnumerator PropagateColorGradually(Color newColor)
     {
-        // Cola para realizar la búsqueda (BFS)
+        GridManager gridManager = FindObjectOfType<GridManager>();
+        if (gridManager != null)
+        {
+            gridManager.StartPropagation(); // Iniciar propagación
+        }
+
         Queue<GridCell> cellsToProcess = new Queue<GridCell>();
         HashSet<GridCell> processedCells = new HashSet<GridCell>();
         cellsToProcess.Enqueue(this);
 
-        // Color original de la celda actual
         Color originalColor = cellColor;
 
-        while (cellsToProcess.Count > 0)
+        try
         {
-            GridCell currentCell = cellsToProcess.Dequeue();
-
-            // Evitar procesar celdas que ya fueron cambiadas
-            if (currentCell.cellColor != originalColor || processedCells.Contains(currentCell))
+            while (cellsToProcess.Count > 0)
             {
-                continue;
-            }
+                GridCell currentCell = cellsToProcess.Dequeue();
 
-            // Cambiar el color de la celda actual
-            currentCell.ChangeColor(newColor);
-            processedCells.Add(currentCell);
-
-            // Agregar vecinos a la cola
-            foreach (GridCell neighbor in GetNeighbors(currentCell))
-            {
-                if (neighbor.cellColor == originalColor && !processedCells.Contains(neighbor))
+                if (currentCell.cellColor != originalColor || processedCells.Contains(currentCell))
                 {
-                    cellsToProcess.Enqueue(neighbor);
+                    continue;
                 }
-            }
 
-            // Esperar un pequeño retraso antes de continuar
-            yield return new WaitForSeconds(0.1f);
+                currentCell.ChangeColor(newColor);
+                processedCells.Add(currentCell);
+
+                foreach (GridCell neighbor in GetNeighbors(currentCell))
+                {
+                    if (neighbor.cellColor == originalColor && !processedCells.Contains(neighbor))
+                    {
+                        cellsToProcess.Enqueue(neighbor);
+                    }
+                }
+
+                yield return new WaitForSeconds(0.1f); // Simular propagación gradual
+            }
+        }
+        finally
+        {
+            if (gridManager != null)
+            {
+                gridManager.EndPropagation(); // Finalizar propagación
+            }
         }
     }
+
+
 
     List<GridCell> GetNeighbors(GridCell cell)
     {
