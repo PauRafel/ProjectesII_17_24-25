@@ -48,4 +48,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f; // Asegurarse de reanudar el tiempo
         SceneManager.LoadScene("MainMenu"); // Cambiar a tu escena de menú principal
     }
+    public void LoadLevelSelector()
+    {
+        Time.timeScale = 1f; // Asegurarse de reanudar el tiempo
+        SceneManager.LoadScene("LevelSelector"); // Cambiar a tu escena de menú principal
+    }
 }

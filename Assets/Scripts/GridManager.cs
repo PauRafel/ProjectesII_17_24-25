@@ -49,13 +49,12 @@ public class GridManager : MonoBehaviour
     {
         if (isCheckingRestart)
         {
-            Debug.Log("[CheckAndRestartLevel] Ya en ejecución, saliendo...");
-            yield break;
+            yield break; // Evitar múltiples ejecuciones simultáneas
         }
 
-        isCheckingRestart = true; // Marca que ya está en ejecución
-        Debug.Log("[CheckAndRestartLevel] Iniciando comprobación...");
+        isCheckingRestart = true; // Marcar que la comprobación está en curso
 
+        // Esperar a que terminen todas las propagaciones
         // Esperar hasta que todas las propagaciones terminen
         while (activePropagations > 0)
         {
@@ -63,29 +62,32 @@ public class GridManager : MonoBehaviour
             yield return null; // Esperar al siguiente frame
         }
 
-        Debug.Log("[CheckAndRestartLevel] No hay propagaciones activas. Verificando victoria...");
 
-        // Verificar la condición de victoria
+        // Comprobar la condición de victoria después de que terminen las propagaciones
         LevelManager levelManager = FindObjectOfType<LevelManager>();
         if (levelManager != null)
         {
             bool victory = levelManager.CheckVictoryCondition();
-            Debug.Log($"[CheckAndRestartLevel] Condición de victoria: {victory}");
 
             if (!victory)
             {
-                Debug.Log("[CheckAndRestartLevel] Condición de victoria no cumplida. Reiniciando nivel...");
-                yield return new WaitForSeconds(1f); // Pequeño retraso antes de reiniciar
+                // Esperar un momento antes de reiniciar para evitar un reinicio abrupto
+                yield return new WaitForSeconds(1f);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             else
             {
-                Debug.Log("[CheckAndRestartLevel] Nivel completado con éxito.");
+                Debug.Log("¡Nivel completado!");
             }
         }
 
-        isCheckingRestart = false; // Reinicia el flag
+        isCheckingRestart = false; // Reiniciar el flag
+
+        // Esperar unos instantes después de que las propagaciones terminen
+        yield return new WaitForSeconds(0.5f);
+
     }
+
 
 
     // Actualiza el texto del contador de intentos
@@ -100,14 +102,15 @@ public class GridManager : MonoBehaviour
     public void StartPropagation()
     {
         activePropagations++;
-        Debug.Log($"[GridManager] StartPropagation. Propagaciones activas: {activePropagations}");
+        Debug.Log($"[StartPropagation] Iniciado. Propagaciones activas: {activePropagations}");
     }
 
     public void EndPropagation()
     {
-        activePropagations = Mathf.Max(0, activePropagations - 1); // Evitar valores negativos
-        Debug.Log($"[GridManager] EndPropagation. Propagaciones activas: {activePropagations}");
+        activePropagations = Mathf.Max(0, activePropagations - 1);
+        Debug.Log($"[EndPropagation] Terminado. Propagaciones activas: {activePropagations}");
     }
+
 
 
 
