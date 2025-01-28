@@ -108,6 +108,7 @@ public class GridCell : MonoBehaviour
 
 
 
+
     List<GridCell> GetNeighbors(GridCell cell)
     {
         List<GridCell> neighbors = new List<GridCell>();
