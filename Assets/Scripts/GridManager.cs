@@ -19,6 +19,7 @@ public class GridManager : MonoBehaviour
     public TextMeshProUGUI attemptsText; // Referencia al texto del contador de intentos
     private int activePropagations = 0; // Contador de propagaciones activas
     private bool isCheckingRestart = false;
+    public bool finishedPropagations;
 
     void Start()
     {
@@ -29,31 +30,6 @@ public class GridManager : MonoBehaviour
         remainingAttempts = maxAttempts; // Inicializar los intentos restantes
         UpdateAttemptsUI(); // Actualizar el texto del UI
     }
-
-    private IEnumerator WaitForPropagationAndCheckLevel()
-    {
-        // Esperar a que terminen las propagaciones activas
-        yield return StartCoroutine(WaitForPropagations());
-
-        // Verificar si el nivel se completó
-        LevelManager levelManager = FindObjectOfType<LevelManager>();
-        if (levelManager != null)
-        {
-            bool victory = levelManager.CheckVictoryCondition();
-
-            if (victory)
-            {
-                Debug.Log("¡Nivel completado!");
-                levelManager.CompleteLevel(); // Pasar al siguiente nivel
-            }
-            else
-            {
-                Debug.Log("Sin intentos restantes. Reiniciando nivel...");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reiniciar nivel actual
-            }
-        }
-    }
-
     public void UseAttempt()
 {
     if (remainingAttempts > 0)
@@ -64,23 +40,21 @@ public class GridManager : MonoBehaviour
         if (remainingAttempts <= 0)
         {
             Debug.Log("Intentos agotados. Esperando a que termine la propagación...");
-            StartCoroutine(WaitForPropagationAndCheckLevel());
+            StartCoroutine(WaitForPropagations());
         }
     }
 }
 
-
-
-
     private IEnumerator WaitForPropagations()
     {
+        finishedPropagations = false;
         while (activePropagations > 0)
         {
-            yield return null; // Esperar un frame
+            yield return new WaitForSeconds(1.0f);
         }
+        finishedPropagations = true;
         Debug.Log("Todas las propagaciones han terminado.");
     }
-
 
     IEnumerator CheckAndRestartLevel()
     {
@@ -92,22 +66,20 @@ public class GridManager : MonoBehaviour
         isCheckingRestart = true;
 
         // Esperar a que todas las propagaciones terminen
-        yield return StartCoroutine(WaitForPropagations());
-
-        // Retraso adicional para asegurar la sincronización visual
-        yield return new WaitForSeconds(1.0f); // Ajustar el tiempo según sea necesario
+        StartCoroutine(WaitForPropagations());
 
         LevelManager levelManager = FindObjectOfType<LevelManager>();
         if (levelManager != null)
         {
+
             bool victory = levelManager.CheckVictoryCondition();
 
-            if (victory)
+            if (victory == true)
             {
                 Debug.Log("¡Nivel completado!");
                 levelManager.CompleteLevel(); // Pasar al siguiente nivel
             }
-            else
+            else if (remainingAttempts <= 0 && finishedPropagations)
             {
                 Debug.Log("Sin intentos restantes. Reiniciando nivel...");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reiniciar nivel actual
@@ -129,6 +101,7 @@ public class GridManager : MonoBehaviour
     public void StartPropagation()
     {
         activePropagations++;
+        finishedPropagations = false;
         Debug.Log($"Propagación iniciada. Total activas: {activePropagations}");
     }
 
@@ -142,8 +115,12 @@ public class GridManager : MonoBehaviour
             activePropagations = 0;
             Debug.LogWarning("activePropagations fue menor que 0. Asegúrate de que EndPropagation se llama correctamente.");
         }
-    }
 
+        if(activePropagations == 0 && remainingAttempts <= 0)
+        {
+            StartCoroutine(CheckAndRestartLevel());
+        }
+    }
 
     void GenerateGrid()
     {
