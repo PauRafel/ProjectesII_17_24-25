@@ -82,7 +82,7 @@ public class GridManager : MonoBehaviour
             else if (remainingAttempts <= 0 && finishedPropagations)
             {
                 Debug.Log("Sin intentos restantes. Reiniciando nivel...");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reiniciar nivel actual
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reiniciar nivel actual
             }
         }
 
