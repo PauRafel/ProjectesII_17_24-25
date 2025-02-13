@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement; // Necesario para manejar escenas
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // Singleton para acceso global
-    public Color selectedColor = Color.red; // Color por defecto
+    public Color selectedColor = Color.white; // Color por defecto
 
     private void Awake()
     {
