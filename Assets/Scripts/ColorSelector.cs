@@ -6,6 +6,7 @@ public class ColorSelector : MonoBehaviour
 {
     public void SelectColor(string colorName)
     {
+
         Color selectedColor = Color.white;
 
         switch (colorName)
@@ -28,5 +29,6 @@ public class ColorSelector : MonoBehaviour
         }
 
         GameManager.Instance.SetSelectedColor(selectedColor);
+
     }
 }
