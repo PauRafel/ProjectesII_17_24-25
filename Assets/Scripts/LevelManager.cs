@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public string levelPrefix = "Level_";    // Prefijo común en los nombres de niveles
     private int currentLevelIndex;           // Índice actual del nivel
 
+    public LevelCompleteUI levelCompleteUI;
+
     public Color targetColor; // El color que debe alcanzar toda la cuadrícula para ganar
 
     void Start()
@@ -77,17 +79,8 @@ public class LevelManager : MonoBehaviour
 
     public void CompleteLevel()
     {
-        // Intentar cargar el siguiente nivel
-        string nextLevelName = $"{levelPrefix}{currentLevelIndex + 1}";
-
-        if (Application.CanStreamedLevelBeLoaded(nextLevelName))
-        {
-            SceneManager.LoadScene(nextLevelName);
-        }
-        else
-        {
-            // Si no hay más niveles, volver al menú principal
-            SceneManager.LoadScene(menuSceneName);
-        }
+        Debug.Log("¡Nivel completado!");
+        levelCompleteUI.ShowLevelCompletePanel();
     }
+
 }
