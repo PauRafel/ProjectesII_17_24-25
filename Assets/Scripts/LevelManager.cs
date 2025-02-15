@@ -80,6 +80,7 @@ public class LevelManager : MonoBehaviour
     public void CompleteLevel()
     {
         Debug.Log("¡Nivel completado!");
+        FindObjectOfType<LevelTimer>().StopTimer();
         levelCompleteUI.ShowLevelCompletePanel();
     }
 
