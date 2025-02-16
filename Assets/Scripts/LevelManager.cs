@@ -87,7 +87,8 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log("¡Nivel completado!");
         FindObjectOfType<LevelTimer>().StopTimer();
-        levelCompleteUI.ShowLevelCompletePanel();
-    }
 
+        int movesUsed = FindObjectOfType<MoveCounter>().GetMovesUsed();
+        levelCompleteUI.ShowLevelCompletePanel(movesUsed);
+    }
 }
