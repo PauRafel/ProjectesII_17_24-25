@@ -35,32 +35,31 @@ public class LevelManager : MonoBehaviour
                     targetColor = Color.blue;
                     break;
                 case 4:
-                    targetColor = Color.blue;
-                    break;
-                case 5:
-                    targetColor = Color.red;
-                    break;
-                case 6:
-                    targetColor = Color.blue;
-                    break;
-                case 7:
-                    targetColor = Color.yellow;
-                    break;
-                case 8:
-                    targetColor = Color.green;
-                    break;
-                case 9:
                     targetColor = Color.magenta;
                     break;
-                case 10:
+                case 5:
                     targetColor = Color.blue;
+                    break;
+                case 6:
+                    targetColor = Color.red;
+                    break;
+                case 7:
+                    targetColor = Color.blue;
+                    break;
+                case 8:
+                    targetColor = Color.yellow;
+                    break;
+                case 9:
+                    targetColor = Color.blue;
+                    break;
+                case 10:
+                    targetColor = Color.green;
                     break;
                 default:
                     break;
             }
         }
     }
-
 
     public bool CheckVictoryCondition()
     {
