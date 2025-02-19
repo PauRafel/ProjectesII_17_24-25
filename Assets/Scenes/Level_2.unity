@@ -3177,7 +3177,7 @@ GameObject:
   - component: {fileID: 1356473909}
   - component: {fileID: 1356473908}
   - component: {fileID: 1356473907}
-  - component: {fileID: 1356473906}
+  - component: {fileID: 1356473910}
   m_Layer: 5
   m_Name: MoreVelocityButton
   m_TagString: Untagged
@@ -3206,19 +3206,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1270, y: -275}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1356473906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356473904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 707ed19133138364398e9fb396fa0944, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelTimer: {fileID: 1296122134}
 --- !u!114 &1356473907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3263,9 +3250,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1356473906}
-        m_TargetAssemblyTypeName: RestartButtonHandler, Assembly-CSharp
-        m_MethodName: RestartLevel
+      - m_Target: {fileID: 1356473910}
+        m_TargetAssemblyTypeName: VelocityCells, Assembly-CSharp
+        m_MethodName: MorePropagationSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3313,6 +3300,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356473904}
   m_CullTransparentMesh: 1
+--- !u!114 &1356473910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356473904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c246a8cb3945b4296870e8cbfc5d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1360724983
 GameObject:
   m_ObjectHideFlags: 0

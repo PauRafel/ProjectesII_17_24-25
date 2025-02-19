@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class VelocityCells : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool isSpeedIncreased = false;
+    public static float propagationDelay = 0.1f; 
+    private const float normalSpeed = 0.1f;
+    private const float increasedSpeed = 0.05f; 
 
-    // Update is called once per frame
-    void Update()
+    public void MorePropagationSpeed()
     {
-        
+        isSpeedIncreased = !isSpeedIncreased; // Alternar entre true y false
+        propagationDelay = isSpeedIncreased ? increasedSpeed : normalSpeed; // Cambiar la velocidad
     }
 }
