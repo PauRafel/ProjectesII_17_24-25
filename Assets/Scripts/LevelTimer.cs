@@ -9,6 +9,8 @@ public class LevelTimer : MonoBehaviour
     private float elapsedTime = 0f;
     private bool isRunning = true;
     private string levelKey;
+    private float actualTime = 0f;
+    public float totalTime = 0f;
 
     void Start()
     {
@@ -24,11 +26,17 @@ public class LevelTimer : MonoBehaviour
         }
     }
 
-    void UpdateTimerDisplay()
+    public void saveACtualTime()
+    {
+        actualTime = elapsedTime;
+        totalTime += actualTime;
+    }
+
+    public void UpdateTimerDisplay()
     {
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timerText.text = string.Format("{00:00}:{01:00}", minutes, seconds);
     }
 
     public void StopTimer()
