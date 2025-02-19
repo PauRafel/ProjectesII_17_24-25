@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turn all the palette into BLUE
+  m_text: Turn all the palette into YELLOW
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3173,8 +3173,8 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
-  maxAttempts: 4
-  remainingAttempts: 4
+  maxAttempts: 3
+  remainingAttempts: 3
   attemptsText: {fileID: 665028477}
   finishedPropagations: 0
 --- !u!4 &1047215093
@@ -3749,6 +3749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707ed19133138364398e9fb396fa0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelTimer: {fileID: 0}
 --- !u!114 &1359244593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,6 +5630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1271084506}
+  totalTime: 0
 --- !u!4 &2021025299
 Transform:
   m_ObjectHideFlags: 0

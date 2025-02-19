@@ -44,10 +44,10 @@ public class LevelManager : MonoBehaviour
                     targetColor = Color.red;
                     break;
                 case 7:
-                    targetColor = Color.blue;
+                    targetColor = Color.yellow;
                     break;
                 case 8:
-                    targetColor = Color.yellow;
+                    targetColor = Color.blue;
                     break;
                 case 9:
                     targetColor = Color.blue;
