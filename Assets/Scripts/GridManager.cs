@@ -133,11 +133,13 @@ public class GridManager : MonoBehaviour
         float offsetX = (columns - 1) / 2f;
         float offsetY = (rows - 1) / 2f;
 
+        float extraOffsetX = 2.85f;
+
         for (int y = 0; y < rows; y++)
         {
             for (int x = 0; x < columns; x++)
             {
-                Vector3 position = new Vector3(x - offsetX + (x * cellSpacing), -(y - offsetY) - (y * cellSpacing), 0);
+                Vector3 position = new Vector3(x - offsetX + (x * cellSpacing) + extraOffsetX, -(y - offsetY) - (y * cellSpacing), 0);
                 GameObject cell = Instantiate(cellPrefab, position, Quaternion.identity);
                 cell.name = $"Cell_{x}_{y}";
                 cell.transform.parent = transform;
