@@ -3401,7 +3401,7 @@ MonoBehaviour:
   cellPrefab: {fileID: 5090876870165623962, guid: 22bba7d9d7a847d4397376b664e1e4f6, type: 3}
   rows: 8
   columns: 10
-  cellSpacing: 0.001
+  cellSpacing: -0.3
   levelColors:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
@@ -3871,6 +3871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707ed19133138364398e9fb396fa0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelTimer: {fileID: 0}
 --- !u!114 &1359244593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5148,6 +5149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 857732327}
+  totalTime: 0
 --- !u!4 &1743271778
 Transform:
   m_ObjectHideFlags: 0

@@ -9,9 +9,9 @@ using System.Linq;
 public class GridManager : MonoBehaviour
 {
     public GameObject cellPrefab;
-    public int rows = 8;
-    public int columns = 10;
-    public float cellSpacing = 0.001f;
+    public int rows = 9;
+    public int columns = 7;
+    public float cellSpacing = -0.3f;
     public Color[] levelColors; // Colores personalizados para el nivel actual
 
     public int maxAttempts = 10; // Número máximo de intentos por nivel
@@ -133,13 +133,12 @@ public class GridManager : MonoBehaviour
         float offsetX = (columns - 1) / 2f;
         float offsetY = (rows - 1) / 2f;
 
-        float extraOffsetX = 2.85f;
 
         for (int y = 0; y < rows; y++)
         {
             for (int x = 0; x < columns; x++)
             {
-                Vector3 position = new Vector3(x - offsetX + (x * cellSpacing) + extraOffsetX, -(y - offsetY) - (y * cellSpacing), 0);
+                Vector3 position = new Vector3(x - offsetX + 0.9f + (x * cellSpacing), -(y - offsetY + 1.3f) - (y * cellSpacing), 0);
                 GameObject cell = Instantiate(cellPrefab, position, Quaternion.identity);
                 cell.name = $"Cell_{x}_{y}";
                 cell.transform.parent = transform;
@@ -173,28 +172,31 @@ public class GridManager : MonoBehaviour
             case "Level_1":
                 levelColors = new Color[]
                 {
-                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red,
-                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
-                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red,
-                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red, Color.yellow, Color.red,
-                    Color.red, Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red, Color.yellow, Color.red,
-                    Color.red, Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red,
-                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
-                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red
+                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red,
+                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
+                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red, 
+                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
+                    Color.red, Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.red,
+                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red, 
+                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red,
+                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
+                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red,
+                    
                 };
                 break;
 
             case "Level_2":
                 levelColors = new Color[]
                 {
-                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red,
-                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
-                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red,
-                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red, Color.yellow, Color.red,
-                    Color.red, Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red, Color.yellow, Color.red,
-                    Color.red, Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red,
-                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
-                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red
+                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red,
+                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
+                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red,
+                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
+                    Color.red, Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.red,
+                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
+                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.red,
+                    Color.red, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.red,
+                    Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red,
                 };
                 break;
 
