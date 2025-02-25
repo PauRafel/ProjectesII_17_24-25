@@ -7,7 +7,7 @@ public class GridCell : MonoBehaviour
     public Color cellColor = Color.white; // Color inicial
     private SpriteRenderer spriteRenderer;
 
-    private const float neighborDetectionDistance = 0.86f; // Tamaño de celda (0.85) + Espaciado (0.001)
+    private const float neighborDetectionDistance = 0.5f; 
 
     void Start()
     {
