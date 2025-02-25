@@ -53,4 +53,18 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f; // Asegurarse de reanudar el tiempo
         SceneManager.LoadScene("LevelSelector"); // Cambiar a tu escena de menú principal
     }
+
+    public void NextLevel()
+    {
+        Time.timeScale = 1f;
+        string nextLevelName = "Level_" + (SceneManager.GetActiveScene().buildIndex + 1);
+        if (Application.CanStreamedLevelBeLoaded(nextLevelName))
+        {
+            SceneManager.LoadScene(nextLevelName);
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
 }

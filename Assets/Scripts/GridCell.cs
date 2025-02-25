@@ -94,7 +94,7 @@ public class GridCell : MonoBehaviour
                     }
                 }
 
-                yield return new WaitForSeconds(VelocityCells.propagationDelay); // Simular propagación gradual
+                yield return new WaitForSeconds(0.1f); // Simular propagación gradual
             }
         }
         finally

@@ -9,8 +9,7 @@ public class LevelManager : MonoBehaviour
     public string menuSceneName = "MainMenu"; // Nombre de la escena del menú principal
     public string levelPrefix = "Level_";    // Prefijo común en los nombres de niveles
     private int currentLevelIndex;           // Índice actual del nivel
-
-    public LevelCompleteUI levelCompleteUI;
+    public GameObject levelCompletePanel; // Panel de victoria
 
     public Color targetColor; // El color que debe alcanzar toda la cuadrícula para ganar
 
@@ -88,8 +87,6 @@ public class LevelManager : MonoBehaviour
     public void CompleteLevel()
     {
         Debug.Log("¡Nivel completado!");
-
-        int movesUsed = FindObjectOfType<MoveCounter>().GetMovesUsed();
-        levelCompleteUI.ShowLevelCompletePanel(movesUsed);
+        levelCompletePanel.SetActive(true);
     }
 }
