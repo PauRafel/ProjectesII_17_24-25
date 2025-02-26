@@ -203,14 +203,16 @@ public class GridManager : MonoBehaviour
             case "Level_3":
                 levelColors = new Color[]
                 {
-                    Color.blue, Color.blue, Color.yellow, Color.blue, Color.blue, Color.blue, Color.blue, Color.yellow, Color.blue, Color.blue,
-                    Color.blue, Color.yellow, Color.red, Color.yellow, Color.blue, Color.blue, Color.yellow, Color.red, Color.yellow, Color.blue,
-                    Color.yellow, Color.red, Color.red, Color.red, Color.yellow, Color.yellow, Color.red, Color.red, Color.red, Color.yellow,
-                    Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow,
-                    Color.blue, Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.blue,
-                    Color.blue, Color.blue, Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.blue, Color.blue,
-                    Color.blue, Color.blue, Color.blue, Color.yellow, Color.red, Color.red, Color.yellow, Color.blue, Color.blue, Color.blue,
-                    Color.blue, Color.blue, Color.blue, Color.blue, Color.yellow, Color.yellow, Color.blue, Color.blue, Color.blue, Color.blue
+                    Color.blue, Color.blue, Color.blue, Color.blue, Color.blue, Color.blue, Color.blue,
+                    Color.blue, Color.yellow, Color.yellow, Color.blue, Color.yellow, Color.yellow, Color.blue,
+                    Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                    Color.yellow, Color.red, Color.red, Color.yellow, Color.red, Color.red, Color.yellow,
+                    Color.yellow, Color.red, Color.red, Color.red, Color.red, Color.red, Color.yellow,
+                    Color.yellow, Color.yellow, Color.red, Color.red, Color.red, Color.yellow, Color.yellow,
+                    Color.blue, Color.yellow, Color.yellow, Color.red, Color.yellow, Color.yellow, Color.blue,
+                    Color.blue, Color.blue, Color.yellow, Color.yellow, Color.yellow, Color.blue, Color.blue,
+                    Color.blue, Color.blue, Color.blue, Color.yellow, Color.blue, Color.blue, Color.blue,
+
                 };
                 break;
 
