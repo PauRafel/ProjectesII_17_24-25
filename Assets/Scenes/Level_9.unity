@@ -4172,8 +4172,8 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
-  maxAttempts: 3
-  remainingAttempts: 3
+  maxAttempts: 4
+  remainingAttempts: 4
   attemptsText: {fileID: 230877525}
   finishedPropagations: 0
 --- !u!1 &2109247585
