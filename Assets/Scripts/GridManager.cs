@@ -273,16 +273,17 @@ public class GridManager : MonoBehaviour
                 break;
             case "Level_8":
                 levelColors = new Color[]
-                {
-                    Color.yellow, Color.yellow, Color.blue, Color.blue, Color.red, Color.red, Color.blue, Color.blue, Color.yellow, Color.yellow,
-                    Color.blue, Color.yellow, Color.yellow, Color.yellow, Color.red, Color.red, Color.yellow, Color.yellow, Color.yellow, Color.blue,
-                    Color.blue, Color.yellow, Color.blue, Color.red, Color.blue, Color.blue, Color.red, Color.blue, Color.yellow, Color.blue,
-                    Color.red, Color.red, Color.red, Color.red, Color.yellow, Color.yellow, Color.red, Color.red, Color.yellow, Color.yellow,
-                    Color.yellow, Color.yellow, Color.red, Color.red, Color.yellow, Color.yellow, Color.red, Color.red, Color.red, Color.red,
-                    Color.blue, Color.yellow, Color.blue, Color.red, Color.blue, Color.blue, Color.red, Color.blue, Color.yellow, Color.blue,
-                    Color.blue, Color.yellow, Color.yellow, Color.yellow, Color.red, Color.red, Color.yellow, Color.yellow, Color.yellow, Color.blue,
-                    Color.yellow, Color.yellow, Color.blue, Color.blue, Color.red, Color.red, Color.blue, Color.blue, Color.yellow, Color.yellow
-                };
+                 {
+                    Color.yellow, Color.blue, Color.blue, Color.red, Color.blue, Color.blue, Color.yellow,
+                    Color.yellow, Color.yellow, Color.yellow, Color.red, Color.yellow, Color.yellow, Color.yellow,
+                    Color.blue, Color.yellow, Color.blue, Color.red, Color.blue, Color.yellow, Color.blue,
+                    Color.blue, Color.yellow, Color.blue, Color.red, Color.red, Color.yellow, Color.blue,
+                    Color.red, Color.red, Color.red, Color.yellow, Color.red, Color.red, Color.red,
+                    Color.blue, Color.yellow, Color.red, Color.red, Color.blue, Color.yellow, Color.blue,
+                    Color.blue, Color.yellow, Color.blue, Color.red, Color.blue, Color.yellow, Color.blue,
+                    Color.yellow, Color.yellow, Color.yellow, Color.red, Color.yellow, Color.yellow, Color.yellow,
+                    Color.yellow, Color.blue, Color.blue, Color.red, Color.blue, Color.blue, Color.yellow,
+                 };
                 break;
             case "Level_9":
                 levelColors = new Color[]

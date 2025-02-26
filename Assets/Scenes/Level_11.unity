@@ -152,9 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244d5ddf81309ba45a0893fbfb2e63c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victorySound: {fileID: 0}
-  glowDuration: 1.5
-  glowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!4 &60667931
 Transform:
   m_ObjectHideFlags: 0
@@ -3182,7 +3179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuSceneName: MainMenu
   levelPrefix: Level_
-  levelCompleteUI: {fileID: 2001434773}
+  levelCompletePanel: {fileID: 0}
   targetColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1264360197
 Transform:
@@ -4381,12 +4378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec75a6bd4a7b004ab97380aae5bdf7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starImages:
-  - {fileID: 914124448}
-  - {fileID: 1412250106}
-  - {fileID: 80920537}
-  starFull: {fileID: 21300000, guid: ea78b5dbabd8d8a4aa3d41dbec1f6252, type: 3}
-  starEmpty: {fileID: 21300000, guid: fa903821b59cc4545ba081065cc4c5c1, type: 3}
 --- !u!1 &1481574001
 GameObject:
   m_ObjectHideFlags: 0
@@ -4697,8 +4688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f3d33770b50fc44ae390df86602822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalTimeText: {fileID: 2050764140}
-  newRecordText: {fileID: 126909661}
 --- !u!1 &1625634145
 GameObject:
   m_ObjectHideFlags: 0
@@ -5279,10 +5268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84cf9b4bb81afb48b27083d4d6eb9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCompletePanel: {fileID: 1996246068}
-  starDisplay: {fileID: 1474954731}
-  minMovesRequired: 4
-  extraMovesAllowed: 2
 --- !u!1 &1996246068
 GameObject:
   m_ObjectHideFlags: 0
@@ -5415,10 +5400,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84cf9b4bb81afb48b27083d4d6eb9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCompletePanel: {fileID: 1996246068}
-  starDisplay: {fileID: 0}
-  minMovesRequired: 0
-  extraMovesAllowed: 2
 --- !u!4 &2001434774
 Transform:
   m_ObjectHideFlags: 0
