@@ -94,7 +94,7 @@ public class GridManager : MonoBehaviour
     {
         if (attemptsText != null)
         {
-            attemptsText.text = $"Intentos restantes: {remainingAttempts}";
+            attemptsText.text = $"{remainingAttempts}";
         }
     }
 
