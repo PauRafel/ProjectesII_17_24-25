@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
                     targetColor = Color.blue;
                     break;
                 case 4:
-                    targetColor = Color.magenta;
+                    targetColor = new Color(0.7294f, 0.3333f, 0.8275f);
                     break;
                 case 5:
                     targetColor = Color.blue;

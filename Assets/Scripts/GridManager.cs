@@ -220,7 +220,7 @@ public class GridManager : MonoBehaviour
                     Color.blue, Color.blue, Color.blue, Color.blue, Color.blue, Color.blue, Color.blue,
                     Color.blue, Color.green, Color.green, Color.green, Color.green, Color.green, Color.blue,
                     Color.green, Color.green, Color.red, Color.red, Color.red, Color.green, Color.green,
-                    Color.green, Color.red, Color.magenta, Color.red, Color.magenta, Color.red, Color.green,
+                    Color.green, Color.red, new Color(0.7294f, 0.3333f, 0.8275f), Color.red, new Color(0.7294f, 0.3333f, 0.8275f), Color.red, Color.green,
                     Color.green, Color.red, Color.red, Color.red, Color.red, Color.red, Color.green,
                     Color.green, Color.green, Color.green, Color.green, Color.green, Color.green, Color.green,
                     Color.green, Color.green, Color.red, Color.red, Color.red, Color.green, Color.green,
@@ -288,15 +288,15 @@ public class GridManager : MonoBehaviour
             case "Level_9":
                 levelColors = new Color[]
                  {
-                    Color.yellow, Color.magenta, Color.yellow, Color.magenta, Color.magenta, Color.magenta, Color.red,
-                    Color.yellow, Color.magenta, Color.yellow, Color.yellow, Color.blue, Color.magenta, Color.red,
-                    Color.yellow, Color.magenta, Color.yellow, Color.magenta, Color.blue, Color.magenta, Color.red,
-                    Color.yellow, Color.magenta, Color.yellow, Color.magenta, Color.blue, Color.magenta, Color.red,
-                    Color.blue, Color.yellow, Color.magenta, Color.magenta, Color.blue, Color.magenta, Color.blue,
-                    Color.blue, Color.yellow, Color.yellow, Color.magenta, Color.magenta, Color.magenta, Color.blue,
-                    Color.blue, Color.red, Color.yellow, Color.magenta, Color.blue, Color.magenta, Color.blue,
-                    Color.blue, Color.red, Color.yellow, Color.yellow, Color.blue, Color.magenta, Color.blue,
-                    Color.blue, Color.red, Color.yellow, Color.magenta, Color.magenta, Color.magenta, Color.blue,
+                    Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), new Color(0.7294f, 0.3333f, 0.8275f), new Color(0.7294f, 0.3333f, 0.8275f), Color.red,
+                    Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), Color.yellow, Color.yellow, Color.blue, new Color(0.7294f, 0.3333f, 0.8275f), Color.red,
+                    Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), Color.blue, new Color(0.7294f, 0.3333f, 0.8275f), Color.red,
+                    Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), Color.blue, new Color(0.7294f, 0.3333f, 0.8275f), Color.red,
+                    Color.blue, Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), new Color(0.7294f, 0.3333f, 0.8275f), Color.blue, new Color(0.7294f, 0.3333f, 0.8275f), Color.blue,
+                    Color.blue, Color.yellow, Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), new Color(0.7294f, 0.3333f, 0.8275f), new Color(0.7294f, 0.3333f, 0.8275f), Color.blue,
+                    Color.blue, Color.red, Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), Color.blue, new Color(0.7294f, 0.3333f, 0.8275f), Color.blue,
+                    Color.blue, Color.red, Color.yellow, Color.yellow, Color.blue, new Color(0.7294f, 0.3333f, 0.8275f), Color.blue,
+                    Color.blue, Color.red, Color.yellow, new Color(0.7294f, 0.3333f, 0.8275f), new Color(0.7294f, 0.3333f, 0.8275f), new Color(0.7294f, 0.3333f, 0.8275f), Color.blue,
                  };
                 break;
             case "Level_10":
