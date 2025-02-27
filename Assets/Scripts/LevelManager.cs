@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
                 case 3:
                     targetColor = Color.blue;
                     break;
-                case 4:
+                case 4: // magenta
                     targetColor = new Color(0.7294f, 0.3333f, 0.8275f);
                     break;
                 case 5:

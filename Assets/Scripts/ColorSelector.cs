@@ -7,7 +7,7 @@ public class ColorSelector : MonoBehaviour
     public void SelectColor(string colorName)
     {
 
-        Color selectedColor = new Color (1.0f, 1.0f, 1.0f);
+        Color selectedColor = Color.white;
 
         switch (colorName)
         {
