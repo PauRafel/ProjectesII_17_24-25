@@ -26,6 +26,9 @@ public class ColorSelector : MonoBehaviour
             case "Magenta":
                 selectedColor = new Color(0.7294f, 0.3333f, 0.8275f);
                 break;
+            default:
+                selectedColor = Color.clear;
+                break;
         }
 
         GameManager.Instance.SetSelectedColor(selectedColor);

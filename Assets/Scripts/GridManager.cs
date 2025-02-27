@@ -50,7 +50,7 @@ public class GridManager : MonoBehaviour
         finishedPropagations = false;
         while (activePropagations > 0)
         {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
         }
         finishedPropagations = true;
         Debug.Log("Todas las propagaciones han terminado.");
