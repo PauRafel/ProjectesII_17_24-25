@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 58558919}
   - component: {fileID: 58558918}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: TopPartBackground2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 421157232}
   - component: {fileID: 421157231}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TopPartBackground3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1013,7 +1013,7 @@ GameObject:
   - component: {fileID: 452385097}
   - component: {fileID: 452385096}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ButtonsBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2008,7 +2008,7 @@ GameObject:
   - component: {fileID: 795696135}
   - component: {fileID: 795696134}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: TopPartBackground1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2518,7 +2518,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.35
+  m_fontSize: 23.05
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2741,7 +2741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: 0}
+  m_AnchoredPosition: {x: -61, y: -2}
   m_SizeDelta: {x: -99.99997, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079210828
@@ -2782,7 +2782,7 @@ GameObject:
   - component: {fileID: 1116253016}
   - component: {fileID: 1116253015}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: TopPartBackground4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3582,7 +3582,7 @@ GameObject:
   - component: {fileID: 1577623223}
   - component: {fileID: 1577623222}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: ButtonsBackground2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
