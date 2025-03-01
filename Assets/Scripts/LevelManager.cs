@@ -13,8 +13,13 @@ public class LevelManager : MonoBehaviour
 
     public Color targetColor; // El color que debe alcanzar toda la cuadrícula para ganar
 
+    public AudioClip victorySound; // Asigna el sonido desde el Inspector
+    private AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         string currentSceneName = SceneManager.GetActiveScene().name;
 
         if (currentSceneName.StartsWith(levelPrefix))
@@ -83,10 +88,21 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-
     public void CompleteLevel()
     {
         Debug.Log("¡Nivel completado!");
-        levelCompletePanel.SetActive(true);
+
+        if (victorySound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(victorySound); // Reproduce el sonido de victoria
+        }
+
+        StartCoroutine(ShowVictoryPanel());
+    }
+
+    private IEnumerator ShowVictoryPanel()
+    {
+        yield return new WaitForSeconds(2f); // Espera 2 segundos
+        levelCompletePanel.SetActive(true); // Activa el panel de victoria
     }
 }

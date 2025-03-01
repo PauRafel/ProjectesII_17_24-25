@@ -501,6 +501,7 @@ MonoBehaviour:
   levelPrefix: Level_
   levelCompletePanel: {fileID: 510478778}
   targetColor: {r: 0, g: 0, b: 0, a: 0}
+  victorySound: {fileID: 8300000, guid: 7fb0a9698411ac24c96d38188d971e31, type: 3}
 --- !u!4 &267740230
 Transform:
   m_ObjectHideFlags: 0
@@ -2518,7 +2519,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.2
+  m_fontSize: 21.55
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
