@@ -1866,7 +1866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8117647, g: 0.73333335, b: 0.654902, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2492,7 +2492,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turn all the palette into <#1E1E24>BLACK
+  m_text: Turn all the palette into <#3BA99C>GREEN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16bf36cc2526efe48a02ff166556b5da, type: 2}
   m_sharedMaterial: {fileID: 483032974343892823, guid: 16bf36cc2526efe48a02ff166556b5da, type: 2}
@@ -2627,9 +2627,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'LEVEL 10
-
-'
+  m_text: LEVEL 11
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0ffc450c1f1e5c4abdbdcb21af9b179, type: 2}
   m_sharedMaterial: {fileID: 3260997105245379846, guid: d0ffc450c1f1e5c4abdbdcb21af9b179, type: 2}
@@ -2941,7 +2939,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FloralWhite
+          m_StringArgument: Keppel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1126420424
@@ -2957,7 +2955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.972549, b: 0.9411765, a: 1}
+  m_Color: {r: 0.23137255, g: 0.6627451, b: 0.6117647, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3221,7 +3219,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DeepChampagne
+          m_StringArgument: BdazzledBlue
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1295333642
@@ -3237,7 +3235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.8117647, b: 0.6, a: 1}
+  m_Color: {r: 0.13725491, g: 0.34117648, b: 0.5372549, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3532,7 +3530,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: RaisinBlack
+          m_StringArgument: SafetyYellow
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1515050373
@@ -3548,7 +3546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.11764706, g: 0.11764706, b: 0.14117648, a: 1}
+  m_Color: {r: 0.94509804, g: 0.827451, b: 0.007843138, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4241,8 +4239,8 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
-  maxAttempts: 5
-  remainingAttempts: 5
+  maxAttempts: 3
+  remainingAttempts: 3
   attemptsText: {fileID: 230877525}
   finishedPropagations: 0
 --- !u!1 &2109247585
@@ -4337,7 +4335,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DarkRed
+          m_StringArgument: RedPigment
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2109247588
@@ -4353,7 +4351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.57254905, g: 0.078431375, b: 0.047058824, a: 1}
+  m_Color: {r: 0.92941177, g: 0.10980392, b: 0.14117648, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
