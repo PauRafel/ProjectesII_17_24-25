@@ -9,6 +9,7 @@ using System.Linq;
 public class GridManager : MonoBehaviour
 {
     public GameObject cellPrefab;
+    public GameObject bombPrefab; // Asigna el prefab de la bomba en el Inspector
     public int rows = 9;
     public int columns = 7;
     public float cellSpacing = -0.3f;
@@ -31,19 +32,19 @@ public class GridManager : MonoBehaviour
         UpdateAttemptsUI(); // Actualizar el texto del UI
     }
     public void UseAttempt()
-{
-    if (remainingAttempts > 0)
     {
-        remainingAttempts--;
-        UpdateAttemptsUI();
-
-        if (remainingAttempts <= 0)
+        if (remainingAttempts > 0)
         {
-            Debug.Log("Intentos agotados. Esperando a que termine la propagación...");
-            StartCoroutine(WaitForPropagations());
+            remainingAttempts--;
+            UpdateAttemptsUI();
+
+            if (remainingAttempts <= 0)
+            {
+                Debug.Log("Intentos agotados. Esperando a que termine la propagación...");
+                StartCoroutine(WaitForPropagations());
+            }
         }
     }
-}
 
     private IEnumerator WaitForPropagations()
     {
@@ -54,48 +55,6 @@ public class GridManager : MonoBehaviour
         }
         finishedPropagations = true;
         Debug.Log("Todas las propagaciones han terminado.");
-    }
-
-    IEnumerator CheckAndRestartLevel()
-    {
-        if (isCheckingRestart)
-        {
-            yield break; // Evitar múltiples llamadas simultáneas
-        }
-
-        isCheckingRestart = true;
-
-        // Esperar a que todas las propagaciones terminen
-        StartCoroutine(WaitForPropagations());
-
-        LevelManager levelManager = FindObjectOfType<LevelManager>();
-        if (levelManager != null)
-        {
-
-            bool victory = levelManager.CheckVictoryCondition();
-
-            if (victory == true)
-            {
-                Debug.Log("¡Nivel completado!");
-                levelManager.CompleteLevel(); // Pasar al siguiente nivel
-            }
-            else if (remainingAttempts <= 0 && finishedPropagations)
-            {
-                Debug.Log("Sin intentos restantes. Reiniciando nivel...");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reiniciar nivel actual
-            }
-        }
-
-        isCheckingRestart = false;
-    }
-
-    // Actualiza el texto del contador de intentos
-    void UpdateAttemptsUI()
-    {
-        if (attemptsText != null)
-        {
-            attemptsText.text = $"{remainingAttempts}";
-        }
     }
 
     public void StartPropagation()
@@ -116,7 +75,7 @@ public class GridManager : MonoBehaviour
             Debug.LogWarning("activePropagations fue menor que 0. Asegúrate de que EndPropagation se llama correctamente.");
         }
 
-        if(activePropagations == 0 && remainingAttempts <= 0)
+        if (activePropagations == 0 && remainingAttempts <= 0)
         {
             StartCoroutine(CheckAndRestartLevel());
         }
@@ -161,6 +120,103 @@ public class GridManager : MonoBehaviour
                     renderer.color = cellColor; // Aplicar el color
                 }
             }
+        }
+    }
+
+    public Vector3 GridToWorldPosition(int x, int y)
+    {
+        float offsetX = (columns - 1) / 2f;
+        float offsetY = (rows - 1) / 2f;
+
+        // Calcular la posición en el mundo basándose en el espaciado de las celdas
+        return new Vector3(x - offsetX + 1.06f + (x * cellSpacing),
+                           -(y - offsetY + 1.5f) - (y * cellSpacing),
+                           0);
+    }
+
+    public bool IsWithinBounds(int x, int y)
+    {
+        return x >= 0 && x < columns && y >= 0 && y < rows;
+    }
+
+    public void SetCellColor(int x, int y, Color color)
+    {
+        string cellName = $"Cell_{x}_{y}";
+        Transform cellTransform = transform.Find(cellName);
+
+        if (cellTransform != null)
+        {
+            GridCell gridCell = cellTransform.GetComponent<GridCell>();
+            if (gridCell != null)
+            {
+                gridCell.SetColor(color); // Asigna el color a la celda
+            }
+        }
+    }
+
+    public void DestroyCell(int x, int y, Color explosionColor)
+    {
+        string cellName = $"Cell_{x}_{y}";
+        Transform cellTransform = transform.Find(cellName);
+
+        if (cellTransform != null)
+        {
+            GridCell gridCell = cellTransform.GetComponent<GridCell>();
+            if (gridCell != null)
+            {
+                gridCell.SetColor(explosionColor); // Asigna el color de la explosión
+            }
+        }
+    }
+
+    public void PlaceBomb(int x, int y)
+    {
+        GameObject bombObj = Instantiate(bombPrefab, GridToWorldPosition(x, y), Quaternion.identity);
+        Bomb bomb = bombObj.GetComponent<Bomb>();
+        bomb.gridX = x;
+        bomb.gridY = y;
+        bomb.gridManager = this;
+    }
+
+    IEnumerator CheckAndRestartLevel()
+    {
+        if (isCheckingRestart)
+        {
+            yield break; // Evitar múltiples llamadas simultáneas
+        }
+
+        isCheckingRestart = true;
+
+        // Esperar a que todas las propagaciones terminen
+        StartCoroutine(WaitForPropagations());
+
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        if (levelManager != null)
+        {
+
+            bool victory = levelManager.CheckVictoryCondition();
+
+            if (victory == true)
+            {
+                Debug.Log("¡Nivel completado!");
+                levelManager.CompleteLevel(); // Pasar al siguiente nivel
+            }
+            else if (remainingAttempts <= 0 && finishedPropagations)
+            {
+                Debug.Log("Sin intentos restantes. Reiniciando nivel...");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reiniciar nivel actual
+            }
+        }
+
+        isCheckingRestart = false;
+    }
+
+    // Actualiza el texto del contador de intentos
+    void UpdateAttemptsUI()
+    {
+        if (attemptsText != null)
+        {
+            attemptsText.text = $"{remainingAttempts}";
         }
     }
 
@@ -339,6 +395,20 @@ public class GridManager : MonoBehaviour
                    new Color(0.9255f, 0.7961f, 0.8510f), new Color(0.6275f, 0.6863f, 0.5176f), new Color(0.9569f, 0.3765f, 0.2039f), new Color(0.6275f, 0.6863f, 0.5176f), new Color(0.9255f, 0.7961f, 0.8510f), new Color(0.9255f, 0.7961f, 0.8510f), new Color(0.9569f, 0.3765f, 0.2039f),
                    new Color(0.9255f, 0.7961f, 0.8510f), new Color(0.6275f, 0.6863f, 0.5176f), new Color(0.9569f, 0.3765f, 0.2039f), new Color(0.6275f, 0.6863f, 0.5176f), new Color(0.9569f, 0.3765f, 0.2039f), new Color(0.9569f, 0.3765f, 0.2039f), new Color(0.9569f, 0.3765f, 0.2039f),
                    new Color(0.9255f, 0.7961f, 0.8510f), new Color(0.6275f, 0.6863f, 0.5176f), new Color(0.6275f, 0.6863f, 0.5176f), new Color(0.6275f, 0.6863f, 0.5176f), new Color(0.9255f, 0.7961f, 0.8510f), new Color(0.9255f, 0.7961f, 0.8510f), new Color(0.9255f, 0.7961f, 0.8510f),
+                 };
+                break;
+            case "Level_25":
+                levelColors = new Color[]
+                 {
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9569f, 0.3765f, 0.2039f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
+                   new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
                  };
                 break;
             default:

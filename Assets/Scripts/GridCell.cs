@@ -22,6 +22,12 @@ public class GridCell : MonoBehaviour
         spriteRenderer.color = cellColor; // Aplicar el color inicial
     }
 
+    public void SetColor(Color newColor)
+    {
+        cellColor = newColor;
+        GetComponent<SpriteRenderer>().color = newColor;
+    }
+
     void OnMouseDown()
     {
         // Verificar si quedan intentos

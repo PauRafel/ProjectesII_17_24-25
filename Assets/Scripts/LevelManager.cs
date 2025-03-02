@@ -65,6 +65,9 @@ public class LevelManager : MonoBehaviour
                 case 12: // Red --> QueenPink
                     targetColor = new Color(0.9255f, 0.7961f, 0.8510f);
                     break;
+                case 25: // Yellow --> SafetyYellow
+                    targetColor = new Color(0.9451f, 0.8275f, 0.0078f);
+                    break;
                 default:
                     break;
             }
