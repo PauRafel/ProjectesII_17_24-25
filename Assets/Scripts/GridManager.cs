@@ -302,15 +302,15 @@ public class GridManager : MonoBehaviour
             case "Level_10":
                 levelColors = new Color[]
                  {
-                    Color.green, Color.yellow, Color.yellow, Color.blue, Color.green, Color.red, Color.green,
-                    Color.green, Color.red, Color.yellow, Color.blue, Color.green, Color.red, Color.red,
-                    Color.blue, Color.blue, Color.yellow, Color.blue, Color.blue, Color.green, Color.green,
-                    Color.blue, Color.green, Color.yellow, Color.yellow, Color.blue, Color.blue, Color.blue,
-                    Color.blue, Color.green, Color.green, Color.yellow, Color.red, Color.red, Color.blue,
-                    Color.blue, Color.blue, Color.green, Color.yellow, Color.yellow, Color.red, Color.red,
-                    Color.red, Color.blue, Color.green, Color.green, Color.yellow, Color.yellow, Color.red,
-                    Color.yellow, Color.blue, Color.blue, Color.green, Color.green, Color.yellow, Color.red,
-                    Color.yellow, Color.red, Color.blue, Color.blue, Color.green, Color.yellow, Color.yellow,
+                    new Color(0.1176f, 0.1176f, 0.1412f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(0.5725f, 0.0784f, 0.0471f), new Color(0.1176f, 0.1176f, 0.1412f),
+                    new Color(0.1176f, 0.1176f, 0.1412f), new Color(0.5725f, 0.0784f, 0.0471f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(0.5725f, 0.0784f, 0.0471f), new Color(0.5725f, 0.0784f, 0.0471f),
+                    new Color(1.0f, 0.9725f, 0.9412f), new Color(1.0f, 0.9725f, 0.9412f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.9725f, 0.9412f), new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(0.1176f, 0.1176f, 0.1412f),
+                    new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.9725f, 0.9412f), new Color(1.0f, 0.9725f, 0.9412f), new Color(1.0f, 0.9725f, 0.9412f),
+                    new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(1.0f, 0.8118f, 0.6f), new Color(0.5725f, 0.0784f, 0.0471f), new Color(0.5725f, 0.0784f, 0.0471f), new Color(1.0f, 0.9725f, 0.9412f),
+                    new Color(1.0f, 0.9725f, 0.9412f), new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.8118f, 0.6f), new Color(0.5725f, 0.0784f, 0.0471f), new Color(0.5725f, 0.0784f, 0.0471f),
+                    new Color(0.5725f, 0.0784f, 0.0471f), new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.8118f, 0.6f), new Color(0.5725f, 0.0784f, 0.0471f),
+                    new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.9725f, 0.9412f), new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(1.0f, 0.8118f, 0.6f), new Color(0.5725f, 0.0784f, 0.0471f),
+                    new Color(1.0f, 0.8118f, 0.6f), new Color(0.5725f, 0.0784f, 0.0471f), new Color(1.0f, 0.9725f, 0.9412f), new Color(1.0f, 0.9725f, 0.9412f), new Color(0.1176f, 0.1176f, 0.1412f), new Color(1.0f, 0.8118f, 0.6f), new Color(1.0f, 0.8118f, 0.6f),
                  };
                 break;
             default:
