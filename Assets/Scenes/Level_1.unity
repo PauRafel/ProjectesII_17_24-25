@@ -2447,6 +2447,7 @@ GameObject:
   - component: {fileID: 983985056}
   - component: {fileID: 983985058}
   - component: {fileID: 983985057}
+  - component: {fileID: 983985059}
   m_Layer: 5
   m_Name: TargetColorText
   m_TagString: Untagged
@@ -2494,7 +2495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turn all the palette into <#FF0000>RED
+  m_text: Turn all the palette into <#FF0000>RED</color>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16bf36cc2526efe48a02ff166556b5da, type: 2}
   m_sharedMaterial: {fileID: 483032974343892823, guid: 16bf36cc2526efe48a02ff166556b5da, type: 2}
@@ -2571,6 +2572,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983985055}
   m_CullTransparentMesh: 1
+--- !u!114 &983985059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983985055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029749e5edd2ce1409d0364e33bb280e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 983985057}
+  blinkDuration: 5
+  blinkSpeed: 0.5
 --- !u!1 &998973440
 GameObject:
   m_ObjectHideFlags: 0
