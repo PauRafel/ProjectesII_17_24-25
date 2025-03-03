@@ -71,8 +71,8 @@ public class Bomb : MonoBehaviour
 
     void Explode()
     {
-        int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 }; // Coordenadas en X de la explosión
-        int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 }; // Coordenadas en Y de la explosión
+        int[] dx = { -2, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 2 }; // Coordenadas en X de la explosión
+        int[] dy = { 0, -1, 0, 1, -2, -1, 1, 2, -1, 0, 1, 0 }; // Coordenadas en Y de la explosión
 
         for (int i = 0; i < dx.Length; i++)
         {

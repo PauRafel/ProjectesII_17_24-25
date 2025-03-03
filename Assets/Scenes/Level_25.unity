@@ -858,7 +858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 8.200012, y: -5.5}
+  m_AnchoredPosition: {x: 8.199951, y: -5.5}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &425614036
@@ -2606,7 +2606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 39.049988, y: 38.850006}
+  m_AnchoredPosition: {x: 39.05005, y: 38.850006}
   m_SizeDelta: {x: -82.10001, y: -93.119995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998973442
@@ -4175,8 +4175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellPrefab: {fileID: 5090876870165623962, guid: 22bba7d9d7a847d4397376b664e1e4f6, type: 3}
   bombPrefab: {fileID: 5231694354781453327, guid: 4648eb852dd470c4e8931243f012e6be, type: 3}
-  bombX: 3
-  bombY: 3
+  bombX: 2
+  bombY: 2
   explosionColors:
   - {r: 0.95686275, g: 0.3764706, b: 0.21176471, a: 0}
   - {r: 0.35686275, g: 0.52156866, b: 0.6666667, a: 0}
