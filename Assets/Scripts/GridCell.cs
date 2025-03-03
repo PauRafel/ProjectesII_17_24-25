@@ -67,7 +67,7 @@ public class GridCell : MonoBehaviour
         Vector3 originalScale = transform.localScale;
         Vector3 enlargedScale = originalScale * 1.25f; // Agranda la celda un 20%
 
-        float duration = 0.15f; // Duración de la animación
+        float duration = 0.17f; // Duración de la animación
         float elapsedTime = 0f;
 
         // Expandir
@@ -93,9 +93,6 @@ public class GridCell : MonoBehaviour
         transform.localScale = originalScale; // Asegurar que vuelva al tamaño original
     }
 
-
-
-
     IEnumerator PropagateColorGradually(Color newColor)
     {
         GridManager gridManager = FindObjectOfType<GridManager>();
@@ -109,6 +106,7 @@ public class GridCell : MonoBehaviour
         cellsToProcess.Enqueue(this);
 
         Color originalColor = cellColor;
+        float delay = 0.2f; // Tiempo inicial de espera
 
         try
         {
@@ -132,7 +130,11 @@ public class GridCell : MonoBehaviour
                     }
                 }
 
-                yield return new WaitForSeconds(0.07f); // Simular propagación gradual
+                yield return new WaitForSeconds(delay);
+
+                // Reducimos progresivamente el delay, para que la propagación se acelere
+                delay *= 0.88f; // Disminuye el tiempo en un 15% en cada paso
+                delay = Mathf.Max(0.02f, delay); // Evita que sea menor a 0.02s
             }
         }
         finally
@@ -140,20 +142,8 @@ public class GridCell : MonoBehaviour
             if (gridManager != null)
             {
                 gridManager.EndPropagation(); // Finalizar propagación
-
-                // Ahora que terminó la propagación, verificamos la victoria
-                LevelManager levelManager = FindObjectOfType<LevelManager>();
-                if (levelManager != null)
-                {
-                    bool victory = levelManager.CheckVictoryCondition();
-                    if (victory)
-                    {
-                        levelManager.CompleteLevel(); // Si se gana, mostrar pantalla de victoria
-                    }
-                }
             }
         }
-
     }
 
     List<GridCell> GetNeighbors(GridCell cell)
