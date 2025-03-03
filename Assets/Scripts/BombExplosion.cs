@@ -27,33 +27,36 @@ public class Bomb : MonoBehaviour
 
     void Start()
     {
-        // Elegir color aleatorio de la lista proporcionada
+        // Seleccionar un color aleatorio de la lista
         if (explosionColors != null && explosionColors.Length > 0)
         {
-            int idx = Random.Range(0, explosionColors.Length);
-            chosenColor = explosionColors[idx];
+            chosenColor = explosionColors[Random.Range(0, explosionColors.Length)];
         }
         else
         {
-            chosenColor = Color.white; // Color por defecto si no hay lista
+            chosenColor = Color.white;
         }
 
-        // Aplicar el color elegido a la celda donde está la bomba
+        // Asegurar que el color tenga opacidad total
+        chosenColor.a = 1.0f;
+
+        // Pinta la casilla donde está la bomba con el color elegido
         if (gridManager != null)
         {
             gridManager.SetCellColor(gridX, gridY, chosenColor);
         }
 
-        // Configurar el contador de intentos
+        // Agregar un contador visual sobre la bomba
         GameObject textObj = new GameObject("CountdownText");
         textObj.transform.SetParent(transform);
         textObj.transform.localPosition = new Vector3(0, 0.5f, 0);
 
         countdownText = textObj.AddComponent<TextMesh>();
         countdownText.text = explosionCountdown.ToString();
-        countdownText.color = chosenColor;
+        countdownText.color = Color.black;
         countdownText.fontSize = 48;
     }
+
 
     public void ReduceCountdown()
     {
@@ -68,42 +71,20 @@ public class Bomb : MonoBehaviour
 
     void Explode()
     {
-        /* 1. Crear el efecto visual de explosión
-        if (explosionPrefab != null)
-        {
-            GameObject explosionObj = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            ParticleSystem ps = explosionObj.GetComponent<ParticleSystem>();
-            if (ps != null)
-            {
-                var mainModule = ps.main;
-                mainModule.startColor = chosenColor;
-                ps.Play();
-            }
-        }*/
+        int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 }; // Coordenadas en X de la explosión
+        int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 }; // Coordenadas en Y de la explosión
 
-        /* 2. Reproducir sonido de explosión
-        if (explosionSound != null)
+        for (int i = 0; i < dx.Length; i++)
         {
-            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
-        }*/
+            int nx = gridX + dx[i];
+            int ny = gridY + dy[i];
 
-        // 3. Aplicar efectos en la cuadrícula (destruir/afectar casillas en el radio de la explosión)
-        int radius = 2;
-        for (int dx = -radius; dx <= radius; dx++)
-        {
-            for (int dy = -radius; dy <= radius; dy++)
+            if (gridManager.IsWithinBounds(nx, ny))
             {
-                int nx = gridX + dx;
-                int ny = gridY + dy;
-                // Verificar que (nx, ny) esté dentro de los límites del grid
-                if (gridManager != null && gridManager.IsWithinBounds(nx, ny))
-                {
-                    gridManager.DestroyCell(nx, ny, chosenColor);
-                }
+                gridManager.SetCellColor(nx, ny, chosenColor);
             }
         }
 
-        // 4. Destruir la bomba
         Destroy(gameObject);
     }
 }

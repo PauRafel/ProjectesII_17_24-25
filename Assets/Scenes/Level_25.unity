@@ -4177,6 +4177,10 @@ MonoBehaviour:
   bombPrefab: {fileID: 5231694354781453327, guid: 4648eb852dd470c4e8931243f012e6be, type: 3}
   bombX: 3
   bombY: 3
+  explosionColors:
+  - {r: 0.95686275, g: 0.3764706, b: 0.21176471, a: 0}
+  - {r: 0.35686275, g: 0.52156866, b: 0.6666667, a: 0}
+  - {r: 0.23137255, g: 0.6627451, b: 0.6117647, a: 0}
   rows: 9
   columns: 7
   cellSpacing: -0.35

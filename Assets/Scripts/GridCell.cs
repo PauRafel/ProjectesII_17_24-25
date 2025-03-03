@@ -25,6 +25,7 @@ public class GridCell : MonoBehaviour
     public void SetColor(Color newColor)
     {
         cellColor = newColor;
+        spriteRenderer.color = newColor;
         GetComponent<SpriteRenderer>().color = newColor;
     }
 

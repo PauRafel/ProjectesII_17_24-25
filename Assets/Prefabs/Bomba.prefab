@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7105904419330672207}
   - component: {fileID: 8574767883221074875}
   - component: {fileID: 5415500133279192403}
-  - component: {fileID: 6735966967641140790}
+  - component: {fileID: 3921808735480200943}
   m_Layer: 6
   m_Name: Bomba
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8574767883221074875
 SpriteRenderer:
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6735966967641140790
+--- !u!114 &3921808735480200943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,9 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionColors:
-  - {r: 0.95686275, g: 0.3764706, b: 0.21176471, a: 0}
-  - {r: 0.35686275, g: 0.52156866, b: 0.6666667, a: 0}
-  - {r: 0.23137255, g: 0.6627451, b: 0.6117647, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
   explosionCountdown: 3
   gridX: 0
   gridY: 0

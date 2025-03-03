@@ -13,6 +13,8 @@ public class GridManager : MonoBehaviour
     public GameObject bombPrefab; // Asigna el prefab de la bomba en el Inspector
     public int bombX;
     public int bombY;
+    private Bomb placedBomb; // Referencia a la bomba colocada
+    public Color[] explosionColors; // Colores posibles para la explosión
 
     public int rows = 9;
     public int columns = 7;
@@ -44,6 +46,11 @@ public class GridManager : MonoBehaviour
         {
             remainingAttempts--;
             UpdateAttemptsUI();
+
+            if (placedBomb != null)
+            {
+                placedBomb.ReduceCountdown(); // Reduce el contador de la bomba
+            }
 
             if (remainingAttempts <= 0)
             {
@@ -215,11 +222,17 @@ public class GridManager : MonoBehaviour
 
     public void PlaceBomb(int x, int y)
     {
-        GameObject bombObj = Instantiate(bombPrefab, GridToWorldPosition(x, y), Quaternion.identity);
-        Bomb bomb = bombObj.GetComponent<Bomb>();
-        bomb.gridX = x;
-        bomb.gridY = y;
-        bomb.gridManager = this;
+        Vector3 bombPosition = GridToWorldPosition(x, y);
+        GameObject bombObj = Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+        placedBomb = bombObj.GetComponent<Bomb>();
+
+        if (placedBomb != null)
+        {
+            placedBomb.gridX = x;
+            placedBomb.gridY = y;
+            placedBomb.gridManager = this;
+            placedBomb.explosionColors = explosionColors; // Asigna los colores configurados
+        }
     }
 
     private IEnumerator ShowFailPanel()
