@@ -83,6 +83,35 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    IEnumerator AnimateCellsAppearance(List<GameObject> cells)
+    {
+        float totalDuration = 2f; // Duración total de la animación
+        float delayBetweenCells = totalDuration / cells.Count; // Tiempo entre cada celda
+        System.Random rnd = new System.Random();
+
+        foreach (GameObject cell in cells)
+        {
+            StartCoroutine(ScaleUpCell(cell, rnd.Next(15, 30) / 100f)); // Variabilidad en el tiempo de escala
+            yield return new WaitForSeconds(delayBetweenCells * UnityEngine.Random.Range(0.7f, 1.3f)); // Variabilidad en aparición
+        }
+    }
+
+    IEnumerator ScaleUpCell(GameObject cell, float duration)
+    {
+        Vector3 originalScale = new Vector3(0.06f, 0.06f, 1);
+        Vector3 startScale = Vector3.zero;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            cell.transform.localScale = Vector3.Lerp(startScale, originalScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        cell.transform.localScale = originalScale; // Asegurar tamaño final
+    }
+
     void GenerateGrid()
     {
         if (levelColors == null || levelColors.Length != rows * columns)
@@ -94,6 +123,7 @@ public class GridManager : MonoBehaviour
         float offsetX = (columns - 1) / 2f;
         float offsetY = (rows - 1) / 2f;
 
+        List<GameObject> cells = new List<GameObject>();
 
         for (int y = 0; y < rows; y++)
         {
@@ -121,8 +151,17 @@ public class GridManager : MonoBehaviour
                     renderer.material = new Material(renderer.material); // Clonar el material
                     renderer.color = cellColor; // Aplicar el color
                 }
+                // Inicialmente la escala de la celda será 0(invisible)
+            cell.transform.localScale = Vector3.zero;
+                cells.Add(cell);
             }
         }
+        // Revolver aleatoriamente el orden de aparición de las celdas
+        System.Random rnd = new System.Random();
+        cells = cells.OrderBy(c => rnd.Next()).ToList();
+
+        // Iniciar la animación de aparición
+        StartCoroutine(AnimateCellsAppearance(cells));
     }
 
     public Vector3 GridToWorldPosition(int x, int y)
