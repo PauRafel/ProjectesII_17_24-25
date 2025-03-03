@@ -10,9 +10,12 @@ public class BlinkColorSelected : MonoBehaviour
 
     private bool isBlinking = false;
 
-    private void Awake()
+    private void Start()
     {
-        caretText.enabled = false; // Asegurar que el "^" esté desactivado al inicio
+        if (caretText != null)
+        {
+            StartBlinking();
+        }
     }
 
     public void StartBlinking()
