@@ -9,7 +9,11 @@ using System.Linq;
 public class GridManager : MonoBehaviour
 {
     public GameObject cellPrefab;
+
     public GameObject bombPrefab; // Asigna el prefab de la bomba en el Inspector
+    public int bombX;
+    public int bombY;
+
     public int rows = 9;
     public int columns = 7;
     public float cellSpacing = -0.3f;
@@ -23,7 +27,6 @@ public class GridManager : MonoBehaviour
     public bool finishedPropagations;
     public GameObject levelFailedPanel; // Panel de Derrota
 
-
     void Start()
     {
         string levelName = SceneManager.GetActiveScene().name; // Obtiene el nombre de la escena activa
@@ -32,6 +35,8 @@ public class GridManager : MonoBehaviour
 
         remainingAttempts = maxAttempts; // Inicializar los intentos restantes
         UpdateAttemptsUI(); // Actualizar el texto del UI
+
+        PlaceBomb(bombX - 1, bombY - 1);
     }
     public void UseAttempt()
     {

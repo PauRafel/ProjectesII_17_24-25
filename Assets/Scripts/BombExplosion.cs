@@ -19,6 +19,7 @@ public class Bomb : MonoBehaviour
     // Posición de la bomba en la cuadrícula
     [HideInInspector] public int gridX;
     [HideInInspector] public int gridY;
+    
     public GridManager gridManager; // Referencia al GridManager
 
     private Color chosenColor; // Color elegido aleatoriamente
