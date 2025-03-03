@@ -56,13 +56,45 @@ public class GridCell : MonoBehaviour
         cellColor = newColor;
         spriteRenderer.color = cellColor;
 
-        // Notificar al LevelManager para verificar la condición de victoria
-        LevelManager levelManager = FindObjectOfType<LevelManager>();
-        if (levelManager != null)
-        {
-            levelManager.CheckVictoryCondition();
-        }
+        // Ejecutar animación de escala
+        StartCoroutine(AnimateCell());
     }
+
+
+
+    private IEnumerator AnimateCell()
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 enlargedScale = originalScale * 1.25f; // Agranda la celda un 20%
+
+        float duration = 0.15f; // Duración de la animación
+        float elapsedTime = 0f;
+
+        // Expandir
+        while (elapsedTime < duration)
+        {
+            transform.localScale = Vector3.Lerp(originalScale, enlargedScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localScale = enlargedScale; // Asegurar que llegue al tamaño final
+
+        elapsedTime = 0f;
+
+        // Volver a tamaño original
+        while (elapsedTime < duration)
+        {
+            transform.localScale = Vector3.Lerp(enlargedScale, originalScale, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localScale = originalScale; // Asegurar que vuelva al tamaño original
+    }
+
+
+
 
     IEnumerator PropagateColorGradually(Color newColor)
     {
@@ -108,8 +140,20 @@ public class GridCell : MonoBehaviour
             if (gridManager != null)
             {
                 gridManager.EndPropagation(); // Finalizar propagación
+
+                // Ahora que terminó la propagación, verificamos la victoria
+                LevelManager levelManager = FindObjectOfType<LevelManager>();
+                if (levelManager != null)
+                {
+                    bool victory = levelManager.CheckVictoryCondition();
+                    if (victory)
+                    {
+                        levelManager.CompleteLevel(); // Si se gana, mostrar pantalla de victoria
+                    }
+                }
             }
         }
+
     }
 
     List<GridCell> GetNeighbors(GridCell cell)

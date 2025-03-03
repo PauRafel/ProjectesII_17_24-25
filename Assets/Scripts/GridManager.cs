@@ -196,28 +196,31 @@ public class GridManager : MonoBehaviour
         isCheckingRestart = true;
 
         // Esperar a que todas las propagaciones terminen
-        StartCoroutine(WaitForPropagations());
+        yield return StartCoroutine(WaitForPropagations());
 
         LevelManager levelManager = FindObjectOfType<LevelManager>();
         if (levelManager != null)
         {
-
             bool victory = levelManager.CheckVictoryCondition();
 
-            if (victory == true)
+            if (victory)
             {
                 Debug.Log("¡Nivel completado!");
                 levelManager.CompleteLevel(); // Pasar al siguiente nivel
+                isCheckingRestart = false;
+                yield break; //  Salimos de la corrutina para evitar que siga ejecutándose y muestre la derrota
             }
-            else if (remainingAttempts <= 0 && finishedPropagations)
+
+            if (remainingAttempts <= 0 && finishedPropagations)
             {
-                Debug.Log("Sin intentos restantes. Abriendo panel de derrota!");
+                Debug.Log("Sin intentos restantes. Mostrando panel de derrota...");
                 StartCoroutine(ShowFailPanel());
             }
         }
 
         isCheckingRestart = false;
     }
+
 
     // Actualiza el texto del contador de intentos
     void UpdateAttemptsUI()
