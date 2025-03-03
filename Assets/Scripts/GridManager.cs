@@ -131,9 +131,7 @@ public class GridManager : MonoBehaviour
         float offsetY = (rows - 1) / 2f;
 
         // Calcular la posición en el mundo basándose en el espaciado de las celdas
-        return new Vector3(x - offsetX + 1.06f + (x * cellSpacing),
-                           -(y - offsetY + 1.5f) - (y * cellSpacing),
-                           0);
+        return new Vector3(x - offsetX + 1.06f + (x * cellSpacing), -(y - offsetY + 1.5f) - (y * cellSpacing), 0);
     }
 
     public bool IsWithinBounds(int x, int y)
