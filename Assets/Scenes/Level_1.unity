@@ -2522,7 +2522,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.35
+  m_fontSize: 23.05
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2585,7 +2585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 983985057}
-  blinkDuration: 5
+  blinkDuration: 3
   blinkSpeed: 0.5
 --- !u!1 &998973440
 GameObject:
@@ -3158,7 +3158,7 @@ GameObject:
   - component: {fileID: 1295333642}
   - component: {fileID: 1295333641}
   m_Layer: 5
-  m_Name: MagentaButton
+  m_Name: YellowButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4275,7 +4275,7 @@ GameObject:
   - component: {fileID: 2109247588}
   - component: {fileID: 2109247587}
   m_Layer: 5
-  m_Name: YellowButton
+  m_Name: RedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
