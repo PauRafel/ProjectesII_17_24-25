@@ -1,45 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class ColorSelector : MonoBehaviour
 {
-    public BlinkColorSelected redCaret;
-    public BlinkColorSelected blueCaret;
-    public BlinkColorSelected yellowCaret;
-    public BlinkColorSelected greenCaret;
-
-    private BlinkColorSelected activeCaret;
-
     public void SelectColor(string colorName)
     {
 
         Color selectedColor = Color.white;
-       
-        // Si hay un caret activo, detener su parpadeo
-        if (activeCaret != null)
-        {
-            activeCaret.StopBlinking();
-        }
 
         switch (colorName)
         {
             case "Red":
                 selectedColor = Color.red;
-                activeCaret = redCaret;
                 break;
             case "Blue":
                 selectedColor = Color.blue;
-                activeCaret = blueCaret;
                 break;
             case "Green":
                 selectedColor = Color.green;
-                activeCaret = greenCaret;
                 break;
             case "Yellow":
                 selectedColor = Color.yellow;
-                activeCaret = yellowCaret;
                 break;
             case "Magenta":
                 selectedColor = new Color(0.7294f, 0.3333f, 0.8275f);
@@ -90,10 +72,5 @@ public class ColorSelector : MonoBehaviour
 
         GameManager.Instance.SetSelectedColor(selectedColor);
 
-        // Si hay un caret válido, iniciar parpadeo
-        if (activeCaret != null)
-        {
-            activeCaret.StartBlinking();
-        }
     }
 }
