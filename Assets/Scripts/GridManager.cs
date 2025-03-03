@@ -21,6 +21,8 @@ public class GridManager : MonoBehaviour
     private int activePropagations = 0; // Contador de propagaciones activas
     private bool isCheckingRestart = false;
     public bool finishedPropagations;
+    public GameObject levelFailedPanel; // Panel de Derrota
+
 
     void Start()
     {
@@ -178,6 +180,12 @@ public class GridManager : MonoBehaviour
         bomb.gridManager = this;
     }
 
+    private IEnumerator ShowFailPanel()
+    {
+        yield return new WaitForSeconds(1f); // Espera 1 segundo
+        levelFailedPanel.SetActive(true); // Activa el panel de derrota
+    }
+
     IEnumerator CheckAndRestartLevel()
     {
         if (isCheckingRestart)
@@ -203,8 +211,8 @@ public class GridManager : MonoBehaviour
             }
             else if (remainingAttempts <= 0 && finishedPropagations)
             {
-                Debug.Log("Sin intentos restantes. Reiniciando nivel...");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reiniciar nivel actual
+                Debug.Log("Sin intentos restantes. Abriendo panel de derrota!");
+                StartCoroutine(ShowFailPanel());
             }
         }
 
