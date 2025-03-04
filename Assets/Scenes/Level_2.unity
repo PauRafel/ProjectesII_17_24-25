@@ -4910,6 +4910,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellPrefab: {fileID: 5090876870165623962, guid: 22bba7d9d7a847d4397376b664e1e4f6, type: 3}
   bombPrefab: {fileID: 0}
+  bombX: 0
+  bombY: 0
+  explosionColors: []
   rows: 9
   columns: 7
   cellSpacing: -0.35
