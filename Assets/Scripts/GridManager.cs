@@ -52,17 +52,27 @@ public class GridManager : MonoBehaviour
             remainingAttempts--;
             UpdateAttemptsUI();
 
+
             if (placedBomb != null)
             {
-                placedBomb.ReduceCountdown(); // Reduce el contador de la bomba
+                StartCoroutine(ReduceBombCountdownAfterPropagation());
             }
 
             if (remainingAttempts <= 0)
             {
-                Debug.Log("Intentos agotados. Esperando a que termine la propagación...");
                 StartCoroutine(WaitForPropagations());
             }
         }
+    }
+
+    private IEnumerator ReduceBombCountdownAfterPropagation()
+    {
+        while (activePropagations > 0)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+
+        placedBomb.ReduceCountdown();
     }
 
     private IEnumerator WaitForPropagations()

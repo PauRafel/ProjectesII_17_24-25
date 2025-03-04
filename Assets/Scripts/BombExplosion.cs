@@ -4,30 +4,17 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    // Colores posibles para la explosión (definidos por el developer en Inspector)
-    public Color[] explosionColors;
-   
-    // Prefab de la explosión (puede ser un sprite animado o un sistema de partículas)
-    //public GameObject explosionPrefab;
-    
-    // Sonido de la explosión
-    //public AudioClip explosionSound;
-    
-    // Retardo antes de explotar (en intentos del jugador)
-    public int explosionCountdown = 3;
-
-    // Posición de la bomba en la cuadrícula
-    [HideInInspector] public int gridX;
-    [HideInInspector] public int gridY;
-    
+    public Color[] explosionColors; // Colores posibles para la explosión (definidos en Inspector)
+    public int explosionCountdown = 3; // Intentos antes de explotar
+    public int gridX, gridY; // Posición en la cuadrícula
     public GridManager gridManager; // Referencia al GridManager
 
-    private Color chosenColor; // Color elegido aleatoriamente
-    private TextMesh countdownText; // Texto del contador sobre la bomba
+    private Color chosenColor; // Color de la explosión
+    private TextMesh countdownText; // Texto sobre la bomba
 
     void Start()
     {
-        // Seleccionar un color aleatorio de la lista
+        // Seleccionar color aleatorio para la explosión
         if (explosionColors != null && explosionColors.Length > 0)
         {
             chosenColor = explosionColors[Random.Range(0, explosionColors.Length)];
@@ -36,17 +23,12 @@ public class Bomb : MonoBehaviour
         {
             chosenColor = Color.white;
         }
-
-        // Asegurar que el color tenga opacidad total
         chosenColor.a = 1.0f;
 
-        // Pinta la casilla donde está la bomba con el color elegido
-        if (gridManager != null)
-        {
-            gridManager.SetCellColor(gridX, gridY, chosenColor);
-        }
+        // Pintar la casilla donde está la bomba
+        gridManager.SetCellColor(gridX, gridY, chosenColor);
 
-        // Agregar un contador visual sobre la bomba
+        // Agregar contador visual sobre la bomba
         GameObject textObj = new GameObject("CountdownText");
         textObj.transform.SetParent(transform);
         textObj.transform.localPosition = new Vector3(0, 0.5f, 0);
@@ -56,7 +38,6 @@ public class Bomb : MonoBehaviour
         countdownText.color = Color.black;
         countdownText.fontSize = 48;
     }
-
 
     public void ReduceCountdown()
     {
@@ -71,8 +52,9 @@ public class Bomb : MonoBehaviour
 
     void Explode()
     {
-        int[] dx = { -2, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 2 }; // Coordenadas en X de la explosión
-        int[] dy = { 0, -1, 0, 1, -2, -1, 1, 2, -1, 0, 1, 0 }; // Coordenadas en Y de la explosión
+        // Patrón de explosión basado en la posición de la bomba
+        int[] dx = { -2, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 2 };
+        int[] dy = { 0, -1, 0, 1, -2, -1, 1, 2, -1, 0, 1, 0 };
 
         for (int i = 0; i < dx.Length; i++)
         {
@@ -85,7 +67,6 @@ public class Bomb : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject); // Destruir la bomba después de explotar
     }
 }
-
