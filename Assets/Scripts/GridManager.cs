@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class GridManager : MonoBehaviour
 {
@@ -38,7 +39,11 @@ public class GridManager : MonoBehaviour
         remainingAttempts = maxAttempts; // Inicializar los intentos restantes
         UpdateAttemptsUI(); // Actualizar el texto del UI
 
-        PlaceBomb(bombX - 1, bombY - 1);
+        // Solo coloca la bomba si el prefab está asignado
+        if (bombPrefab != null)
+        {
+            PlaceBomb(bombX, bombY);
+        }
     }
     public void UseAttempt()
     {
@@ -222,6 +227,12 @@ public class GridManager : MonoBehaviour
 
     public void PlaceBomb(int x, int y)
     {
+        if (bombPrefab == null)
+        {
+            Debug.LogWarning("No hay bomba en este nivel, PlaceBomb() no hará nada.");
+            return; // Salimos de la función para evitar el error
+        }
+
         Vector3 bombPosition = GridToWorldPosition(x, y);
         GameObject bombObj = Instantiate(bombPrefab, bombPosition, Quaternion.identity);
         placedBomb = bombObj.GetComponent<Bomb>();
