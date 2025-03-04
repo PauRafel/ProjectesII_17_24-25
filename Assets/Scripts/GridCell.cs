@@ -151,7 +151,7 @@ public class GridCell : MonoBehaviour
                 delay = Mathf.Max(0.02f, delay); // Evita que sea menor a 0.02s
 
                 // **Aumentar tono progresivamente**
-                pitch += 0.01f; // Sube el tono en cada celda
+                pitch += 0.05f; // Sube el tono en cada celda
                 pitch = Mathf.Min(100.0f, pitch); // Limita el pitch máximo
             }
         }
