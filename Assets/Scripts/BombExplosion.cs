@@ -52,7 +52,6 @@ public class Bomb : MonoBehaviour
 
     void Explode()
     {
-        // Patrón de explosión basado en la posición de la bomba
         int[] dx = { -2, -1, -1, -1, 0, 0, 0, 0, 1, 1, 1, 2 };
         int[] dy = { 0, -1, 0, 1, -2, -1, 1, 2, -1, 0, 1, 0 };
 
@@ -63,10 +62,16 @@ public class Bomb : MonoBehaviour
 
             if (gridManager.IsWithinBounds(nx, ny))
             {
-                gridManager.SetCellColor(nx, ny, chosenColor);
+                GridCell cell = gridManager.GetCell(nx, ny);
+                if (cell != null)
+                {
+                    cell.ChangeColor(chosenColor); // Cambia el color de la celda
+                    StartCoroutine(cell.PropagateColorGradually(chosenColor)); // Inicia propagación
+                }
             }
         }
 
-        Destroy(gameObject); // Destruir la bomba después de explotar
+        Destroy(gameObject);
     }
+
 }

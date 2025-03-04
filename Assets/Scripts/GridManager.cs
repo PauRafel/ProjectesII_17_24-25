@@ -75,6 +75,19 @@ public class GridManager : MonoBehaviour
         placedBomb.ReduceCountdown();
     }
 
+    public GridCell GetCell(int x, int y)
+    {
+        string cellName = $"Cell_{x}_{y}";
+        Transform cellTransform = transform.Find(cellName);
+
+        if (cellTransform != null)
+        {
+            return cellTransform.GetComponent<GridCell>();
+        }
+        return null;
+    }
+
+
     private IEnumerator WaitForPropagations()
     {
         finishedPropagations = false;

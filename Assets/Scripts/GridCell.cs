@@ -99,7 +99,7 @@ public class GridCell : MonoBehaviour
         transform.localScale = originalScale; // Asegurar que vuelva al tamaño original
     }
 
-    IEnumerator PropagateColorGradually(Color newColor)
+    public IEnumerator PropagateColorGradually(Color newColor)
     {
         GridManager gridManager = FindObjectOfType<GridManager>();
         if (gridManager != null)
