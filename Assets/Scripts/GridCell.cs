@@ -7,11 +7,16 @@ public class GridCell : MonoBehaviour
     public Color cellColor = Color.white; // Color inicial
     private SpriteRenderer spriteRenderer;
 
-    private const float neighborDetectionDistance = 0.5f; 
+    private const float neighborDetectionDistance = 0.5f;
+
+    private AudioSource audioSource;
+    public AudioClip propagationSound;
+
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = gameObject.AddComponent<AudioSource>(); // Agrega un AudioSource dinámicamente
 
         if (spriteRenderer == null)
         {
@@ -108,6 +113,7 @@ public class GridCell : MonoBehaviour
 
         Color originalColor = cellColor;
         float delay = 0.2f; // Tiempo inicial de espera
+        float pitch = 1.0f; // Pitch inicial del sonido
 
         try
         {
@@ -123,6 +129,13 @@ public class GridCell : MonoBehaviour
                 currentCell.ChangeColor(newColor);
                 processedCells.Add(currentCell);
 
+                // **Reproducir sonido con tono progresivo**
+                if (audioSource != null && propagationSound != null)
+                {
+                    audioSource.pitch = pitch; // Aumentar tono
+                    audioSource.PlayOneShot(propagationSound);
+                }
+
                 foreach (GridCell neighbor in GetNeighbors(currentCell))
                 {
                     if (neighbor.cellColor == originalColor && !processedCells.Contains(neighbor))
@@ -133,9 +146,13 @@ public class GridCell : MonoBehaviour
 
                 yield return new WaitForSeconds(delay);
 
-                // Reducimos progresivamente el delay, para que la propagación se acelere
-                delay *= 0.88f; // Disminuye el tiempo en un 15% en cada paso
+                // **Aceleración de propagación**
+                delay *= 0.88f; // Disminuye el delay en un 12%
                 delay = Mathf.Max(0.02f, delay); // Evita que sea menor a 0.02s
+
+                // **Aumentar tono progresivamente**
+                pitch += 0.01f; // Sube el tono en cada celda
+                pitch = Mathf.Min(100.0f, pitch); // Limita el pitch máximo
             }
         }
         finally
@@ -146,6 +163,7 @@ public class GridCell : MonoBehaviour
             }
         }
     }
+
 
     List<GridCell> GetNeighbors(GridCell cell)
     {
