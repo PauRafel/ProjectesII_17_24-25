@@ -29,7 +29,21 @@ public class ColorSelector : MonoBehaviour
                 break;
 
 
-            // Paleta 1: TEMÁTICA ESTACIONES --> OTOÑO
+            // Colores de niveles de aprendizaje (tutorial - nivel8):
+            case "TuftsBlue":
+                selectedColor = new Color(0.2902f, 0.5647f, 0.8863f);
+                break;
+            case "Saffron":
+                selectedColor = new Color(0.9608f, 0.7725f, 0.0941f);
+                break;
+            case "IndianRed":
+                selectedColor = new Color(0.8510f, 0.3255f, 0.3098f);
+                break;
+            case "Emerald":
+                selectedColor = new Color(0.4253f, 0.7490f, 0.5176f);
+                break;
+
+            // Paleta: TEMÁTICA ESTACIONES --> OTOÑO
             case "AntiqueBronze":
                 selectedColor = new Color(0.3451f, 0.3176f, 0.1373f);
                 break;
@@ -43,7 +57,7 @@ public class ColorSelector : MonoBehaviour
                 selectedColor = new Color(0.7608f, 0.6588f, 0.4902f);
                 break;
 
-            // Paleta 2: TEMÁTICA ESTACIONES --> INVIERNO
+            // Paleta: TEMÁTICA ESTACIONES --> INVIERNO
             case "QuickSilver":
                 selectedColor = new Color(0.6275f, 0.6275f, 0.6275f);
                 break;
@@ -57,7 +71,7 @@ public class ColorSelector : MonoBehaviour
                 selectedColor = new Color(0.6392f, 0.5059f, 0.4078f);
                 break;
 
-            // Paleta 3: TEMÁTICA ESTACIONES --> PRIMAVERA
+            // Paleta: TEMÁTICA ESTACIONES --> PRIMAVERA
             case "YellowCrayola":
                 selectedColor = new Color(0.9882f, 0.9059f, 0.4902f);
                 break;
@@ -74,7 +88,7 @@ public class ColorSelector : MonoBehaviour
                 selectedColor = new Color(0.6431f, 0.4275f, 0.6784f);
                 break;
 
-            // Paleta 4: TEMÁTICA ESTACIONES --> VERANO
+            // Paleta: TEMÁTICA ESTACIONES --> VERANO
             case "SkyBlue":
                 selectedColor = new Color(0.5294f, 0.8078f, 0.9216f);
                 break;
