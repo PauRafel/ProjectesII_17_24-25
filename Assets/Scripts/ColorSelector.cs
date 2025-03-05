@@ -53,8 +53,8 @@ public class ColorSelector : MonoBehaviour
             case "GreenBlue":
                 selectedColor = new Color(0.1882f, 0.4196f, 0.6745f);
                 break;
-            case "KhakiWeb":
-                selectedColor = new Color(0.7490f, 0.6471f, 0.5412f);
+            case "Beaver":
+                selectedColor = new Color(0.6392f, 0.5059f, 0.4078f);
                 break;
 
             // Paleta 3: TEMÁTICA ESTACIONES --> PRIMAVERA
