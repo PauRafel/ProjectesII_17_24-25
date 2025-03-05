@@ -11,6 +11,7 @@ public class ColorSelector : MonoBehaviour
 
         switch (colorName)
         {
+            // Colores de prueba de niveles:
             case "Red":
                 selectedColor = Color.red;
                 break;
@@ -26,7 +27,66 @@ public class ColorSelector : MonoBehaviour
             case "Magenta":
                 selectedColor = new Color(0.7294f, 0.3333f, 0.8275f);
                 break;
-            // Paleta de prueva num1:
+
+
+            // Paleta 1: TEMÁTICA ESTACIONES --> OTOÑO
+            case "AntiqueBronze":
+                selectedColor = new Color(0.3451f, 0.3176f, 0.1373f);
+                break;
+            case "Bronze":
+                selectedColor = new Color(0.8353f, 0.5373f, 0.2118f);
+                break;
+            case "Rosewood":
+                selectedColor = new Color(0.3529f, 0.0667f, 0.0471f);
+                break;
+            case "LightFrenchBeige":
+                selectedColor = new Color(0.7608f, 0.6588f, 0.4902f);
+                break;
+
+            // Paleta 2: TEMÁTICA ESTACIONES --> INVIERNO
+            case "QuickSilver":
+                selectedColor = new Color(0.6275f, 0.6275f, 0.6275f);
+                break;
+            case "PeriwinkleCrayola":
+                selectedColor = new Color(0.7725f, 0.8431f, 0.9686f);
+                break;
+            case "GreenBlue":
+                selectedColor = new Color(0.1882f, 0.4196f, 0.6745f);
+                break;
+            case "KhakiWeb":
+                selectedColor = new Color(0.7490f, 0.6471f, 0.5412f);
+                break;
+
+            // Paleta 3: TEMÁTICA ESTACIONES --> PRIMAVERA
+            case "YellowCrayola":
+                selectedColor = new Color(0.9882f, 0.9059f, 0.4902f);
+                break;
+            case "UranianBlue":
+                selectedColor = new Color(0.7059f, 1.0f, 1.0f);
+                break;
+            case "CherryBlossomPink":
+                selectedColor = new Color(1.0f, 0.7176f, 0.7725f);
+                break;
+            case "MintGreen":
+                selectedColor = new Color(0.5961f, 0.9843f, 0.5961f);
+                break;
+
+            // Paleta 4: TEMÁTICA ESTACIONES --> VERANO
+            case "SkyBlue":
+                selectedColor = new Color(0.5294f, 0.8078f, 0.9216f);
+                break;
+            case "CedarChest":
+                selectedColor = new Color(0.8510f, 0.3529f, 0.3137f);
+                break;
+            case "Melon":
+                selectedColor = new Color(1.0f, 0.7098f, 0.6549f);
+                break;
+            case "Sunray":
+                selectedColor = new Color(0.9294f, 0.6824f, 0.2863f);
+                break;
+
+
+            // Paleta de prueba num1:
             case "RaisinBlack":
                 selectedColor = new Color(0.1176f, 0.1176f, 0.1412f);
                 break;
@@ -39,7 +99,8 @@ public class ColorSelector : MonoBehaviour
             case "DeepChampagne":
                 selectedColor = new Color(1.0f, 0.8118f, 0.6f);
                 break;
-            // Paleta de prueva num2:
+
+            // Paleta de prueba num2:
             case "RedPigment":
                 selectedColor = new Color(0.9294f, 0.1098f, 0.1412f);
                 break;
@@ -52,7 +113,8 @@ public class ColorSelector : MonoBehaviour
             case "SafetyYellow":
                 selectedColor = new Color(0.9451f, 0.8275f, 0.0078f);
                 break;
-            // Paleta de prueva num3:
+
+            // Paleta de prueba num3:
             case "PortlandOrange":
                 selectedColor = new Color(0.9569f, 0.3765f, 0.2039f);
                 break;
@@ -65,6 +127,7 @@ public class ColorSelector : MonoBehaviour
             case "LaurelGreen":
                 selectedColor = new Color(0.6275f, 0.6863f, 0.5176f);
                 break;
+
             default:
                 selectedColor = Color.clear;
                 break;
