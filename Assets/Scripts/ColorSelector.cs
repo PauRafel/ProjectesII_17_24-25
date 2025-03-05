@@ -70,6 +70,9 @@ public class ColorSelector : MonoBehaviour
             case "MintGreen":
                 selectedColor = new Color(0.5961f, 0.9843f, 0.5961f);
                 break;
+            case "PurpleMountainMajesty":
+                selectedColor = new Color(0.6431f, 0.4275f, 0.6784f);
+                break;
 
             // Paleta 4: TEMÁTICA ESTACIONES --> VERANO
             case "SkyBlue":
