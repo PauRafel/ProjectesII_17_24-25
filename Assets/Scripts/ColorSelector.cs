@@ -50,7 +50,7 @@ public class ColorSelector : MonoBehaviour
             case "Bronze": // Orange
                 selectedColor = new Color(0.8353f, 0.5373f, 0.2118f);
                 break;
-            case "Rosewood": // Brown
+            case "Rosewood": // Red
                 selectedColor = new Color(0.3529f, 0.0667f, 0.0471f);
                 break;
             case "LightFrenchBeige": // Beige

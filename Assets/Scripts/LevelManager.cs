@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
                 case 12: // Brown --> Rosewood
                     targetColor = new Color(0.3529f, 0.0667f, 0.0471f);
                     break;
-                case 13: // Beige --> LightFrenchBeige
+                case 13: // Red --> LightFrenchBeige
                     targetColor = new Color(0.7608f, 0.6588f, 0.4902f);
                     break;
                 case 14: // Orange --> Bronze
@@ -74,7 +74,7 @@ public class LevelManager : MonoBehaviour
                 case 15: // Orange --> Bronze
                     targetColor = new Color(0.8353f, 0.5373f, 0.2118f);
                     break;
-                case 16: // Brown --> Rosewood
+                case 16: // Red --> Rosewood
                     targetColor = new Color(0.3529f, 0.0667f, 0.0471f);
                     break;
                 case 17: // DarkBlue --> GreenBlue
