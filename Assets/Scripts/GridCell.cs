@@ -36,6 +36,7 @@ public class GridCell : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (TutorialManager.isTutorialActive) return;
         // Verificar si quedan intentos
         GridManager gridManager = FindObjectOfType<GridManager>();
         if (gridManager != null && gridManager.remainingAttempts > 0)
