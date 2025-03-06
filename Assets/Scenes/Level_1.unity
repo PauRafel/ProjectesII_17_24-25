@@ -3280,7 +3280,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.35
+  m_fontSize: 23.05
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3343,8 +3343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 983985057}
-  blinkDuration: 5
-  blinkSpeed: 0.5
+  blinkDuration: 0
+  blinkSpeed: 0
 --- !u!1 &998973440
 GameObject:
   m_ObjectHideFlags: 0
@@ -6626,7 +6626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41be7ad4d28560e4d9c7e6445765c5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockerPanel: {fileID: 0}
   tutorialPanels:
   - {fileID: 2079722864}
   - {fileID: 593492559}

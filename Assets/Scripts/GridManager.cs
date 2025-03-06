@@ -125,14 +125,14 @@ public class GridManager : MonoBehaviour
 
     IEnumerator AnimateCellsAppearance(List<GameObject> cells)
     {
-        float totalDuration = 1.5f; // Duración total de la animación
+        float totalDuration = 1.0f; // Duración total de la animación
         float delayBetweenCells = totalDuration / cells.Count; // Tiempo entre cada celda
         System.Random rnd = new System.Random();
 
         foreach (GameObject cell in cells)
         {
-            StartCoroutine(ScaleUpCell(cell, rnd.Next(10, 25) / 100f)); // Variabilidad en el tiempo de escala
-            yield return new WaitForSeconds(delayBetweenCells * UnityEngine.Random.Range(0.5f, 1.2f)); // Variabilidad en aparición
+            StartCoroutine(ScaleUpCell(cell, rnd.Next(5, 13) / 100f)); // Variabilidad en el tiempo de escala
+            yield return new WaitForSeconds(delayBetweenCells * UnityEngine.Random.Range(0.25f, 0.75f)); // Variabilidad en aparición
         }
     }
 
