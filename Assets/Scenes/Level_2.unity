@@ -2819,7 +2819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 983985057}
-  blinkDuration: 3
+  blinkDuration: 5
   blinkSpeed: 0.5
 --- !u!1 &998973440
 GameObject:

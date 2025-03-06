@@ -29,44 +29,74 @@ public class LevelManager : MonoBehaviour
             // Asignar el color objetivo basado en el nivel
             switch (currentLevelIndex)
             {
-                case 1: // Red
+                case 1: // Red --> IndianRed
                     targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
                     break;
-                case 2: // Yellow
+                case 2: // Yellow --> Saffron
                     targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
                     break;
-                case 3: // Blue
+                case 3: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
-                case 4: // Magenta
-                    targetColor = new Color(0.7294f, 0.3333f, 0.8275f);
+                case 4: // Yellow --> Saffron
+                    targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
                     break;
-                case 5: // Blue
+                case 5: // Red --> IndianRed 
+                    targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
+                    break;
+                case 6: // Green --> Emerald 
+                    targetColor = new Color(0.4253f, 0.7490f, 0.5176f); 
+                    break;
+                case 7: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
-                case 6: // Red
-                    targetColor = new Color(0.8510f, 0.3255f, 0.3098f); 
-                    break;
-                case 7:
-                    targetColor = Color.yellow;
-                    break;
-                case 8: // Blue
-                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
+                case 8: // Green --> Emerald
+                    targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
                 case 9:
-                    targetColor = Color.blue;
+                    //targetColor = ;
                     break;
-                case 10: // Green --> RaisinBlack
-                    targetColor = new Color(0.1176f, 0.1176f, 0.1412f);
+                case 10: 
+                    //targetColor ;
                     break;
-                case 11: // Green --> Keppel
-                    targetColor = new Color(0.2314f, 0.6627f, 0.6118f);
+                case 11: 
+                    //targetColor ;
                     break;
-                case 12: // Red --> QueenPink
-                    targetColor = new Color(0.9255f, 0.7961f, 0.8510f);
+                case 12:
+                    //targetColor ;
                     break;
-                case 25: // Yellow --> SafetyYellow
-                    targetColor = new Color(0.9451f, 0.8275f, 0.0078f);
+                case 13: 
+                    //targetColor ;
+                    break;
+                case 14: 
+                    //targetColor ;
+                    break;
+                case 15:
+                    //targetColor ;
+                    break;
+                case 16: 
+                    //targetColor ;
+                    break;
+                case 17:
+                    //targetColor ;
+                    break;
+                case 18: 
+                    //targetColor ;
+                    break;
+                case 19:
+                    //targetColor ;
+                    break;
+                case 20: 
+                    //targetColor ;
+                    break;
+                case 21: 
+                    //targetColor ;
+                    break;
+                case 22: 
+                    //targetColor ;
+                    break;
+                case 25: 
+                    //targetColor ;
                     break;
                 default:
                     break;

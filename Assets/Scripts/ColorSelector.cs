@@ -30,16 +30,16 @@ public class ColorSelector : MonoBehaviour
 
 
             // Colores de niveles de aprendizaje (tutorial - nivel8):
-            case "TuftsBlue":
+            case "TuftsBlue": // Blue
                 selectedColor = new Color(0.2902f, 0.5647f, 0.8863f);
                 break;
-            case "Saffron":
+            case "Saffron": // Yellow
                 selectedColor = new Color(0.9608f, 0.7725f, 0.0941f);
                 break;
-            case "IndianRed":
+            case "IndianRed": // Red
                 selectedColor = new Color(0.8510f, 0.3255f, 0.3098f);
                 break;
-            case "Emerald":
+            case "Emerald": // Green
                 selectedColor = new Color(0.4253f, 0.7490f, 0.5176f);
                 break;
 

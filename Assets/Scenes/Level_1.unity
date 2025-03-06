@@ -2710,7 +2710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turn all the palette into <#FF0000>RED</color>
+  m_text: Turn all the palette into <#D9534F>RED</color>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16bf36cc2526efe48a02ff166556b5da, type: 2}
   m_sharedMaterial: {fileID: 483032974343892823, guid: 16bf36cc2526efe48a02ff166556b5da, type: 2}
@@ -2800,7 +2800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 983985057}
-  blinkDuration: 3
+  blinkDuration: 5
   blinkSpeed: 0.5
 --- !u!1 &998973440
 GameObject:
