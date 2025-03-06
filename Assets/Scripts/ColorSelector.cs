@@ -58,33 +58,33 @@ public class ColorSelector : MonoBehaviour
                 break;
 
             // Paleta: TEMÁTICA ESTACIONES --> INVIERNO
-            case "QuickSilver":
+            case "QuickSilver": // Grey
                 selectedColor = new Color(0.6275f, 0.6275f, 0.6275f);
                 break;
-            case "PeriwinkleCrayola":
+            case "PeriwinkleCrayola": // LightBlue
                 selectedColor = new Color(0.7725f, 0.8431f, 0.9686f);
                 break;
-            case "GreenBlue":
+            case "GreenBlue": // DarkBlue
                 selectedColor = new Color(0.1882f, 0.4196f, 0.6745f);
                 break;
-            case "Beaver":
+            case "Beaver": // Brown
                 selectedColor = new Color(0.6392f, 0.5059f, 0.4078f);
                 break;
 
             // Paleta: TEMÁTICA ESTACIONES --> PRIMAVERA
-            case "YellowCrayola":
+            case "YellowCrayola": // Yellow
                 selectedColor = new Color(0.9882f, 0.9059f, 0.4902f);
                 break;
-            case "UranianBlue":
+            case "UranianBlue": // Blue
                 selectedColor = new Color(0.7059f, 1.0f, 1.0f);
                 break;
-            case "CherryBlossomPink":
+            case "CherryBlossomPink": // Pink
                 selectedColor = new Color(1.0f, 0.7176f, 0.7725f);
                 break;
-            case "MintGreen":
+            case "MintGreen": // Green
                 selectedColor = new Color(0.5961f, 0.9843f, 0.5961f);
                 break;
-            case "PurpleMountainMajesty":
+            case "PurpleMountainMajesty": // Purple
                 selectedColor = new Color(0.6431f, 0.4275f, 0.6784f);
                 break;
 

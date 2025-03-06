@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
                     targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
                     break;
                 case 6: // Green --> Emerald 
-                    targetColor = new Color(0.4253f, 0.7490f, 0.5176f); 
+                    targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
                 case 7: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
@@ -77,26 +77,35 @@ public class LevelManager : MonoBehaviour
                 case 16: // Brown --> Rosewood
                     targetColor = new Color(0.3529f, 0.0667f, 0.0471f);
                     break;
-                case 17:
+                case 17: // DarkBlue --> GreenBlue
+                    targetColor = new Color(0.1882f, 0.4196f, 0.6745f);
+                    break;
+                case 18: // LightBlue --> PeriwinkleCrayola
+                    targetColor = new Color(0.7725f, 0.8431f, 0.9686f);
+                    break;
+                case 19: // Grey --> QuickSilver
+                    targetColor = new Color(0.6275f, 0.6275f, 0.6275f);
+                    break;
+                case 20: // LightBlue --> PeriwinkleCrayola
+                    targetColor = new Color(0.7725f, 0.8431f, 0.9686f);
+                    break;
+                case 21: // Brown --> Beaver
+                    targetColor = new Color(0.6392f, 0.5059f, 0.4078f);
+                    break;
+                case 22: // DarkBlue --> GreenBlue
+                    targetColor = new Color(0.1882f, 0.4196f, 0.6745f);
+                    break;
+                case 23: // Brown --> Beaver
+                    targetColor = new Color(0.6392f, 0.5059f, 0.4078f);
+                    break;
+                case 24: // Grey --> QuickSilver
+                    targetColor = new Color(0.6275f, 0.6275f, 0.6275f);
+                    break;
+                case 25:
                     //targetColor ;
                     break;
-                case 18: 
-                    //targetColor ;
-                    break;
-                case 19:
-                    //targetColor ;
-                    break;
-                case 20: 
-                    //targetColor ;
-                    break;
-                case 21: 
-                    //targetColor ;
-                    break;
-                case 22: 
-                    //targetColor ;
-                    break;
-                case 25: 
-                    //targetColor ;
+                case 33:
+                    // targetColor ;
                     break;
                 default:
                     break;
