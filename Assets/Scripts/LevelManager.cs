@@ -101,8 +101,29 @@ public class LevelManager : MonoBehaviour
                 case 24: // Grey --> QuickSilver
                     targetColor = new Color(0.6275f, 0.6275f, 0.6275f);
                     break;
-                case 25:
-                    //targetColor ;
+                case 25: // Blue --> UranianBlue
+                    targetColor = new Color(0.7059f, 1.0f, 1.0f);
+                    break;
+                case 26: // Green --> MintGreen
+                    targetColor = new Color(0.5961f, 0.9843f, 0.5961f);
+                    break;
+                case 27: // Pink --> CherryBlossomPink
+                    targetColor = new Color(1.0f, 0.7176f, 0.7725f);
+                    break;
+                case 28: // Green --> MintGreen
+                    targetColor = new Color(0.5961f, 0.9843f, 0.5961f);
+                    break;
+                case 29: // Yellow --> YellowCrayola
+                    targetColor = new Color(0.9882f, 0.9059f, 0.4902f);
+                    break;
+                case 30: // Yellow --> YellowCrayola
+                    targetColor = new Color(0.9882f, 0.9059f, 0.4902f);
+                    break;
+                case 31: // Blue --> UranianBlue
+                    targetColor = new Color(0.7059f, 1.0f, 1.0f);
+                    break;
+                case 32: // Pink --> CherryBlossomPink
+                    targetColor = new Color(1.0f, 0.7176f, 0.7725f);
                     break;
                 case 33:
                     // targetColor ;
