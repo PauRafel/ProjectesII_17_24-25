@@ -858,7 +858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 8.2, y: -5.5}
+  m_AnchoredPosition: {x: 8.200012, y: -5.5}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &425614036
@@ -2939,7 +2939,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Blue
+          m_StringArgument: TuftsBlue
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1126420424
@@ -2955,7 +2955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.27450982, b: 0.81960785, a: 1}
+  m_Color: {r: 0.2901961, g: 0.5647059, b: 0.8862745, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4172,6 +4172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellPrefab: {fileID: 5090876870165623962, guid: 22bba7d9d7a847d4397376b664e1e4f6, type: 3}
+  bombPrefab: {fileID: 0}
+  bombX: 0
+  bombY: 0
+  explosionColors: []
   rows: 9
   columns: 7
   cellSpacing: -0.35
@@ -4243,6 +4247,7 @@ MonoBehaviour:
   remainingAttempts: 3
   attemptsText: {fileID: 230877525}
   finishedPropagations: 0
+  levelFailedPanel: {fileID: 0}
 --- !u!1 &2109247585
 GameObject:
   m_ObjectHideFlags: 0

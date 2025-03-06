@@ -29,29 +29,29 @@ public class LevelManager : MonoBehaviour
             // Asignar el color objetivo basado en el nivel
             switch (currentLevelIndex)
             {
-                case 1:
-                    targetColor = Color.red;
+                case 1: // Red
+                    targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
                     break;
-                case 2:
-                    targetColor = Color.yellow;
+                case 2: // Yellow
+                    targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
                     break;
-                case 3:
-                    targetColor = Color.blue;
+                case 3: // Blue
+                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
-                case 4: // magenta
+                case 4: // Magenta
                     targetColor = new Color(0.7294f, 0.3333f, 0.8275f);
                     break;
-                case 5:
-                    targetColor = Color.blue;
+                case 5: // Blue
+                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
-                case 6:
-                    targetColor = Color.red;
+                case 6: // Red
+                    targetColor = new Color(0.8510f, 0.3255f, 0.3098f); 
                     break;
                 case 7:
                     targetColor = Color.yellow;
                     break;
-                case 8:
-                    targetColor = Color.blue;
+                case 8: // Blue
+                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
                 case 9:
                     targetColor = Color.blue;
