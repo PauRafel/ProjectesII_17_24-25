@@ -1033,6 +1033,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 927407987}
+    - target: {fileID: 5409085609358084478, guid: ffbf8a8800f828d4581fc6f5dd46567d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectColor
+      objectReference: {fileID: 0}
     - target: {fileID: 7810701218276916158, guid: ffbf8a8800f828d4581fc6f5dd46567d, type: 3}
       propertyPath: m_Name
       value: GreenButton
