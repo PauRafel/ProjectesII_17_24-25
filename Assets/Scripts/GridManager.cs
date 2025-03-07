@@ -771,7 +771,7 @@ public class GridManager : MonoBehaviour
                    new Color(0.7059f, 1.0f, 1.0f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(0.6431f, 0.4275f, 0.6784f),
                    new Color(0.5961f, 0.9843f, 0.5961f), new Color(0.5961f, 0.9843f, 0.5961f), new Color(0.5961f, 0.9843f, 0.5961f), new Color(1.0f, 0.7176f, 0.7725f), new Color(0.9882f, 0.9059f, 0.4902f), new Color(0.9882f, 0.9059f, 0.4902f), new Color(0.6431f, 0.4275f, 0.6784f),
                    new Color(0.5961f, 0.9843f, 0.5961f), new Color(0.5961f, 0.9843f, 0.5961f), new Color(1.0f, 0.7176f, 0.7725f), new Color(0.5961f, 0.9843f, 0.5961f), new Color(0.9882f, 0.9059f, 0.4902f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(0.6431f, 0.4275f, 0.6784f),
-                   new Color(0.5961f, 0.9843f, 0.5961f), new Color(1.0f, 0.7176f, 0.7725f), new Color(1.0f, 0.7176f, 0.7725f), new Color(0.5961f, 0.9843f, 0.5961f), new Color(0.9882f, 0.9059f, 0.4902f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(1.0f, 0.7176f, 0.7725f),
+                   new Color(0.5961f, 0.9843f, 0.5961f), new Color(1.0f, 0.7176f, 0.7725f), new Color(1.0f, 0.7176f, 0.7725f), new Color(0.5961f, 0.9843f, 0.5961f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(0.6431f, 0.4275f, 0.6784f), new Color(1.0f, 0.7176f, 0.7725f),
                };
                break;
 
