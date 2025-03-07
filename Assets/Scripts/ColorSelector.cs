@@ -58,16 +58,16 @@ public class ColorSelector : MonoBehaviour
                 break;
 
             // Paleta: TEMÁTICA ESTACIONES --> INVIERNO
-            case "QuickSilver": // Grey
+            case "SilverChalice": // Grey
                 selectedColor = new Color(0.7059f, 0.7059f, 0.7059f);
                 break;
             case "PeriwinkleCrayola": // LightBlue
                 selectedColor = new Color(0.7725f, 0.8431f, 0.9686f);
                 break;
-            case "GreenBlue": // DarkBlue
+            case "BdazzledBlue": // DarkBlue
                 selectedColor = new Color(0.1176f, 0.3529f, 0.6275f);
                 break;
-            case "Beaver": // Brown
+            case "LiverChestnut": // Brown
                 selectedColor = new Color(0.5490f, 0.4118f, 0.3137f);
                 break;
 
@@ -124,9 +124,9 @@ public class ColorSelector : MonoBehaviour
             case "Keppel":
                 selectedColor = new Color(0.2314f, 0.6627f, 0.6118f);
                 break;
-            case "BdazzledBlue":
-                selectedColor = new Color(0.1373f, 0.3412f, 0.5373f);
-                break;
+            //case "BdazzledBlue": Lo usamos en la paleta de INVIERNO
+                //selectedColor = new Color(0.1373f, 0.3412f, 0.5373f);
+                //break;
             case "SafetyYellow":
                 selectedColor = new Color(0.9451f, 0.8275f, 0.0078f);
                 break;

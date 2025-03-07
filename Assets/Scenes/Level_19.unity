@@ -1280,12 +1280,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5304033830818164808, guid: 04e3f3219551de64a8fa6209271840f6, type: 3}
       propertyPath: m_Name
-      value: QuickSilverButton
+      value: SilverChaliceButton
       objectReference: {fileID: 0}
     - target: {fileID: 6864716272510570522, guid: 04e3f3219551de64a8fa6209271840f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 927407987}
+    - target: {fileID: 6864716272510570522, guid: 04e3f3219551de64a8fa6209271840f6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: SilverChalice
+      objectReference: {fileID: 0}
     - target: {fileID: 8492236901097895306, guid: 04e3f3219551de64a8fa6209271840f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1599,12 +1603,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 450716488887553591, guid: 23501210891baac48a9cb0dfb5ebbf20, type: 3}
       propertyPath: m_Name
-      value: 'GreenBlueButton '
+      value: 'BdazzledBlueButton '
       objectReference: {fileID: 0}
     - target: {fileID: 6073376655536987480, guid: 23501210891baac48a9cb0dfb5ebbf20, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 927407987}
+    - target: {fileID: 6073376655536987480, guid: 23501210891baac48a9cb0dfb5ebbf20, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: BdazzledBlue
+      objectReference: {fileID: 0}
     - target: {fileID: 7044205169981440356, guid: 23501210891baac48a9cb0dfb5ebbf20, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2897,12 +2905,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4937795297537038953, guid: 4a6ba9289da58b4488151428cfd49a2b, type: 3}
       propertyPath: m_Name
-      value: BeaverButton
+      value: LiverChestnutButton
       objectReference: {fileID: 0}
     - target: {fileID: 6401220034389453877, guid: 4a6ba9289da58b4488151428cfd49a2b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 927407987}
+    - target: {fileID: 6401220034389453877, guid: 4a6ba9289da58b4488151428cfd49a2b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: LiverChestnut
+      objectReference: {fileID: 0}
     - target: {fileID: 8480173746284347437, guid: 4a6ba9289da58b4488151428cfd49a2b, type: 3}
       propertyPath: m_Pivot.x
       value: 0

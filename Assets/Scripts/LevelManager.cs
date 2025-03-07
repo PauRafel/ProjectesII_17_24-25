@@ -77,28 +77,28 @@ public class LevelManager : MonoBehaviour
                 case 16: // Brown --> Redwood
                     targetColor = new Color(0.6667f, 0.3922f, 0.3529f);
                     break;
-                case 17: // DarkBlue --> GreenBlue
+                case 17: // DarkBlue --> BdazzledBlue
                     targetColor = new Color(0.1176f, 0.3529f, 0.6275f);
                     break;
                 case 18: // LightBlue --> PeriwinkleCrayola
                     targetColor = new Color(0.7725f, 0.8431f, 0.9686f);
                     break;
-                case 19: // Grey --> QuickSilver
+                case 19: // Grey --> SilverChalice
                     targetColor = new Color(0.7059f, 0.7059f, 0.7059f);
                     break;
                 case 20: // LightBlue --> PeriwinkleCrayola
                     targetColor = new Color(0.7725f, 0.8431f, 0.9686f);
                     break;
-                case 21: // Brown --> Beaver
+                case 21: // Brown --> LiverChestnut 
                     targetColor = new Color(0.5490f, 0.4118f, 0.3137f);
                     break;
-                case 22: // DarkBlue --> GreenBlue
+                case 22: // DarkBlue --> BdazzledBlue
                     targetColor = new Color(0.1176f, 0.3529f, 0.6275f);
                     break;
-                case 23: // Brown --> Beaver
+                case 23: // Brown --> LiverChestnut 
                     targetColor = new Color(0.5490f, 0.4118f, 0.3137f);
                     break;
-                case 24: // Grey --> QuickSilver
+                case 24: // Grey --> SilverChalice
                     targetColor = new Color(0.7059f, 0.7059f, 0.7059f);
                     break;
                 case 25: // Blue --> UranianBlue
