@@ -53,28 +53,28 @@ public class LevelManager : MonoBehaviour
                 case 8: // Green --> Emerald
                     targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
-                case 9: // DarkGreen --> AntiqueBronze
+                case 9: // DarkGreen --> GoldFusion 
                     targetColor = new Color(0.5098f, 0.4784f, 0.2941f);
                     break;
-                case 10: // Beige --> LightFrenchBeige
+                case 10: // Beige --> Tan
                     targetColor = new Color(0.8431f, 0.7451f, 0.6078f);
                     break;
-                case 11: // DarkGreen --> AntiqueBronze 
+                case 11: // DarkGreen --> GoldFusion  
                     targetColor = new Color(0.5098f, 0.4784f, 0.2941f);
                     break;
-                case 12: // Brown --> Rosewood
+                case 12: // Red --> Redwood
                     targetColor = new Color(0.6667f, 0.3922f, 0.3529f);
                     break;
-                case 13: // Red --> LightFrenchBeige
+                case 13: // Red --> Tan
                     targetColor = new Color(0.8431f, 0.7451f, 0.6078f);
                     break;
-                case 14: // Orange --> Bronze
+                case 14: // Orange --> Fawn
                     targetColor = new Color(0.9137f, 0.6471f, 0.4000f);
                     break;
-                case 15: // Orange --> Bronze
+                case 15: // Orange --> Fawn
                     targetColor = new Color(0.9137f, 0.6471f, 0.4000f);
                     break;
-                case 16: // Red --> Rosewood
+                case 16: // Red --> Redwood
                     targetColor = new Color(0.6667f, 0.3922f, 0.3529f);
                     break;
                 case 17: // DarkBlue --> GreenBlue
