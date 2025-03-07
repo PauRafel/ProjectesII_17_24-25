@@ -54,28 +54,28 @@ public class LevelManager : MonoBehaviour
                     targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
                 case 9: // DarkGreen --> AntiqueBronze
-                    targetColor = new Color(0.3451f, 0.3176f, 0.1373f);
+                    targetColor = new Color(0.5098f, 0.4784f, 0.2941f);
                     break;
                 case 10: // Beige --> LightFrenchBeige
-                    targetColor = new Color(0.7608f, 0.6588f, 0.4902f);
+                    targetColor = new Color(0.8431f, 0.7451f, 0.6078f);
                     break;
                 case 11: // DarkGreen --> AntiqueBronze 
-                    targetColor = new Color(0.3451f, 0.3176f, 0.1373f);
+                    targetColor = new Color(0.5098f, 0.4784f, 0.2941f);
                     break;
                 case 12: // Brown --> Rosewood
-                    targetColor = new Color(0.3529f, 0.0667f, 0.0471f);
+                    targetColor = new Color(0.6667f, 0.3922f, 0.3529f);
                     break;
                 case 13: // Red --> LightFrenchBeige
-                    targetColor = new Color(0.7608f, 0.6588f, 0.4902f);
+                    targetColor = new Color(0.8431f, 0.7451f, 0.6078f);
                     break;
                 case 14: // Orange --> Bronze
-                    targetColor = new Color(0.8353f, 0.5373f, 0.2118f);
+                    targetColor = new Color(0.9137f, 0.6471f, 0.4000f);
                     break;
                 case 15: // Orange --> Bronze
-                    targetColor = new Color(0.8353f, 0.5373f, 0.2118f);
+                    targetColor = new Color(0.9137f, 0.6471f, 0.4000f);
                     break;
                 case 16: // Red --> Rosewood
-                    targetColor = new Color(0.3529f, 0.0667f, 0.0471f);
+                    targetColor = new Color(0.6667f, 0.3922f, 0.3529f);
                     break;
                 case 17: // DarkBlue --> GreenBlue
                     targetColor = new Color(0.1882f, 0.4196f, 0.6745f);

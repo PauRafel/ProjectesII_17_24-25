@@ -45,16 +45,16 @@ public class ColorSelector : MonoBehaviour
 
             // Paleta: TEMÁTICA ESTACIONES --> OTOÑO
             case "AntiqueBronze": // DarkGreen
-                selectedColor = new Color(0.3451f, 0.3176f, 0.1373f);
+                selectedColor = new Color(0.5098f, 0.4784f, 0.2941f);
                 break;
             case "Bronze": // Orange
-                selectedColor = new Color(0.8353f, 0.5373f, 0.2118f);
+                selectedColor = new Color(0.9137f, 0.6471f, 0.4000f);
                 break;
             case "Rosewood": // Red
-                selectedColor = new Color(0.3529f, 0.0667f, 0.0471f);
+                selectedColor = new Color(0.6667f, 0.3922f, 0.3529f);
                 break;
             case "LightFrenchBeige": // Beige
-                selectedColor = new Color(0.7608f, 0.6588f, 0.4902f);
+                selectedColor = new Color(0.8431f, 0.7451f, 0.6078f);
                 break;
 
             // Paleta: TEMÁTICA ESTACIONES --> INVIERNO
