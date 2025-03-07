@@ -59,16 +59,16 @@ public class ColorSelector : MonoBehaviour
 
             // Paleta: TEMÁTICA ESTACIONES --> INVIERNO
             case "QuickSilver": // Grey
-                selectedColor = new Color(0.6275f, 0.6275f, 0.6275f);
+                selectedColor = new Color(0.7059f, 0.7059f, 0.7059f);
                 break;
             case "PeriwinkleCrayola": // LightBlue
                 selectedColor = new Color(0.7725f, 0.8431f, 0.9686f);
                 break;
             case "GreenBlue": // DarkBlue
-                selectedColor = new Color(0.1882f, 0.4196f, 0.6745f);
+                selectedColor = new Color(0.1176f, 0.3529f, 0.6275f);
                 break;
             case "Beaver": // Brown
-                selectedColor = new Color(0.6392f, 0.5059f, 0.4078f);
+                selectedColor = new Color(0.5490f, 0.4118f, 0.3137f);
                 break;
 
             // Paleta: TEMÁTICA ESTACIONES --> PRIMAVERA

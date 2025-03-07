@@ -78,28 +78,28 @@ public class LevelManager : MonoBehaviour
                     targetColor = new Color(0.6667f, 0.3922f, 0.3529f);
                     break;
                 case 17: // DarkBlue --> GreenBlue
-                    targetColor = new Color(0.1882f, 0.4196f, 0.6745f);
+                    targetColor = new Color(0.1176f, 0.3529f, 0.6275f);
                     break;
                 case 18: // LightBlue --> PeriwinkleCrayola
                     targetColor = new Color(0.7725f, 0.8431f, 0.9686f);
                     break;
                 case 19: // Grey --> QuickSilver
-                    targetColor = new Color(0.6275f, 0.6275f, 0.6275f);
+                    targetColor = new Color(0.7059f, 0.7059f, 0.7059f);
                     break;
                 case 20: // LightBlue --> PeriwinkleCrayola
                     targetColor = new Color(0.7725f, 0.8431f, 0.9686f);
                     break;
                 case 21: // Brown --> Beaver
-                    targetColor = new Color(0.6392f, 0.5059f, 0.4078f);
+                    targetColor = new Color(0.5490f, 0.4118f, 0.3137f);
                     break;
                 case 22: // DarkBlue --> GreenBlue
-                    targetColor = new Color(0.1882f, 0.4196f, 0.6745f);
+                    targetColor = new Color(0.1176f, 0.3529f, 0.6275f);
                     break;
                 case 23: // Brown --> Beaver
-                    targetColor = new Color(0.6392f, 0.5059f, 0.4078f);
+                    targetColor = new Color(0.5490f, 0.4118f, 0.3137f);
                     break;
                 case 24: // Grey --> QuickSilver
-                    targetColor = new Color(0.6275f, 0.6275f, 0.6275f);
+                    targetColor = new Color(0.7059f, 0.7059f, 0.7059f);
                     break;
                 case 25: // Blue --> UranianBlue
                     targetColor = new Color(0.7059f, 1.0f, 1.0f);
