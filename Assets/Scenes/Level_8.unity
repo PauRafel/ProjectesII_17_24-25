@@ -2423,7 +2423,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 254139238205045831, guid: 5376c5f46fbcdeb4d9721d784341cfaf, type: 3}
       propertyPath: m_text
-      value: Turn all the palette into <#6CBF84>GREEN</color>
+      value: Turn all the palette into <#000000>GREEN</color>
       objectReference: {fileID: 0}
     - target: {fileID: 254139238205045831, guid: 5376c5f46fbcdeb4d9721d784341cfaf, type: 3}
       propertyPath: m_fontSize
@@ -2439,7 +2439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4195677441527457043, guid: 5376c5f46fbcdeb4d9721d784341cfaf, type: 3}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4195677441527457043, guid: 5376c5f46fbcdeb4d9721d784341cfaf, type: 3}
       propertyPath: m_RootOrder
@@ -2503,7 +2503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4195677441527457043, guid: 5376c5f46fbcdeb4d9721d784341cfaf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -111
+      value: -128.1
       objectReference: {fileID: 0}
     - target: {fileID: 4195677441527457043, guid: 5376c5f46fbcdeb4d9721d784341cfaf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
