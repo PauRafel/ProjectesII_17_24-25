@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4394643111512747323}
   - component: {fileID: 1259600707888050854}
   - component: {fileID: 6073376655536987480}
+  - component: {fileID: 4015552301803002213}
   m_Layer: 5
   m_Name: 'BdazzledBlueButton '
   m_TagString: Untagged
@@ -133,3 +134,15 @@ MonoBehaviour:
           m_StringArgument: GreenBlue
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4015552301803002213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450716488887553591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339c5d1067b49e4796c28c326310b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

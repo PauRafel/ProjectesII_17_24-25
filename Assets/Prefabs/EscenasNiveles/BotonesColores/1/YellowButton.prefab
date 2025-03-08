@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4504888804247317147}
   - component: {fileID: 4070867308357392829}
   - component: {fileID: 8891217438929860844}
+  - component: {fileID: 274524359270202452}
   m_Layer: 5
   m_Name: YellowButton
   m_TagString: Untagged
@@ -133,3 +134,15 @@ MonoBehaviour:
           m_StringArgument: Saffron
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &274524359270202452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509153574899156167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339c5d1067b49e4796c28c326310b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7530788380018196543}
   - component: {fileID: 1571818713287670392}
   - component: {fileID: 3314237163662478609}
+  - component: {fileID: -7874963868274499008}
   m_Layer: 5
   m_Name: 'BlueButton '
   m_TagString: Untagged
@@ -133,3 +134,15 @@ MonoBehaviour:
           m_StringArgument: TuftsBlue
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-7874963868274499008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309677605900373607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339c5d1067b49e4796c28c326310b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

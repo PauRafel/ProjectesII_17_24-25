@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2949096557261663732}
   - component: {fileID: 3918449382184955343}
   - component: {fileID: 3060305723628607922}
+  - component: {fileID: -4303240424237262131}
   m_Layer: 5
   m_Name: 'UranianBlueButton '
   m_TagString: Untagged
@@ -133,3 +134,15 @@ MonoBehaviour:
           m_StringArgument: 'UranianBlue '
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-4303240424237262131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9013329454375370916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339c5d1067b49e4796c28c326310b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

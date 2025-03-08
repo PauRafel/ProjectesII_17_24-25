@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6784538968798874065}
   - component: {fileID: 2792155942664435121}
   - component: {fileID: 6401220034389453877}
+  - component: {fileID: 4345762494970924607}
   m_Layer: 5
   m_Name: LiverChestnutButton
   m_TagString: Untagged
@@ -133,3 +134,15 @@ MonoBehaviour:
           m_StringArgument: Beaver
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4345762494970924607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4937795297537038953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339c5d1067b49e4796c28c326310b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

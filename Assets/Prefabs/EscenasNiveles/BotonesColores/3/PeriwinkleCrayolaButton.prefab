@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6468903984439954256}
   - component: {fileID: 2996361785919227535}
   - component: {fileID: 4925477650837209833}
+  - component: {fileID: -4025213551394684303}
   m_Layer: 5
   m_Name: PeriwinkleCrayolaButton
   m_TagString: Untagged
@@ -133,3 +134,15 @@ MonoBehaviour:
           m_StringArgument: PeriwinkleCrayola
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-4025213551394684303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981314294468873666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339c5d1067b49e4796c28c326310b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
