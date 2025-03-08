@@ -1484,15 +1484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playlist:
-  - {fileID: 8300000, guid: 351456c55da7a2a4aab0163694fd423f, type: 3}
-  - {fileID: 8300000, guid: dbde391be681a494495eb6cbab294625, type: 3}
-  - {fileID: 8300000, guid: 736367d6c8e3c7e4a8620c351b049a85, type: 3}
-  - {fileID: 8300000, guid: 42800689f3719d54b97337d92a225a3d, type: 3}
-  - {fileID: 8300000, guid: bcfaa9b0a40d6754a88aff4cfdb4fe61, type: 3}
-  - {fileID: 8300000, guid: 6f1cb5209f75ffa418c26d39a78cb762, type: 3}
-  - {fileID: 8300000, guid: 3820ab601cc8204408a8e594cdf67844, type: 3}
-  - {fileID: 8300000, guid: 2a4daca883504544e81dcd3eb7e21d7e, type: 3}
-  - {fileID: 8300000, guid: cce3d8b118ffade498a98bde33db643e, type: 3}
+  - {fileID: 8300000, guid: 2a793555fe597514c9605041e59c8ee6, type: 3}
 --- !u!82 &1957010378
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1505,7 +1497,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.05
   m_Pitch: 0.85
   Loop: 1
   Mute: 0
