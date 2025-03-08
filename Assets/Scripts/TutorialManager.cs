@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -15,11 +14,23 @@ public class TutorialManager : MonoBehaviour
     public TMP_Text tutorialText4;
     public TMP_Text tutorialText5;
 
+    private TMP_Text[] tutorialTexts;
     private int step = 0;
+    private Coroutine fadeCoroutine;
 
     void Start()
     {
-        isTutorialActive = true;  // Bloqueamos la interacción
+        isTutorialActive = true;
+
+        // Guardar los textos en un array para fácil acceso
+        tutorialTexts = new TMP_Text[] { tutorialText0, tutorialText1, tutorialText2, tutorialText3, tutorialText4, tutorialText5 };
+
+        // Asegurar que los textos comiencen con alpha en 0
+        foreach (TMP_Text text in tutorialTexts)
+        {
+            text.alpha = 0;
+        }
+
         ShowStep();
     }
 
@@ -33,10 +44,26 @@ public class TutorialManager : MonoBehaviour
 
     private void ShowStep()
     {
+        if (step >= 7)
+        {
+            isTutorialActive = false;
+            return;
+        }
         // Desactivar todos los paneles antes de activar el actual
         foreach (GameObject panel in tutorialPanels)
         {
             panel.SetActive(false);
+        }
+
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+
+        // Hacer fade out del texto anterior antes de avanzar
+        if (step > 0)
+        {
+            fadeCoroutine = StartCoroutine(FadeTextOut(tutorialTexts[step - 1]));
         }
 
         switch (step)
@@ -44,26 +71,32 @@ public class TutorialManager : MonoBehaviour
             case 0:
                 tutorialText0.text = "Welcome to Chromatic!";
                 tutorialPanels[0].SetActive(true);
+                fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText0));
                 break;
             case 1:
                 tutorialText1.text = "Select a color and dye the blocks of a different color with it";
                 tutorialPanels[1].SetActive(true);
+                fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText1));
                 break;
             case 2:
-                tutorialText2.text = "This is the palette where you will apply the colors by clicking on the boxes!";
+                tutorialText2.text = "This is the palette! Apply the colors by clicking on the boxes!";
                 tutorialPanels[2].SetActive(true);
+                fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText2));
                 break;
             case 3:
                 tutorialText3.text = "View the target color here!";
                 tutorialPanels[3].SetActive(true);
+                fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText3));
                 break;
             case 4:
                 tutorialText4.text = "Dye all blocks to match the target color within the limited steps!";
                 tutorialPanels[4].SetActive(true);
+                fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText4));
                 break;
             case 5:
                 tutorialText5.text = "Ready? Relax and enjoy!";
                 tutorialPanels[5].SetActive(true);
+                fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText5));
                 break;
             case 6:
                 foreach (GameObject panel in tutorialPanels)
@@ -79,5 +112,36 @@ public class TutorialManager : MonoBehaviour
     {
         step++;
         ShowStep();
+    }
+
+    private IEnumerator FadeTextIn(TMP_Text text)
+    {
+        text.alpha = 0;
+        float duration = 1.2f;
+        float elapsed = 0;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            text.alpha = Mathf.Lerp(0, 1, elapsed / duration);
+            yield return null;
+        }
+
+        text.alpha = 1;
+    }
+
+    private IEnumerator FadeTextOut(TMP_Text text)
+    {
+        float duration = 0.6f;
+        float elapsed = 0;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            text.alpha = Mathf.Lerp(1, 0, elapsed / duration);
+            yield return null;
+        }
+
+        text.alpha = 0;
     }
 }
