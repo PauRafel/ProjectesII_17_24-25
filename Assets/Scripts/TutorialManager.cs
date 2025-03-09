@@ -15,7 +15,7 @@ public class TutorialManager : MonoBehaviour
     public TMP_Text tutorialText2;
     public TMP_Text tutorialText3;
     public TMP_Text tutorialText4;
-    public TMP_Text tutorialText5;
+    /*public TMP_Text tutorialText5;*/
 
     private TMP_Text[] tutorialTexts;
     private int step = 0;
@@ -28,7 +28,7 @@ public class TutorialManager : MonoBehaviour
         isTutorialActive = true;
 
         // Guardar los textos en un array para fácil acceso
-        tutorialTexts = new TMP_Text[] { tutorialText0, tutorialText1, tutorialText2, tutorialText3, tutorialText4, tutorialText5 };
+        tutorialTexts = new TMP_Text[] { tutorialText0, tutorialText1, tutorialText2, tutorialText3, tutorialText4, /*tutorialText5*/ };
 
         // Asegurar que los textos comiencen con alpha en 0
         foreach (TMP_Text text in tutorialTexts)
@@ -127,11 +127,11 @@ public class TutorialManager : MonoBehaviour
                 }
                 borderBlinkCoroutine = StartCoroutine(BlinkBorder(tutorialBorders[3]));
                 break;
-            case 5:
+            /*case 5:
                 tutorialText5.text = "Ready? Relax and enjoy!";
                 tutorialPanels[5].SetActive(true);
                 fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText5));
-                break;
+                break;*/
             case 6:
                 foreach (GameObject panel in tutorialPanels)
                 {

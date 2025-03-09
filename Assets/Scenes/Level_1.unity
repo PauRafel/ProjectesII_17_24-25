@@ -146,7 +146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &81370956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1014,7 +1014,6 @@ MonoBehaviour:
   tutorialText2: {fileID: 166862454}
   tutorialText3: {fileID: 438696305}
   tutorialText4: {fileID: 1460298964}
-  tutorialText5: {fileID: 1091970458}
 --- !u!4 &683771261
 Transform:
   m_ObjectHideFlags: 0
