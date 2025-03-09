@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8113794137222304763}
   - component: {fileID: 7219613699061505912}
   - component: {fileID: 5706209048700278250}
+  - component: {fileID: -4107605227382847757}
   m_Layer: 5
   m_Name: TanButton
   m_TagString: Untagged
@@ -146,3 +147,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a339c5d1067b49e4796c28c326310b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4107605227382847757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273655779458756266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1341ef38f8ae53143b0a5ee80391d6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 0e490bf4fd2425342903d9ed02c799a2, type: 3}
