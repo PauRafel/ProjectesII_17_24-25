@@ -271,7 +271,7 @@ public class GridManager : MonoBehaviour
 
     private IEnumerator ShowFailPanel()
     {
-        yield return new WaitForSeconds(1f); // Espera 1 segundo
+        yield return new WaitForSeconds(0.5f); // Espera 0.5 segundos
         levelFailedPanel.SetActive(true); // Activa el panel de derrota
     }
 
