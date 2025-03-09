@@ -49,7 +49,7 @@ public class TutorialManager : MonoBehaviour
 
     private void ShowStep()
     {
-        if (step >= 7)
+        if (step >= 6)
         {
             isTutorialActive = false;
             return;
@@ -132,7 +132,7 @@ public class TutorialManager : MonoBehaviour
                 tutorialPanels[5].SetActive(true);
                 fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText5));
                 break;*/
-            case 6:
+            case 5:
                 foreach (GameObject panel in tutorialPanels)
                 {
                     panel.SetActive(false); // Desactivar todos los paneles al terminar
