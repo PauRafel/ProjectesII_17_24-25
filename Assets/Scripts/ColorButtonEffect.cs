@@ -36,7 +36,7 @@ public class ColorButtonEffect : MonoBehaviour
         }
 
         selectedButton = this;
-        transform.localScale = originalScale * 1.125f; // Aumenta el tamaño un 20%
+        transform.localScale = originalScale * 1.15f; // Aumenta el tamaño un 20%
         outlineEffect.enabled = true; // Activa el brillo
 
         // Iniciar animación de parpadeo y pulso
