@@ -44,7 +44,7 @@ public class LevelSoundManager : MonoBehaviour
     {
         if (startGameButtonSound != null)
         {
-            audioSource.PlayOneShot(loseSound, 0.4f);
+            audioSource.PlayOneShot(startGameButtonSound, 0.4f);
         }
     }
 }
