@@ -304,6 +304,7 @@ public class GridManager : MonoBehaviour
             {
                 Debug.Log("Sin intentos restantes. Mostrando panel de derrota...");
                 StartCoroutine(ShowFailPanel());
+                LevelSoundManager.instance.PlayLoseSound();
             }
         }
 

@@ -164,6 +164,8 @@ public class LevelManager : MonoBehaviour
         }
 
         StartCoroutine(ShowVictoryPanel());
+        LevelSoundManager.instance.PlayWinSound();
+
     }
 
     private IEnumerator ShowVictoryPanel()
