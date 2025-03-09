@@ -568,11 +568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_RootOrder
@@ -698,11 +698,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_RootOrder
@@ -946,11 +946,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_RootOrder
@@ -2751,11 +2751,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_Pivot.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5820950879301580500, guid: 642ccced5a72fe24e9b02488687084dd, type: 3}
       propertyPath: m_RootOrder
