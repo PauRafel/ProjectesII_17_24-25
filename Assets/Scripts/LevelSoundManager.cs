@@ -26,7 +26,7 @@ public class LevelSoundManager : MonoBehaviour
     {
         if (winSound != null)
         {
-            audioSource.PlayOneShot(winSound, 0.5f);
+            audioSource.PlayOneShot(winSound, 0.2f);
         }
     }
 
@@ -34,7 +34,7 @@ public class LevelSoundManager : MonoBehaviour
     {
         if (loseSound != null)
         {
-            audioSource.PlayOneShot(loseSound, 0.8f);
+            audioSource.PlayOneShot(loseSound, 0.4f);
         }
     }
 }
