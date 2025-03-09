@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4706218892890201944
 MonoBehaviour:
@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winSound: {fileID: 8300000, guid: a32137ca88c5f384691478185266fa92, type: 3}
   loseSound: {fileID: 8300000, guid: 2ce1a7953d6f3034b9cec1536b187ccf, type: 3}
+  startGameButtonSound: {fileID: 8300000, guid: f1a62f39e96e9214ab60384cf571708b, type: 3}

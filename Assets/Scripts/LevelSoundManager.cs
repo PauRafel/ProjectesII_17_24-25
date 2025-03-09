@@ -6,6 +6,8 @@ public class LevelSoundManager : MonoBehaviour
 
     public AudioClip winSound;   // Sonido de victoria
     public AudioClip loseSound;  // Sonido de derrota
+    public AudioClip startGameButtonSound; // Sonido btn main menu
+
     private AudioSource audioSource;
 
     private void Awake()
@@ -33,6 +35,14 @@ public class LevelSoundManager : MonoBehaviour
     public void PlayLoseSound()
     {
         if (loseSound != null)
+        {
+            audioSource.PlayOneShot(loseSound, 0.4f);
+        }
+    }
+
+    public void PlayStartSound()
+    {
+        if (startGameButtonSound != null)
         {
             audioSource.PlayOneShot(loseSound, 0.4f);
         }
