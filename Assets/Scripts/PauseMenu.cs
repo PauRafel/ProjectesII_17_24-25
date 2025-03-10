@@ -30,7 +30,7 @@ public class PauseMenu : MonoBehaviour
         IsPaused = false;
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true); // Mostrar el menú
         Time.timeScale = 0f; // Detener el tiempo del juego
@@ -47,5 +47,24 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f; // Asegurarse de reanudar el tiempo
         SceneManager.LoadScene("MainMenu"); // Cambiar a tu escena de menú principal
+    }
+    public void LoadLevelSelector()
+    {
+        Time.timeScale = 1f; // Asegurarse de reanudar el tiempo
+        SceneManager.LoadScene("LevelSelector"); // Cambiar a tu escena de menú principal
+    }
+
+    public void NextLevel()
+    {
+        Time.timeScale = 1f;
+        string nextLevelName = "Level_" + (SceneManager.GetActiveScene().buildIndex + 1);
+        if (Application.CanStreamedLevelBeLoaded(nextLevelName))
+        {
+            SceneManager.LoadScene(nextLevelName);
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }

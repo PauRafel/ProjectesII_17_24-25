@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelectorHandeler : MonoBehaviour
 {
-    public void ChangeLevel(string levelName)
-    {
-        SceneManager.LoadScene(levelName);
-    }
+    public int level;
 
-    public void ChangeLevel(int levelNumber)
+    public void OpenScene()
     {
-        SceneManager.LoadScene(levelNumber);
+        SceneManager.LoadScene("Level_" + level.ToString());
     }
 }
