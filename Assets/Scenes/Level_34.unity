@@ -1559,7 +1559,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 33}
-  m_SizeDelta: {x: 1300, y: 1300}
+  m_SizeDelta: {x: 1920, y: 1200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630161943
 MonoBehaviour:
@@ -1581,7 +1581,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a1b712711392f8047b9e538db7136176, type: 3}
+  m_Texture: {fileID: 2800000, guid: 202b461f80f51164298462acf74f9725, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2494,7 +2494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Turn all the palette into <#000000>YELLOW
+  m_text: Turn all the palette into <#000000>BLUE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16bf36cc2526efe48a02ff166556b5da, type: 2}
   m_sharedMaterial: {fileID: 483032974343892823, guid: 16bf36cc2526efe48a02ff166556b5da, type: 2}
@@ -2521,7 +2521,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20.55
+  m_fontSize: 22.2
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2629,7 +2629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL 33
+  m_text: LEVEL 34
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0ffc450c1f1e5c4abdbdcb21af9b179, type: 2}
   m_sharedMaterial: {fileID: 3260997105245379846, guid: d0ffc450c1f1e5c4abdbdcb21af9b179, type: 2}
@@ -2941,7 +2941,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SteelBlue
+          m_StringArgument: Blue
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1126420424
@@ -2957,7 +2957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.35686275, g: 0.52156866, b: 0.6666667, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3221,7 +3221,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SafetyYellow
+          m_StringArgument: Yellow
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1295333642
@@ -3532,7 +3532,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Keppel
+          m_StringArgument: Green
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1515050373
@@ -3548,7 +3548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23137255, g: 0.6627451, b: 0.6117647, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4234,14 +4234,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487dc81f64760144197514da48b66a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellPrefab: {fileID: 5090876870165623962, guid: 22bba7d9d7a847d4397376b664e1e4f6, type: 3}
-  bombPrefab: {fileID: 2786505895848251734, guid: 6b8d10844d1775b46b97cb8dbd6a3d1f, type: 3}
-  bombX: 2
-  bombY: 2
-  explosionColors:
-  - {r: 0.95686275, g: 0.3764706, b: 0.21176471, a: 0}
-  - {r: 0.35686275, g: 0.52156866, b: 0.6666667, a: 0}
-  - {r: 0.23137255, g: 0.6627451, b: 0.6117647, a: 0}
+  cellPrefab: {fileID: 5090876870165623962, guid: 07d7c7856891e07438b1f7eb213bbd09, type: 3}
+  bombPrefab: {fileID: 0}
+  bombX: 0
+  bombY: 0
+  explosionColors: []
   rows: 9
   columns: 7
   cellSpacing: -0.35
@@ -4406,7 +4403,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PortlandOrange
+          m_StringArgument: Red
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2109247588
@@ -4422,7 +4419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.95686275, g: 0.3764706, b: 0.21176471, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

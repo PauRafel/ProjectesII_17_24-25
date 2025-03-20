@@ -821,6 +821,21 @@ public class GridManager : MonoBehaviour
                  };
                 break;
 
+            case "Level_34":
+                levelColors = new Color[]
+                 {
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.blue, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                 };
+                break;
+
             default:
                 Debug.LogError("Nivel no definido.");
                 break;
