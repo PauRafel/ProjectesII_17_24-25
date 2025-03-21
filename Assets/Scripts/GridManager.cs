@@ -809,6 +809,21 @@ public class GridManager : MonoBehaviour
             case "Level_33":
                 levelColors = new Color[]
                  {
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.green, Color.green, Color.green, Color.green, Color.green, Color.green, Color.green,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
+                 };
+                break;
+
+            case "Level_34":
+                levelColors = new Color[]
+                 {
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
@@ -818,21 +833,6 @@ public class GridManager : MonoBehaviour
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
-                 };
-                break;
-
-            case "Level_34":
-                levelColors = new Color[]
-                 {
-                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
-                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
-                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
-                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
-                   Color.yellow, Color.yellow, Color.yellow, Color.blue, Color.yellow, Color.yellow, Color.yellow,
-                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
-                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
-                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
-                   Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow, Color.yellow,
                  };
                 break;
 

@@ -125,8 +125,8 @@ public class LevelManager : MonoBehaviour
                 case 32: // Pink --> CherryBlossomPink
                     targetColor = new Color(1.0f, 0.7176f, 0.7725f);
                     break;
-                case 33:
-                    // targetColor ;
+                case 33: // Blue
+                     targetColor = Color.blue;
                     break;
                 case 34: // Blue
                     targetColor = Color.blue;
