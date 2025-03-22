@@ -17,6 +17,11 @@ public class GridManager : MonoBehaviour
     private Bomb placedBomb; // Referencia a la bomba colocada
     public Color[] explosionColors; // Colores posibles para la explosión
 
+    [Tooltip("Coordenadas (x,y) de las celdas que tendrán Portales en este nivel (solo niveles 17-32).")]
+    public List<Vector2Int> portalPositions;
+    public GameObject portalPrefab;
+    private GridCell[,] gridCells;
+
     public int rows = 9;
     public int columns = 7;
     public float cellSpacing = -0.3f;
@@ -38,6 +43,8 @@ public class GridManager : MonoBehaviour
 
         remainingAttempts = maxAttempts; // Inicializar los intentos restantes
         UpdateAttemptsUI(); // Actualizar el texto del UI
+
+        InstantiatePortals();
 
         // Solo coloca la bomba si el prefab está asignado
         if (bombPrefab != null)
@@ -73,6 +80,57 @@ public class GridManager : MonoBehaviour
         }
 
         placedBomb.ReduceCountdown();
+    }
+
+    public GridCell GetCellAt(int x, int y)
+    {
+        if (x < 0 || x >= columns || y < 0 || y >= rows)
+        {
+            return null;
+        }
+
+        return gridCells[x, y];
+    }
+
+    private void InstantiatePortals()
+    {
+        // Verificar si este nivel requiere portales (por ejemplo, nivel 17-32)
+        // Si tienes una variable de nivel actual, podrías hacer algo como:
+        // if (currentLevel < 17 || currentLevel > 32) return;
+        // (Asumiendo que portalPositions está vacía en niveles que no aplican, también valdría con comprobar la lista vacía)
+
+        if (portalPositions == null || portalPositions.Count == 0)
+            return; // No hay portales para instanciar en este nivel
+
+        foreach (Vector2Int coord in portalPositions)
+        {
+            // Obtener la celda de esa coordenada (asumiendo que tienes un método o matriz de celdas)
+            GridCell cell = GetCellAt(coord.x, coord.y);
+            if (cell == null)
+            {
+                Debug.LogWarning("Coordenada de Portal fuera de rango: " + coord);
+                continue;
+            }
+
+            // Instanciar el prefab del Portal sobre la posición de la celda
+            Vector3 worldPos = cell.transform.position;
+            GameObject portalGO = Instantiate(portalPrefab, worldPos, Quaternion.identity);
+            // Asegurar que el Portal aparece por encima de la celda (se puede ajustar la posición z o el sorting layer del sprite)
+            portalGO.transform.SetParent(this.transform);  // opcional: hacer hijo del GridManager para organización
+
+            // Configurar el Portal instanciado
+            Portal portal = portalGO.GetComponent<Portal>();
+            if (portal != null)
+            {
+                portal.linkedCell = cell;       // Vincular el Portal con su celda
+                // Registrar en la celda que tiene un portal (para notificar cambios de color)
+                cell.linkedPortal = portal;
+            }
+            else
+            {
+                Debug.LogError("El prefab de Portal no tiene el script Portal adjunto.");
+            }
+        }
     }
 
     public GridCell GetCell(int x, int y)
@@ -154,6 +212,8 @@ public class GridManager : MonoBehaviour
 
     void GenerateGrid()
     {
+        gridCells = new GridCell[columns, rows];
+
         if (levelColors == null || levelColors.Length != rows * columns)
         {
             Debug.LogError("El array de colores no coincide con la cantidad de celdas.");
@@ -182,6 +242,7 @@ public class GridManager : MonoBehaviour
                 if (gridCell != null)
                 {
                     gridCell.cellColor = cellColor; // Asignar color inicial
+                    gridCells[x, y] = gridCell;
                 }
 
                 // Instanciar un material único para cada celda

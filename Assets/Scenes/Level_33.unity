@@ -4239,6 +4239,10 @@ MonoBehaviour:
   bombX: 0
   bombY: 0
   explosionColors: []
+  portalPositions:
+  - {x: 1, y: 1}
+  - {x: 5, y: 7}
+  portalPrefab: {fileID: 2910864247317916058, guid: ed86fb7731c8b804a8b7e8d4f28d3a3a, type: 3}
   rows: 9
   columns: 7
   cellSpacing: -0.35

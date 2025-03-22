@@ -12,6 +12,8 @@ public class GridCell : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip propagationSound;
 
+    public Portal linkedPortal;
+
 
     void Start()
     {
@@ -31,7 +33,6 @@ public class GridCell : MonoBehaviour
     {
         cellColor = newColor;
         spriteRenderer.color = newColor;
-        GetComponent<SpriteRenderer>().color = newColor;
     }
 
     void OnMouseDown()
@@ -61,12 +62,22 @@ public class GridCell : MonoBehaviour
     public void ChangeColor(Color newColor)
     {
         cellColor = newColor;
-        spriteRenderer.color = cellColor;
+
+        // Asignar el color una sola vez usando spriteRenderer, que ya tienes cacheado
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = cellColor;
+        }
+
+        // Notificar al portal si hay uno
+        if (linkedPortal != null)
+        {
+            linkedPortal.OnCellColorChanged(newColor);
+        }
 
         // Ejecutar animación de escala
         StartCoroutine(AnimateCell());
     }
-
 
 
     private IEnumerator AnimateCell()
@@ -130,6 +141,11 @@ public class GridCell : MonoBehaviour
                 currentCell.ChangeColor(newColor);
                 processedCells.Add(currentCell);
 
+                if (currentCell.linkedPortal != null)
+                {
+                    currentCell.linkedPortal.OnCellColorChanged(newColor);
+                }
+
                 // **Reproducir sonido con tono progresivo**
                 if (audioSource != null && propagationSound != null)
                 {
@@ -165,6 +181,11 @@ public class GridCell : MonoBehaviour
         }
     }
 
+    public Color GetCurrentColor()
+    {
+        // Devuelve el color actual de la celda (por ejemplo, del SpriteRenderer o de una variable interna)
+        return cellColor;
+    }
 
     List<GridCell> GetNeighbors(GridCell cell)
     {
