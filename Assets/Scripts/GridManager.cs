@@ -885,6 +885,21 @@ public class GridManager : MonoBehaviour
             case "Level_34":
                 levelColors = new Color[]
                  {
+                   new Color(0.9608f, 0.7725f, 0.0941f), new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
+                   new Color(0.9608f, 0.7725f, 0.0941f), new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
+                   new Color(0.9608f, 0.7725f, 0.0941f), new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
+                   new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
+                   new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.2902f, 0.5647f, 0.8863f),new Color(0.2902f, 0.5647f, 0.8863f),new Color(0.2902f, 0.5647f, 0.8863f),new Color(0.2902f, 0.5647f, 0.8863f),new Color(0.2902f, 0.5647f, 0.8863f), new Color(0.9608f, 0.7725f, 0.0941f),
+                   new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
+                   new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
+                   new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
+                   new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
+                 };
+                break;
+
+            case "Level_35":
+                levelColors = new Color[]
+                 {
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
                    new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f), new Color(0.9451f, 0.8275f, 0.0078f),
