@@ -11,12 +11,6 @@ public class GridManager : MonoBehaviour
 {
     public GameObject cellPrefab;
 
-    public GameObject bombPrefab; // Asigna el prefab de la bomba en el Inspector
-    public int bombX;
-    public int bombY;
-    private Bomb placedBomb; // Referencia a la bomba colocada
-    public Color[] explosionColors; // Colores posibles para la explosión
-
     [Tooltip("Coordenadas (x,y) de las celdas que tendrán Portales en este nivel (solo niveles 17-32).")]
     public List<Vector2Int> portalPositions;
     public GameObject portalPrefab;
@@ -45,12 +39,6 @@ public class GridManager : MonoBehaviour
         UpdateAttemptsUI(); // Actualizar el texto del UI
 
         InstantiatePortals();
-
-        // Solo coloca la bomba si el prefab está asignado
-        if (bombPrefab != null)
-        {
-            PlaceBomb(bombX, bombY);
-        }
     }
     public void UseAttempt()
     {
@@ -59,27 +47,11 @@ public class GridManager : MonoBehaviour
             remainingAttempts--;
             UpdateAttemptsUI();
 
-
-            if (placedBomb != null)
-            {
-                StartCoroutine(ReduceBombCountdownAfterPropagation());
-            }
-
             if (remainingAttempts <= 0)
             {
                 StartCoroutine(WaitForPropagations());
             }
         }
-    }
-
-    private IEnumerator ReduceBombCountdownAfterPropagation()
-    {
-        while (activePropagations > 0)
-        {
-            yield return new WaitForSeconds(0.5f);
-        }
-
-        placedBomb.ReduceCountdown();
     }
 
     public GridCell GetCellAt(int x, int y)
@@ -306,27 +278,6 @@ public class GridManager : MonoBehaviour
             {
                 gridCell.SetColor(explosionColor); // Asigna el color de la explosión
             }
-        }
-    }
-
-    public void PlaceBomb(int x, int y)
-    {
-        if (bombPrefab == null)
-        {
-            Debug.LogWarning("No hay bomba en este nivel, PlaceBomb() no hará nada.");
-            return; // Salimos de la función para evitar el error
-        }
-
-        Vector3 bombPosition = GridToWorldPosition(x, y);
-        GameObject bombObj = Instantiate(bombPrefab, bombPosition, Quaternion.identity);
-        placedBomb = bombObj.GetComponent<Bomb>();
-
-        if (placedBomb != null)
-        {
-            placedBomb.gridX = x;
-            placedBomb.gridY = y;
-            placedBomb.gridManager = this;
-            placedBomb.explosionColors = explosionColors; // Asigna los colores configurados
         }
     }
 
