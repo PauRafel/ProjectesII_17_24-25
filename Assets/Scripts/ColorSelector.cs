@@ -46,7 +46,7 @@ public class ColorSelector : MonoBehaviour
                 selectedColor = new Color(0.6431f, 0.4275f, 0.6784f);
                 break;
 
-            // Colores de niveles de aprendizaje:
+            // Paleta de Colores Neón:
             case "CyberGrape": // Purple
                 selectedColor = new Color(0.3176f, 0.2275f, 0.4078f);
                 break;

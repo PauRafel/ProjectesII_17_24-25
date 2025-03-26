@@ -126,7 +126,7 @@ public class LevelManager : MonoBehaviour
                     targetColor = new Color(1.0f, 0.7176f, 0.7725f);
                     break;
                 case 33: // Blue
-                     targetColor = Color.blue;
+                     targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
                 case 34: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
