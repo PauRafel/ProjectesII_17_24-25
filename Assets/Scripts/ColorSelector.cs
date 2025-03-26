@@ -29,7 +29,7 @@ public class ColorSelector : MonoBehaviour
                 break;
 
 
-            // Colores de niveles de aprendizaje (tutorial - nivel8):
+            // Colores de niveles de aprendizaje:
             case "TuftsBlue": // Blue
                 selectedColor = new Color(0.2902f, 0.5647f, 0.8863f);
                 break;
@@ -41,6 +41,26 @@ public class ColorSelector : MonoBehaviour
                 break;
             case "Emerald": // Green
                 selectedColor = new Color(0.4253f, 0.7490f, 0.5176f);
+                break;
+            case "PurpleMountainMajesty": // Purple
+                selectedColor = new Color(0.6431f, 0.4275f, 0.6784f);
+                break;
+
+            // Colores de niveles de aprendizaje:
+            case "CyberGrape": // Purple
+                selectedColor = new Color(0.3176f, 0.2275f, 0.4078f);
+                break;
+            case "GreenLizard": // Green
+                selectedColor = new Color(0.7451f, 0.9804f, 0.3098f);
+                break;
+            case "MaximumBlue": // Blue
+                selectedColor = new Color(0.3529f, 0.6549f, 0.7255f);
+                break;
+            case "FashionFuchsia": // Fuchsia
+                selectedColor = new Color(0.9098f, 0.2000f, 0.6000f);
+                break;
+            case "AmaranthRed": // Red
+                selectedColor = new Color(0.8235f, 0.1529f, 0.1882f);
                 break;
 
             // Paleta: TEMÁTICA ESTACIONES --> OTOÑO
@@ -84,9 +104,9 @@ public class ColorSelector : MonoBehaviour
             case "MintGreen": // Green
                 selectedColor = new Color(0.5961f, 0.9843f, 0.5961f);
                 break;
-            case "PurpleMountainMajesty": // Purple
+            /*case "PurpleMountainMajesty": // Purple
                 selectedColor = new Color(0.6431f, 0.4275f, 0.6784f);
-                break;
+                break;*/
 
             // Paleta: TEMÁTICA ESTACIONES --> VERANO
             case "SkyBlue":
