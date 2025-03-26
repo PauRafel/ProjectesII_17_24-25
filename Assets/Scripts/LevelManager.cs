@@ -50,81 +50,81 @@ public class LevelManager : MonoBehaviour
                 case 7: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
-                case 8: // Green --> Emerald
+                case 8: // Blue --> TuftsBlue
+                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
+                    break;
+                case 9: // Yellow --> Saffron
+                    targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
+                    break;
+                case 10: // Green --> Emerald 
                     targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
-                case 9: // DarkGreen --> GoldFusion 
-                    targetColor = new Color(0.5098f, 0.4784f, 0.2941f);
+                case 11: // Green --> Emerald 
+                    targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
-                case 10: // Beige --> Tan
-                    targetColor = new Color(0.8431f, 0.7451f, 0.6078f);
+                case 12: // Yellow --> Saffron
+                    targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
                     break;
-                case 11: // DarkGreen --> GoldFusion  
-                    targetColor = new Color(0.5098f, 0.4784f, 0.2941f);
+                case 13: // Blue --> TuftsBlue
+                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
-                case 12: // Brown --> Redwood
-                    targetColor = new Color(0.6667f, 0.3922f, 0.3529f);
+                case 14: // Red --> IndianRed 
+                    targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
                     break;
-                case 13: // Beige --> Tan
-                    targetColor = new Color(0.8431f, 0.7451f, 0.6078f);
+                case 15: // Red --> IndianRed 
+                    targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
                     break;
-                case 14: // Orange --> Fawn
-                    targetColor = new Color(0.9137f, 0.6471f, 0.4000f);
+                case 16: // Green --> Emerald 
+                    targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
-                case 15: // Orange --> Fawn
-                    targetColor = new Color(0.9137f, 0.6471f, 0.4000f);
+                case 17: // Purple --> CyberGrape
+                    targetColor = new Color(0.3176f, 0.2275f, 0.4078f);
                     break;
-                case 16: // Brown --> Redwood
-                    targetColor = new Color(0.6667f, 0.3922f, 0.3529f);
+                case 18: // Blue --> MaximumBlue
+                    targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
-                case 17: // DarkBlue --> BdazzledBlue
-                    targetColor = new Color(0.1176f, 0.3529f, 0.6275f);
+                case 19: // Purple --> CyberGrape
+                    targetColor = new Color(0.3176f, 0.2275f, 0.4078f);
                     break;
-                case 18: // LightBlue --> PeriwinkleCrayola
-                    targetColor = new Color(0.7725f, 0.8431f, 0.9686f);
+                case 20: // Blue --> MaximumBlue
+                    targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
-                case 19: // Grey --> SilverChalice
-                    targetColor = new Color(0.7059f, 0.7059f, 0.7059f);
+                case 21: // Green --> GreenLizard 
+                    targetColor = new Color(0.7451f, 0.9804f, 0.3098f);
                     break;
-                case 20: // LightBlue --> PeriwinkleCrayola
-                    targetColor = new Color(0.7725f, 0.8431f, 0.9686f);
+                case 22: // Fuchsia --> FashionFuchsia
+                    targetColor = new Color(0.9098f, 0.2000f, 0.6000f);
                     break;
-                case 21: // Brown --> LiverChestnut 
-                    targetColor = new Color(0.5490f, 0.4118f, 0.3137f);
+                case 23: // Purple --> CyberGrape
+                    targetColor = new Color(0.3176f, 0.2275f, 0.4078f);
                     break;
-                case 22: // DarkBlue --> BdazzledBlue
-                    targetColor = new Color(0.1176f, 0.3529f, 0.6275f);
+                case 24: // Fuchsia --> FashionFuchsia
+                    targetColor = new Color(0.9098f, 0.2000f, 0.6000f);
                     break;
-                case 23: // Brown --> LiverChestnut 
-                    targetColor = new Color(0.5490f, 0.4118f, 0.3137f);
+                case 25: // Fuchsia --> FashionFuchsia
+                    targetColor = new Color(0.9098f, 0.2000f, 0.6000f);
                     break;
-                case 24: // Grey --> SilverChalice
-                    targetColor = new Color(0.7059f, 0.7059f, 0.7059f);
+                case 26: // Blue --> MaximumBlue
+                    targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
-                case 25: // Blue --> UranianBlue
-                    targetColor = new Color(0.7059f, 1.0f, 1.0f);
+                case 27: // Green --> GreenLizard 
+                    targetColor = new Color(0.7451f, 0.9804f, 0.3098f);
                     break;
-                case 26: // Green --> MintGreen
-                    targetColor = new Color(0.5961f, 0.9843f, 0.5961f);
+                case 28: // Green --> GreenLizard 
+                    targetColor = new Color(0.7451f, 0.9804f, 0.3098f);
                     break;
-                case 27: // Pink --> CherryBlossomPink
-                    targetColor = new Color(1.0f, 0.7176f, 0.7725f);
+                case 29: // Green --> GreenLizard 
+                    targetColor = new Color(0.7451f, 0.9804f, 0.3098f);
                     break;
-                case 28: // Green --> MintGreen
-                    targetColor = new Color(0.5961f, 0.9843f, 0.5961f);
+                case 30: // Blue --> MaximumBlue
+                    targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
-                case 29: // Yellow --> YellowCrayola
-                    targetColor = new Color(0.9882f, 0.9059f, 0.4902f);
-                    break;
-                case 30: // Yellow --> YellowCrayola
-                    targetColor = new Color(0.9882f, 0.9059f, 0.4902f);
-                    break;
-                case 31: // Blue --> UranianBlue
+                /*case 31: // Blue --> UranianBlue
                     targetColor = new Color(0.7059f, 1.0f, 1.0f);
                     break;
                 case 32: // Pink --> CherryBlossomPink
                     targetColor = new Color(1.0f, 0.7176f, 0.7725f);
-                    break;
+                    break;*/
                 case 33: // Blue
                      targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;

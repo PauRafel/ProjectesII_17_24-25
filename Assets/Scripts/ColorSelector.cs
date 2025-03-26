@@ -28,7 +28,6 @@ public class ColorSelector : MonoBehaviour
                 selectedColor = new Color(0.7294f, 0.3333f, 0.8275f);
                 break;
 
-
             // Colores de niveles de aprendizaje:
             case "TuftsBlue": // Blue
                 selectedColor = new Color(0.2902f, 0.5647f, 0.8863f);
