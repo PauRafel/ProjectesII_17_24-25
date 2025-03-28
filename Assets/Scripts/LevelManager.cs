@@ -121,10 +121,10 @@ public class LevelManager : MonoBehaviour
                     break;
                 /*case 31: // Blue --> UranianBlue
                     targetColor = new Color(0.7059f, 1.0f, 1.0f);
-                    break;
-                case 32: // Pink --> CherryBlossomPink
-                    targetColor = new Color(1.0f, 0.7176f, 0.7725f);
                     break;*/
+                case 32: // Fuchsia --> FashionFuchsia
+                    targetColor = new Color(0.9098f, 0.2000f, 0.6000f);
+                    break;
                 case 33: // Blue
                      targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
