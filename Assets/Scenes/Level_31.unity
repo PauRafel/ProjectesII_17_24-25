@@ -2325,7 +2325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: portalPositions.Array.data[0].x
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: portalPositions.Array.data[0].y
@@ -2333,11 +2333,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: portalPositions.Array.data[1].x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: portalPositions.Array.data[1].y
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3743059723977422586, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: m_Name
