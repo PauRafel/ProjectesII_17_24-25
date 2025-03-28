@@ -2301,7 +2301,7 @@ PrefabInstance:
       objectReference: {fileID: 5090876870165623962, guid: 07d7c7856891e07438b1f7eb213bbd09, type: 3}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: maxAttempts
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: attemptsText
@@ -2317,7 +2317,7 @@ PrefabInstance:
       objectReference: {fileID: 563640823}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: remainingAttempts
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: portalPositions.Array.size
