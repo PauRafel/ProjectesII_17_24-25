@@ -113,15 +113,15 @@ public class LevelManager : MonoBehaviour
                 case 28: // Green --> GreenLizard 
                     targetColor = new Color(0.7451f, 0.9804f, 0.3098f);
                     break;
-                case 29: // Green --> GreenLizard 
-                    targetColor = new Color(0.7451f, 0.9804f, 0.3098f);
+                case 29: // Purple --> CyberGrape
+                    targetColor = new Color(0.3176f, 0.2275f, 0.4078f);
                     break;
                 case 30: // Blue --> MaximumBlue
                     targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
-                /*case 31: // Blue --> UranianBlue
-                    targetColor = new Color(0.7059f, 1.0f, 1.0f);
-                    break;*/
+                case 31: // Green --> GreenLizard 
+                    targetColor = new Color(0.7451f, 0.9804f, 0.3098f);
+                    break;
                 case 32: // Fuchsia --> FashionFuchsia
                     targetColor = new Color(0.9098f, 0.2000f, 0.6000f);
                     break;
