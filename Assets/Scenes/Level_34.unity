@@ -4236,8 +4236,8 @@ MonoBehaviour:
   portalPrefab: {fileID: 0}
   bombPrefab: {fileID: 1953757583770921315, guid: 66feacbbf36cd4f40ac8bc2b37398879, type: 3}
   bombPositions:
-  - {x: 5, y: 5}
-  - {x: 4, y: 6}
+  - {x: 3, y: 3}
+  - {x: 3, y: 5}
   rows: 9
   columns: 7
   cellSpacing: -0.35
