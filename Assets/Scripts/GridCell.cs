@@ -14,6 +14,7 @@ public class GridCell : MonoBehaviour
 
     public Portal linkedPortal;
 
+    public Bomb bomb;  // Nuevo: referencia a una bomba ubicada en esta celda (si la hay)
 
     void Start()
     {
@@ -146,6 +147,28 @@ public class GridCell : MonoBehaviour
                     currentCell.linkedPortal.OnCellColorChanged(newColor);
                 }
 
+                Vector2Int coord = currentCell.GetCellCoordinates();
+                int x = coord.x;
+                int y = coord.y;
+
+                // Arriba
+                if (gridManager.IsWithinBounds(x, y + 1) && gridManager.gridCells[x, y + 1].bomb != null)
+                    gridManager.gridCells[x, y + 1].bomb.TriggerExplosion(newColor);
+
+                // Abajo
+                if (gridManager.IsWithinBounds(x, y - 1) && gridManager.gridCells[x, y - 1].bomb != null)
+                    gridManager.gridCells[x, y - 1].bomb.TriggerExplosion(newColor);
+
+                // Izquierda
+                if (gridManager.IsWithinBounds(x - 1, y) && gridManager.gridCells[x - 1, y].bomb != null)
+                    gridManager.gridCells[x - 1, y].bomb.TriggerExplosion(newColor);
+
+                // Derecha
+                if (gridManager.IsWithinBounds(x + 1, y) && gridManager.gridCells[x + 1, y].bomb != null)
+                    gridManager.gridCells[x + 1, y].bomb.TriggerExplosion(newColor);
+
+
+
                 // **Reproducir sonido con tono progresivo**
                 if (audioSource != null && propagationSound != null)
                 {
@@ -179,6 +202,14 @@ public class GridCell : MonoBehaviour
                 gridManager.EndPropagation(); // Finalizar propagación
             }
         }
+    }
+
+    public Vector2Int GetCellCoordinates()
+    {
+        string[] parts = name.Split('_');
+        int x = int.Parse(parts[1]);
+        int y = int.Parse(parts[2]);
+        return new Vector2Int(x, y);
     }
 
     public Color GetCurrentColor()

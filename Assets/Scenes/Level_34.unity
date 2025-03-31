@@ -529,9 +529,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3ec88b19091ff4d8252eee397dd381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 630161943}
-  x: 0.01
-  y: 0
 --- !u!1 &344109605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4235,12 +4232,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellPrefab: {fileID: 5090876870165623962, guid: 22bba7d9d7a847d4397376b664e1e4f6, type: 3}
-  bombPrefab: {fileID: 0}
-  bombX: 0
-  bombY: 0
-  explosionColors: []
   portalPositions: []
   portalPrefab: {fileID: 0}
+  bombPrefab: {fileID: 1953757583770921315, guid: 66feacbbf36cd4f40ac8bc2b37398879, type: 3}
+  bombPositions:
+  - {x: 5, y: 5}
+  - {x: 4, y: 6}
   rows: 9
   columns: 7
   cellSpacing: -0.35

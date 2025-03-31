@@ -14,7 +14,10 @@ public class GridManager : MonoBehaviour
     [Tooltip("Coordenadas (x,y) de las celdas que tendrán Portales en este nivel (solo niveles 17-32).")]
     public List<Vector2Int> portalPositions;
     public GameObject portalPrefab;
-    private GridCell[,] gridCells;
+    public GridCell[,] gridCells;
+
+    public GameObject bombPrefab;                // Prefab de la Bomba (asignado vía Inspector)
+    public List<Vector2Int> bombPositions;       // Lista de coordenadas (columna,fila) donde colocar bombas en este nivel
 
     public int rows = 9;
     public int columns = 7;
@@ -39,6 +42,19 @@ public class GridManager : MonoBehaviour
         UpdateAttemptsUI(); // Actualizar el texto del UI
 
         InstantiatePortals();
+
+        foreach (Vector2Int bombPos in bombPositions)
+        {
+            // Instanciar el prefab de Bomba en la posición correspondiente del mundo
+            GridCell cell = gridCells[bombPos.y, bombPos.x];
+            Vector3 worldPosition = cell.transform.position;  // posición mundial de la celda
+            Bomb newBomb = Instantiate(bombPrefab, worldPosition, Quaternion.identity)
+                                .GetComponent<Bomb>();
+            // Inicializar la bomba con su posición de grid y referencia al GridManager
+            newBomb.Initialize(bombPos, this);
+            // Vincular la bomba a la celda en la que está colocada
+            cell.bomb = newBomb;
+        }
     }
     public void UseAttempt()
     {
