@@ -338,6 +338,20 @@ public class GridManager : MonoBehaviour
 
         isCheckingRestart = false;
     }
+    public IEnumerator AnimateVictory()
+    {
+        yield return new WaitForSeconds(1f); // Esperar 1 segundo antes de iniciar la animación
+
+        foreach (GridCell cell in gridCells)
+        {
+            if (cell != null)
+            {
+                StartCoroutine(cell.AnimateVictoryEffect());
+            }
+        }
+
+        yield return new WaitForSeconds(1.5f); // Esperar la animación antes de continuar
+    }
 
 
     // Actualiza el texto del contador de intentos

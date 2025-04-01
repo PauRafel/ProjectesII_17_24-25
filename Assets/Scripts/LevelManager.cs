@@ -160,6 +160,18 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private IEnumerator AnimateVictory()
+    {
+        GridManager gridManager = FindObjectOfType<GridManager>();
+        if (gridManager != null)
+        {
+            yield return StartCoroutine(gridManager.AnimateVictory()); // Espera a que termine la animación
+        }
+
+        StartCoroutine(ShowVictoryPanel()); // Luego muestra el panel de victoria
+    }
+
+
     public void CompleteLevel()
     {
         Debug.Log("¡Nivel completado!");
@@ -169,14 +181,16 @@ public class LevelManager : MonoBehaviour
             audioSource.PlayOneShot(victorySound); // Reproduce el sonido de victoria
         }
 
-        StartCoroutine(ShowVictoryPanel());
         LevelSoundManager.instance.PlayWinSound();
 
+        // Iniciar la animación de victoria antes de mostrar el panel
+        StartCoroutine(AnimateVictory());
     }
+
 
     private IEnumerator ShowVictoryPanel()
     {
-        yield return new WaitForSeconds(2f); // Espera 2 segundos
+        yield return new WaitForSeconds(0.1f); // Espera 1 segundos
         levelCompletePanel.SetActive(true); // Activa el panel de victoria
     }
 }

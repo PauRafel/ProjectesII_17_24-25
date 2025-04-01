@@ -238,4 +238,33 @@ public class GridCell : MonoBehaviour
 
         return neighbors;
     }
+
+    public IEnumerator AnimateVictoryEffect()
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 targetScale = originalScale * 1.2f; // Aumenta un 20% el tamaño
+
+        float duration = 0.3f; // Duración de la animación
+        float elapsed = 0f;
+
+        // Aumentar tamaño
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsed / duration);
+            yield return null;
+        }
+
+        elapsed = 0f;
+
+        // Volver al tamaño normal
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(targetScale, originalScale, elapsed / duration);
+            yield return null;
+        }
+    }
+
+
 }
