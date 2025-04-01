@@ -62,6 +62,23 @@ public class ColorSelector : MonoBehaviour
                 selectedColor = new Color(0.8235f, 0.1529f, 0.1882f);
                 break;
 
+            // Paleta de Colores Tecnología/Futuro:
+            case "GreenNCS": // Green
+                selectedColor = new Color(0.1333f, 0.6353f, 0.4392f);
+                break;
+            case "DutchWhite": // White
+                selectedColor = new Color(0.9255f, 0.8863f, 0.7765f);
+                break;
+            case "Amethyst": // Purple
+                selectedColor = new Color(0.6000f, 0.4000f, 0.8000f);
+                break;
+            case "YellowOrangeColorWheel": // Orange
+                selectedColor = new Color(1.0000f, 0.5686f, 0.0000f);
+                break;
+            case "BlueGreen": // Blue
+                selectedColor = new Color(0.2667f, 0.6118f, 0.7373f);
+                break;
+
             default:
                 selectedColor = Color.clear;
                 break;

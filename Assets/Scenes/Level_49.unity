@@ -1555,8 +1555,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 33}
-  m_SizeDelta: {x: 1300, y: 1300}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1636, y: 1024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630161943
 MonoBehaviour:
@@ -1571,14 +1571,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a1b712711392f8047b9e538db7136176, type: 3}
+  m_Texture: {fileID: 2800000, guid: 1ff73f008cf3f434b98729588fdd7ea9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1814,82 +1814,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761471537}
   m_CullTransparentMesh: 1
---- !u!1 &767191871
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 767191872}
-  - component: {fileID: 767191874}
-  - component: {fileID: 767191873}
-  m_Layer: 5
-  m_Name: Lienzo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &767191872
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767191871}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000799, y: 1.0000799, z: 1.0000799}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 785500359}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -22, y: -53.000004}
-  m_SizeDelta: {x: 985.6, y: 1267.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &767191873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767191871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6cda4138744d2b34db300acd5d8b46f8, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &767191874
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767191871}
-  m_CullTransparentMesh: 1
 --- !u!1 &785500355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +1909,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 630161942}
-  - {fileID: 767191872}
   - {fileID: 674793664}
   - {fileID: 927407984}
   m_Father: {fileID: 0}
@@ -2626,7 +2549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LEVEL 34
+  m_text: LEVEL 49
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d0ffc450c1f1e5c4abdbdcb21af9b179, type: 2}
   m_sharedMaterial: {fileID: 3260997105245379846, guid: d0ffc450c1f1e5c4abdbdcb21af9b179, type: 2}
@@ -2938,7 +2861,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TuftsBlue
+          m_StringArgument: MaximumBlue
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1126420424
@@ -2954,7 +2877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2901961, g: 0.5647059, b: 0.8862745, a: 1}
+  m_Color: {r: 0.3529412, g: 0.654902, b: 0.7254902, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3218,7 +3141,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Saffron
+          m_StringArgument: GreenLizard
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1295333642
@@ -3234,7 +3157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9607843, g: 0.77254903, b: 0.09411765, a: 1}
+  m_Color: {r: 0.74509805, g: 0.98039216, b: 0.30980393, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3529,7 +3452,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Emerald
+          m_StringArgument: FashionFuchsia
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1515050373
@@ -3545,7 +3468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42352942, g: 0.7490196, b: 0.5176471, a: 1}
+  m_Color: {r: 0.9098039, g: 0.2, b: 0.6, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4231,13 +4154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487dc81f64760144197514da48b66a8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellPrefab: {fileID: 5090876870165623962, guid: 22bba7d9d7a847d4397376b664e1e4f6, type: 3}
-  portalPositions: []
-  portalPrefab: {fileID: 0}
-  bombPrefab: {fileID: 1953757583770921315, guid: 66feacbbf36cd4f40ac8bc2b37398879, type: 3}
-  bombPositions:
-  - {x: 2, y: 3}
-  - {x: 6, y: 3}
+  cellPrefab: {fileID: 5090876870165623962, guid: 07d7c7856891e07438b1f7eb213bbd09, type: 3}
+  portalPositions:
+  - {x: 1, y: 1}
+  - {x: 5, y: 7}
+  portalPrefab: {fileID: 2910864247317916058, guid: ed86fb7731c8b804a8b7e8d4f28d3a3a, type: 3}
+  bombPrefab: {fileID: 0}
+  bombPositions: []
   rows: 9
   columns: 7
   cellSpacing: -0.35
@@ -4402,7 +4325,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: IndianRed
+          m_StringArgument: CyberGrape
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2109247588
@@ -4418,7 +4341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8509804, g: 0.3254902, b: 0.30980393, a: 1}
+  m_Color: {r: 0.31764707, g: 0.22745098, b: 0.40784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
