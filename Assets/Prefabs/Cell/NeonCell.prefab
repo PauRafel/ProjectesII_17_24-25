@@ -100,8 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellColor: {r: 1, g: 1, b: 1, a: 1}
-  propagationSound: {fileID: 8300000, guid: 7e5f3d721872abc4280da45ad2037594, type: 3}
+  propagationSound: {fileID: 8300000, guid: 7cbbb743136c3174b873ad1f39f7d670, type: 3}
   linkedPortal: {fileID: 0}
+  bomb: {fileID: 0}
 --- !u!61 &1560264249376588540
 BoxCollider2D:
   m_ObjectHideFlags: 0
