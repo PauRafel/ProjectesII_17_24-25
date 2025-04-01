@@ -125,13 +125,16 @@ public class LevelManager : MonoBehaviour
                 case 32: // Fuchsia --> FashionFuchsia
                     targetColor = new Color(0.9098f, 0.2000f, 0.6000f);
                     break;
-                case 33: // Blue
-                     targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
+                case 33: // Green --> GreenNCS
+                    targetColor = new Color(0.1333f, 0.6353f, 0.4392f);
                     break;
-                case 34: // Blue --> TuftsBlue
+                case 49: // Blue --> MaximumBlue
+                    targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
+                    break;
+                case 50: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
-                case 35: // Blue --> TuftsBlue
+                case 51: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
                 default:

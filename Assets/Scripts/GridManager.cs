@@ -851,6 +851,21 @@ public class GridManager : MonoBehaviour
             case "Level_33":
                 levelColors = new Color[]
                  {
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.9255f, 0.8863f, 0.7765f), new Color(0.9255f, 0.8863f, 0.7765f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.9255f, 0.8863f, 0.7765f), new Color(0.9255f, 0.8863f, 0.7765f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.9255f, 0.8863f, 0.7765f), new Color(0.9255f, 0.8863f, 0.7765f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
+                 };
+                break;
+
+            case "Level_49":
+                levelColors = new Color[]
+                 {
                    new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f),
                    new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f),
                    new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f), new Color(0.3176f, 0.2275f, 0.4078f),
@@ -863,7 +878,7 @@ public class GridManager : MonoBehaviour
                  };
                 break;
 
-            case "Level_34":
+            case "Level_50":
                 levelColors = new Color[]
                  {
                    new Color(0.9608f, 0.7725f, 0.0941f), new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
@@ -878,7 +893,7 @@ public class GridManager : MonoBehaviour
                  };
                 break;
 
-            case "Level_35":
+            case "Level_51":
                 levelColors = new Color[]
                  {
                    new Color(0.9608f, 0.7725f, 0.0941f), new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),new Color(0.9608f, 0.7725f, 0.0941f),
