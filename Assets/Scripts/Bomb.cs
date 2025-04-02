@@ -72,10 +72,37 @@ public class Bomb : MonoBehaviour
             currentCell.ChangeColor(colorToUse);
             processedCells.Add(currentCell);
 
+            Vector2Int coord = currentCell.GetCellCoordinates();
+            int x = coord.x;
+            int y = coord.y;
+
             // Encadenamiento de bombas
             if (currentCell.bomb != null && !currentCell.bomb.exploded)
             {
                 currentCell.bomb.TriggerExplosion(colorToUse);
+            }
+
+            Vector2Int[] directions = new Vector2Int[]
+        {
+            new Vector2Int(0,1),   // arriba
+            new Vector2Int(0,-1),  // abajo
+            new Vector2Int(-1,0),  // izquierda
+            new Vector2Int(1,0)    // derecha
+        };
+
+            foreach (Vector2Int dir in directions)
+            {
+                int nx = x + dir.x;
+                int ny = y + dir.y;
+
+                if (gridMgr.IsWithinBounds(nx, ny))
+                {
+                    GridCell neighbor = gridMgr.gridCells[nx, ny];
+                    if (neighbor.bomb != null && !neighbor.bomb.exploded)
+                    {
+                        neighbor.bomb.TriggerExplosion(colorToUse);
+                    }
+                }
             }
 
             // Sonido progresivo
