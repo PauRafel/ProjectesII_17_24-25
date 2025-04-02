@@ -35,44 +35,44 @@ public class LevelManager : MonoBehaviour
                 case 2: // Yellow --> Saffron
                     targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
                     break;
-                case 3: // Blue --> TuftsBlue
-                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
-                    break;
-                case 4: // Yellow --> Saffron
+                case 3: // Yellow --> Saffron
                     targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
                     break;
-                case 5: // Red --> IndianRed 
+                case 4: // Red --> IndianRed 
                     targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
                     break;
-                case 6: // Green --> Emerald 
+                case 5: // Green --> Emerald 
                     targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
+                    break;
+                case 6: // Blue --> TuftsBlue
+                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
                 case 7: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
-                case 8: // Blue --> TuftsBlue
-                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
-                    break;
-                case 9: // Yellow --> Saffron
+                case 8: // Yellow --> Saffron
                     targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
+                    break;
+                case 9: // Green --> Emerald 
+                    targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
                 case 10: // Green --> Emerald 
                     targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
                     break;
-                case 11: // Green --> Emerald 
-                    targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
-                    break;
-                case 12: // Yellow --> Saffron
+                case 11: // Yellow --> Saffron
                     targetColor = new Color(0.9608f, 0.7725f, 0.0941f);
                     break;
-                case 13: // Blue --> TuftsBlue
+                case 12: // Blue --> TuftsBlue
                     targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
+                    break;
+                case 13: // Red --> IndianRed 
+                    targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
                     break;
                 case 14: // Red --> IndianRed 
                     targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
                     break;
-                case 15: // Red --> IndianRed 
-                    targetColor = new Color(0.8510f, 0.3255f, 0.3098f);
+                case 15: // Blue --> TuftsBlue
+                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
                     break;
                 case 16: // Green --> Emerald 
                     targetColor = new Color(0.4253f, 0.7490f, 0.5176f);
