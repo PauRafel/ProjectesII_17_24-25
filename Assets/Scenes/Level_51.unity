@@ -611,7 +611,6 @@ GameObject:
   m_Component:
   - component: {fileID: 267740230}
   - component: {fileID: 267740229}
-  - component: {fileID: 267740231}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -651,21 +650,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &267740231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267740228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de3ec88b19091ff4d8252eee397dd381, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  img: {fileID: 630161943}
-  x: 0.01
-  y: 0
 --- !u!1 &344109605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4066,6 +4050,8 @@ MonoBehaviour:
   cellPrefab: {fileID: 5090876870165623962, guid: 22bba7d9d7a847d4397376b664e1e4f6, type: 3}
   portalPositions: []
   portalPrefab: {fileID: 0}
+  bombPrefab: {fileID: 0}
+  bombPositions: []
   rows: 9
   columns: 7
   cellSpacing: -0.35

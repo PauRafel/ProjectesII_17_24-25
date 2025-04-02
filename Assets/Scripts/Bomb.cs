@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public GridCell linkedCell;
-    private bool exploded = false;
+    public bool exploded = false;
     private Vector2Int gridPosition;
     private GridManager gridMgr;
 
