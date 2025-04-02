@@ -52,9 +52,9 @@ public class Bomb : MonoBehaviour
             int targetX = gridPosition.x + offset.x;
             int targetY = gridPosition.y + offset.y;
 
-            if (gridMgr.IsWithinBounds(targetY, targetX))
+            if (gridMgr.IsWithinBounds(targetX, targetY))
             {
-                GridCell targetCell = gridMgr.gridCells[targetY, targetX];
+                GridCell targetCell = gridMgr.gridCells[targetX, targetY];
                 if (!processedCells.Contains(targetCell))
                 {
                     cellsToProcess.Enqueue(targetCell);

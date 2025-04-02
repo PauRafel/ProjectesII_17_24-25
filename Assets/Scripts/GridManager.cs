@@ -46,10 +46,9 @@ public class GridManager : MonoBehaviour
         foreach (Vector2Int bombPos in bombPositions)
         {
             // Instanciar el prefab de Bomba en la posición correspondiente del mundo
-            GridCell cell = gridCells[bombPos.y, bombPos.x];
+            GridCell cell = gridCells[bombPos.x, bombPos.y];
             Vector3 worldPosition = cell.transform.position;  // posición mundial de la celda
-            Bomb newBomb = Instantiate(bombPrefab, worldPosition, Quaternion.identity)
-                                .GetComponent<Bomb>();
+            Bomb newBomb = Instantiate(bombPrefab, worldPosition, Quaternion.identity).GetComponent<Bomb>();
             // Inicializar la bomba con su posición de grid y referencia al GridManager
             newBomb.Initialize(bombPos, this);
             // Vincular la bomba a la celda en la que está colocada
@@ -860,6 +859,21 @@ public class GridManager : MonoBehaviour
                    new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f),
                    new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
                    new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
+                 };
+                break;
+
+            case "Level_34":
+                levelColors = new Color[]
+                 {
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(1.0000f, 0.5686f, 0.0000f),
+                   new Color(0.9255f, 0.8863f, 0.7765f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.9255f, 0.8863f, 0.7765f),
+                   new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.9255f, 0.8863f, 0.7765f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f),
+                   new Color(0.9255f, 0.8863f, 0.7765f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.9255f, 0.8863f, 0.7765f),
+                   new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(1.0000f, 0.5686f, 0.0000f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
+                   new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.6000f, 0.4000f, 0.8000f), new Color(1.0000f, 0.5686f, 0.0000f), new Color(0.1333f, 0.6353f, 0.4392f), new Color(0.1333f, 0.6353f, 0.4392f),
                  };
                 break;
 

@@ -128,6 +128,9 @@ public class LevelManager : MonoBehaviour
                 case 33: // Green --> GreenNCS
                     targetColor = new Color(0.1333f, 0.6353f, 0.4392f);
                     break;
+                case 34: // White --> DutchWhite
+                    targetColor = new Color(0.9255f, 0.8863f, 0.7765f);
+                    break;
                 case 49: // Blue --> MaximumBlue
                     targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
