@@ -131,6 +131,9 @@ public class LevelManager : MonoBehaviour
                 case 34: // White --> DutchWhite
                     targetColor = new Color(0.9255f, 0.8863f, 0.7765f);
                     break;
+                case 35: // Purple --> Amethyst
+                    targetColor = new Color(0.6000f, 0.4000f, 0.8000f);
+                    break;
                 case 49: // Blue --> MaximumBlue
                     targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
                     break;
