@@ -33,6 +33,8 @@ public class Bomb : MonoBehaviour
     {
         gridMgr.StartPropagation(); // <--- Inicia propagación de bomba
 
+        yield return new WaitForSeconds(0.6f);
+
         Queue<GridCell> cellsToProcess = new Queue<GridCell>();
         HashSet<GridCell> processedCells = new HashSet<GridCell>();
 
