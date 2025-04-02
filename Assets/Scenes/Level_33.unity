@@ -2356,6 +2356,14 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
+      propertyPath: bombPositions.Array.data[1].x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
+      propertyPath: bombPositions.Array.data[1].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: portalPositions.Array.data[0].x
       value: 1
       objectReference: {fileID: 0}

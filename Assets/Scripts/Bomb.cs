@@ -9,29 +9,44 @@ public class Bomb : MonoBehaviour
     private Vector2Int gridPosition;
     private GridManager gridMgr;
 
+    public AudioClip propagationSound;
+    private AudioSource audioSource;
+
     public void Initialize(Vector2Int position, GridManager manager)
     {
         gridPosition = position;
         gridMgr = manager;
         exploded = false;
         linkedCell = gridMgr.gridCells[gridPosition.x, gridPosition.y];
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void TriggerExplosion(Color colorToUse)
     {
-        if (exploded) return; // Evitar doble explosión
+        if (exploded) return;
         exploded = true;
 
-        // Coordenadas relativas según el patrón solicitado
+        StartCoroutine(PropagateExplosion(colorToUse));
+    }
+
+    private IEnumerator PropagateExplosion(Color colorToUse)
+    {
+        gridMgr.StartPropagation(); // <--- Inicia propagación de bomba
+
+        Queue<GridCell> cellsToProcess = new Queue<GridCell>();
+        HashSet<GridCell> processedCells = new HashSet<GridCell>();
+
+        // Pattern de la bomba
         Vector2Int[] pattern = new Vector2Int[]
         {
             new Vector2Int(0,0),
             new Vector2Int(1,0), new Vector2Int(-1,0), new Vector2Int(0,1), new Vector2Int(0,-1),
-            //new Vector2Int(2,0), new Vector2Int(-2,0), new Vector2Int(0,2), new Vector2Int(0,-2),
             new Vector2Int(1,1), new Vector2Int(1,-1), new Vector2Int(-1,1), new Vector2Int(-1,-1)
         };
 
-        // Pinta las casillas siguiendo el patrón
+        float delay = 0.15f;
+        float pitch = 1f;
+
         foreach (Vector2Int offset in pattern)
         {
             int targetX = gridPosition.x + offset.x;
@@ -40,15 +55,40 @@ public class Bomb : MonoBehaviour
             if (gridMgr.IsWithinBounds(targetY, targetX))
             {
                 GridCell targetCell = gridMgr.gridCells[targetY, targetX];
-                targetCell.SetColor(colorToUse);
-
-                // Encadenamiento de bombas
-                if (targetCell.bomb != null && !targetCell.bomb.exploded)
+                if (!processedCells.Contains(targetCell))
                 {
-                    targetCell.bomb.TriggerExplosion(colorToUse);
+                    cellsToProcess.Enqueue(targetCell);
                 }
             }
         }
+
+        while (cellsToProcess.Count > 0)
+        {
+            GridCell currentCell = cellsToProcess.Dequeue();
+
+            // Cambiar color con animación y sonido
+            currentCell.ChangeColor(colorToUse);
+            processedCells.Add(currentCell);
+
+            // Encadenamiento de bombas
+            if (currentCell.bomb != null && !currentCell.bomb.exploded)
+            {
+                currentCell.bomb.TriggerExplosion(colorToUse);
+            }
+
+            // Sonido progresivo
+            if (audioSource != null && propagationSound != null)
+            {
+                audioSource.pitch = pitch;
+                audioSource.PlayOneShot(propagationSound);
+            }
+
+            yield return new WaitForSeconds(delay);
+            delay *= 0.9f;
+            delay = Mathf.Max(0.02f, delay);
+            pitch += 0.05f;
+        }
+        gridMgr.EndPropagation(); // <--- Termina propagación de bomba
 
         // Eliminar la bomba tras explotar
         linkedCell.bomb = null;
