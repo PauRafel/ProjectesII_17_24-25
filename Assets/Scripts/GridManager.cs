@@ -216,7 +216,7 @@ public class GridManager : MonoBehaviour
         {
             for (int x = 0; x < columns; x++)
             {
-                Vector3 position = new Vector3(x - offsetX + 1.06f + (x * cellSpacing), -(y - offsetY + 1.5f) - (y * cellSpacing), 0);
+                Vector3 position = new Vector3(x - offsetX + 1.06f + (x * cellSpacing), -(y - offsetY + 1.74f) - (y * cellSpacing), 0);
                 GameObject cell = Instantiate(cellPrefab, position, Quaternion.identity);
                 cell.name = $"Cell_{x}_{y}";
                 cell.transform.parent = transform;
