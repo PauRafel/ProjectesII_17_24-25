@@ -75,8 +75,8 @@ public class ColorSelector : MonoBehaviour
             case "YellowOrangeColorWheel": // Orange
                 selectedColor = new Color(1.0000f, 0.5686f, 0.0000f);
                 break;
-            case "BlueGreen": // Blue
-                selectedColor = new Color(0.2667f, 0.6118f, 0.7373f);
+            case "FrenchSkyBlue": // Blue
+                selectedColor = new Color(0.3961f, 0.6863f, 1.0000f);
                 break;
 
             default:
