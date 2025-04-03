@@ -1457,7 +1457,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2323218592749626852, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_text
-      value: LEVEL 13
+      value: LV 13
       objectReference: {fileID: 0}
     - target: {fileID: 2378241602977595304, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_Name
@@ -1529,11 +1529,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563663857322696617, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 31.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2563663857322696617, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 38.850006
+      value: 38.940002
       objectReference: {fileID: 0}
     - target: {fileID: 2563663857322696617, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
