@@ -1473,23 +1473,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2323218592749626852, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_text
-      value: LV 35
+      value: LV 42
       objectReference: {fileID: 0}
     - target: {fileID: 2323218592749626852, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.5849056
+      value: 0.6537736
       objectReference: {fileID: 0}
     - target: {fileID: 2323218592749626852, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.27258807
+      value: 0.7076689
       objectReference: {fileID: 0}
     - target: {fileID: 2323218592749626852, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.42874685
+      value: 0.7264151
       objectReference: {fileID: 0}
     - target: {fileID: 2323218592749626852, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4287972973
+      value: 4289180857
       objectReference: {fileID: 0}
     - target: {fileID: 2378241602977595304, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_Name
@@ -2301,15 +2301,15 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 28421df434859654abe127be24ada4e1, type: 3}
     - target: {fileID: 2002875316472650652, guid: 99cc5373d721ef14b9648f34070e5250, type: 3}
       propertyPath: m_Color.b
-      value: 0.8
+      value: 0.7764706
       objectReference: {fileID: 0}
     - target: {fileID: 2002875316472650652, guid: 99cc5373d721ef14b9648f34070e5250, type: 3}
       propertyPath: m_Color.g
-      value: 0.4
+      value: 0.8862745
       objectReference: {fileID: 0}
     - target: {fileID: 2002875316472650652, guid: 99cc5373d721ef14b9648f34070e5250, type: 3}
       propertyPath: m_Color.r
-      value: 0.6
+      value: 0.9254902
       objectReference: {fileID: 0}
     - target: {fileID: 8304480853162861479, guid: 99cc5373d721ef14b9648f34070e5250, type: 3}
       propertyPath: m_Name
@@ -2338,7 +2338,7 @@ PrefabInstance:
       objectReference: {fileID: 5090876870165623962, guid: 2f8c783b00333b248810cc50be6ab00c, type: 3}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: maxAttempts
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: attemptsText
@@ -2354,11 +2354,11 @@ PrefabInstance:
       objectReference: {fileID: 563640823}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: remainingAttempts
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: portalPositions.Array.size
@@ -2370,7 +2370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[0].y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[1].x
@@ -2378,11 +2378,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[1].y
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[2].x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[2].y
@@ -2390,11 +2390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[3].x
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[3].y
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: portalPositions.Array.data[0].x

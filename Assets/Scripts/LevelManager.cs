@@ -134,15 +134,46 @@ public class LevelManager : MonoBehaviour
                 case 35: // Purple --> Amethyst
                     targetColor = new Color(0.6000f, 0.4000f, 0.8000f);
                     break;
-                case 49: // Blue --> MaximumBlue
-                    targetColor = new Color(0.3529f, 0.6549f, 0.7255f);
+                case 36: // Orange --> YellowOrangeColorWheel
+                    targetColor = new Color(1.0000f, 0.5686f, 0.0000f);
                     break;
-                case 50: // Blue --> TuftsBlue
-                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
+                case 37: // Purple --> Amethyst
+                    targetColor = new Color(0.6000f, 0.4000f, 0.8000f);
                     break;
-                case 51: // Blue --> TuftsBlue
-                    targetColor = new Color(0.2902f, 0.5647f, 0.8863f);
+                case 38: // Purple --> Amethyst
+                    targetColor = new Color(0.6000f, 0.4000f, 0.8000f);
                     break;
+                case 39: // Orange --> YellowOrangeColorWheel
+                    targetColor = new Color(1.0000f, 0.5686f, 0.0000f);
+                    break;
+                case 40: // Green --> GreenNCS
+                    targetColor = new Color(0.1333f, 0.6353f, 0.4392f);
+                    break;
+                case 41: // Green --> GreenNCS
+                    targetColor = new Color(0.1333f, 0.6353f, 0.4392f);
+                    break;
+                case 42: // White --> DutchWhite
+                    targetColor = new Color(0.9255f, 0.8863f, 0.7765f);
+                    break;
+                case 43: // Purple --> Amethyst
+                    targetColor = new Color(0.6000f, 0.4000f, 0.8000f);
+                    break;
+                case 44: // White --> DutchWhite
+                    targetColor = new Color(0.9255f, 0.8863f, 0.7765f);
+                    break;
+                case 45: // Orange --> YellowOrangeColorWheel
+                    targetColor = new Color(1.0000f, 0.5686f, 0.0000f);
+                    break;
+                case 46: // White --> DutchWhite
+                    targetColor = new Color(0.9255f, 0.8863f, 0.7765f);
+                    break;
+                case 47: // Orange --> YellowOrangeColorWheel
+                    targetColor = new Color(1.0000f, 0.5686f, 0.0000f);
+                    break;
+                case 48: // Green --> GreenNCS
+                    targetColor = new Color(0.1333f, 0.6353f, 0.4392f);
+                    break;
+
                 default:
                     break;
             }
