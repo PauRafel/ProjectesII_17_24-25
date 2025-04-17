@@ -1473,7 +1473,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2323218592749626852, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_text
-      value: LV 49
+      value: LV 50
       objectReference: {fileID: 0}
     - target: {fileID: 2323218592749626852, guid: e5167c329e38d6f48bb7c0f285656ec1, type: 3}
       propertyPath: m_fontColor.b
@@ -2366,7 +2366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[0].x
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: bombPositions.Array.data[0].y

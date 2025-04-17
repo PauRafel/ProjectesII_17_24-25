@@ -173,6 +173,12 @@ public class LevelManager : MonoBehaviour
                 case 48: // Green --> GreenNCS
                     targetColor = new Color(0.1333f, 0.6353f, 0.4392f);
                     break;
+                case 49: // Black --> Eggplant
+                    targetColor = new Color(0.3255f, 0.2314f, 0.3020f);
+                    break;
+                case 50: // Black --> Eggplant
+                    targetColor = new Color(0.3255f, 0.2314f, 0.3020f);
+                    break;
 
                 default:
                     break;
