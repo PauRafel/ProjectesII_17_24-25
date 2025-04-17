@@ -79,6 +79,23 @@ public class ColorSelector : MonoBehaviour
                 selectedColor = new Color(0.3961f, 0.6863f, 1.0000f);
                 break;
 
+            // Paleta de Colores Hacker:
+            case "Eggplant": // Black
+                selectedColor = new Color(0.3255f, 0.2314f, 0.3020f);
+                break;
+            case "ScreaminGreen": // Green
+                selectedColor = new Color(0.4000f, 1.0000f, 0.4000f);
+                break;
+            case "Blond": // Beige
+                selectedColor = new Color(0.9922f, 0.9608f, 0.7490f);
+                break;
+            case "MediumPurple": // Purple
+                selectedColor = new Color(0.6078f, 0.4941f, 0.8706f);
+                break;
+            case "RadicalRed": // Red
+                selectedColor = new Color(1.0000f, 0.2157f, 0.3725f);
+                break;
+
             default:
                 selectedColor = Color.clear;
                 break;
