@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4303240424237262131}
   - component: {fileID: 2178518326018045816}
   m_Layer: 5
-  m_Name: 'BlondButton '
+  m_Name: 'BurntSiennaButton '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.99215686, g: 0.9607843, b: 0.7490196, a: 1}
+  m_Color: {r: 0.9137255, g: 0.45490196, b: 0.31764707, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
