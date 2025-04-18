@@ -80,20 +80,20 @@ public class ColorSelector : MonoBehaviour
                 break;
 
             // Paleta de Colores Moderno Elegante:
-            case "OxfordBlue": // Black
-                selectedColor = new Color(0.0471f, 0.1373f, 0.2510f);
+            case "BlackOlive": // Black
+                selectedColor = new Color(0.2549f, 0.2745f, 0.2392f);
                 break;
-            case "BurntSienna": // Red
-                selectedColor = new Color(0.9137f, 0.4549f, 0.3176f);
+            case "Coral": // Red
+                selectedColor = new Color(1.0000f, 0.5216f, 0.3216f);
                 break;
-            case "Keppel": // Green
-                selectedColor = new Color(0.0000f, 0.7059f, 0.6275f);
+            case "MediumPurple": // Purple
+                selectedColor = new Color(0.6157f, 0.5529f, 0.9451f);
                 break;
             case "MaizeCrayola": // Yellow
                 selectedColor = new Color(0.9529f, 0.7882f, 0.3843f);
                 break;
-            case "FrenchLilac": // Purple
-                selectedColor = new Color(0.5490f, 0.4078f, 0.6510f);
+            case "Champagne": // White
+                selectedColor = new Color(0.9176f, 0.8471f, 0.7451f);
                 break;
 
             default:
