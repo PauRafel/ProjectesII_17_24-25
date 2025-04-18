@@ -176,10 +176,7 @@ public class LevelManager : MonoBehaviour
                 case 49: // Black --> OxfordBlue
                     targetColor = new Color(0.2549f, 0.2745f, 0.2392f);
                     break;
-                case 50: // Black --> OxfordBlue
-                    targetColor = new Color(0.2549f, 0.2745f, 0.2392f);
-                    break;
-
+                
                 default:
                     break;
             }
