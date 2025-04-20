@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement; // Necesario para manejar escenas
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance; // Singleton para acceso global
-    public Color selectedColor = Color.white; // Color por defecto
+    public Color selectedColor = Color.clear; // Color por defecto
 
     private void Awake()
     {
@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject); // Mantener GameManager entre escenas
+            SceneManager.sceneLoaded += OnSceneLoaded; // Detectar cambio de escena
         }
         else
         {
@@ -29,6 +30,22 @@ public class GameManager : MonoBehaviour
     public void SetSelectedColor(Color newColor)
     {
         selectedColor = newColor;
+    }
+
+    public bool IsColorSelected()
+    {
+        return selectedColor != Color.clear;
+    }
+
+    public void ClearSelectedColor()
+    {
+        selectedColor = Color.clear;
+    }
+
+    // Este método se llama automáticamente cuando se carga una escena nueva
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ClearSelectedColor(); // Resetear color al cargar cada nivel
     }
 
     // Método para cargar el siguiente nivel
