@@ -79,7 +79,7 @@ public class ColorSelector : MonoBehaviour
                 selectedColor = new Color(0.3961f, 0.6863f, 1.0000f);
                 break;
 
-            // Paleta de Colores Moderno Elegante:
+            // Paleta de Colores Final:
             case "BlackOlive": // Black
                 selectedColor = new Color(0.2549f, 0.2745f, 0.2392f);
                 break;
