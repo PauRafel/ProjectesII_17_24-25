@@ -83,8 +83,8 @@ public class ColorSelector : MonoBehaviour
             case "BlackOlive": // Black
                 selectedColor = new Color(0.2549f, 0.2745f, 0.2392f);
                 break;
-            case "Coral": // Red
-                selectedColor = new Color(1.0000f, 0.5216f, 0.3216f);
+            case "VividBurgundy": // Red
+                selectedColor = new Color(0.6392f, 0.0431f, 0.2157f);
                 break;
             case "MediumPurple": // Purple
                 selectedColor = new Color(0.6157f, 0.5529f, 0.9451f);
