@@ -106,7 +106,7 @@ public class TutorialManager : MonoBehaviour
                 borderBlinkCoroutine = StartCoroutine(BlinkBorder(tutorialBorders[1]));
                 break;
             case 3:
-                tutorialText3.text = "View the target color here!";
+                tutorialText3.text = "The color of the line and the number of the level indicate the target!";
                 tutorialPanels[3].SetActive(true);
                 tutorialBorders[2].gameObject.SetActive(true);
                 fadeCoroutine = StartCoroutine(FadeTextIn(tutorialText3));

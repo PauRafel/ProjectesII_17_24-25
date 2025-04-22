@@ -17,7 +17,56 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: ae159c8875cd70942b4d69dbf040689e, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: "COMEN\xC7A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: SELECTOR DE NIVELL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: SORTIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Benvingut a Chromatic!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Selecciona un color i pinta els blocs d'un altre color amb ell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "Aquesta \xE9s la paleta! Aplica els colors fent clic a les caselles!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: "El color de la l\xEDnia i del nombre del nivell indica l'objectiu!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "Pinta tots els blocs perqu\xE8 coincideixin amb el color objectiu
+      amb un nombre de passos limitats!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: PAUSA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: 'NIVELL
+
+      COMPLETAT'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: 'HAS FALLAT..
+
+      TORNA-HO A PROVAR!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

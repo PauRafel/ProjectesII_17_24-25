@@ -17,7 +17,55 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: ae159c8875cd70942b4d69dbf040689e, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: COMENZAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: SELECTOR DE NIVEL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: SALIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: "\xA1Bienvenido a Chromatic!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: "Selecciona un color y pinta con \xE9l los bloques de un color diferente"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: "\xA1Esta es la paleta! Aplica los colores haciendo clic en los
+      recuadros"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: El color de la linea y del numero del nivel indican el objetivo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: "\xA1Pinta todos los bloques para que coincidan con el color objetivo
+      con un numero de pasos limitados!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: PAUSA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: 'NIVEL
+
+      COMPLETADO'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: "\xA1FALLASTE!\r\n\xA1INT\xC9NTALO DE NUEVO!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

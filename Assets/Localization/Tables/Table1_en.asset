@@ -17,7 +17,55 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: ae159c8875cd70942b4d69dbf040689e, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1
+    m_Localized: START
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: LEVEL SELECTOR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Welcome to Chromatic!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: Select a color and dye the blocks of a different color with it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: This is the palette! Apply the colors by clicking on the boxes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: The color of the line and the number of the level indicate the target!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Dye all blocks to match the target color within the limited steps!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: 'LEVEL
+
+      COMPLETED'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: 'YOU''VE FAILED..
+
+      TRY AGAIN!'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
