@@ -176,7 +176,52 @@ public class LevelManager : MonoBehaviour
                 case 49: // Black --> OxfordBlue
                     targetColor = new Color(0.2549f, 0.2745f, 0.2392f);
                     break;
-                
+                case 50: // Purple --> MediumPurple
+                    targetColor = new Color(0.6157f, 0.5529f, 0.9451f);
+                    break;
+                case 51: // Yellow --> MaizeCrayola
+                    targetColor = new Color(0.9529f, 0.7882f, 0.3843f);
+                    break;
+                case 52: // Yellow --> MaizeCrayola
+                    targetColor = new Color(0.9529f, 0.7882f, 0.3843f);
+                    break;
+                case 53: // Yellow --> MaizeCrayola
+                    targetColor = new Color(0.9529f, 0.7882f, 0.3843f);
+                    break;
+                case 54: // Purple --> MediumPurple
+                    targetColor = new Color(0.6157f, 0.5529f, 0.9451f);
+                    break;
+                case 55: // Black --> OxfordBlue
+                    targetColor = new Color(0.2549f, 0.2745f, 0.2392f);
+                    break;
+                case 56: // Red --> VividBurgundy
+                    targetColor = new Color(0.6392f, 0.0431f, 0.2157f);
+                    break;
+                case 57: // Purple --> MediumPurple
+                    targetColor = new Color(0.6157f, 0.5529f, 0.9451f);
+                    break;
+                case 58: // Purple --> MediumPurple
+                    targetColor = new Color(0.6157f, 0.5529f, 0.9451f);
+                    break;
+                case 59: // Black --> OxfordBlue
+                    targetColor = new Color(0.2549f, 0.2745f, 0.2392f);
+                    break;
+                case 60: // Yellow --> MaizeCrayola
+                    targetColor = new Color(0.9529f, 0.7882f, 0.3843f);
+                    break;
+                case 61: // Red --> VividBurgundy
+                    targetColor = new Color(0.6392f, 0.0431f, 0.2157f);
+                    break;
+                case 62: // Red --> VividBurgundy
+                    targetColor = new Color(0.6392f, 0.0431f, 0.2157f);
+                    break;
+                case 63: // Black --> OxfordBlue
+                    targetColor = new Color(0.2549f, 0.2745f, 0.2392f);
+                    break;
+                case 64: // Red --> VividBurgundy
+                    targetColor = new Color(0.6392f, 0.0431f, 0.2157f);
+                    break;
+
                 default:
                     break;
             }
