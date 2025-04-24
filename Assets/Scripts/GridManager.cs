@@ -1102,6 +1102,21 @@ public class GridManager : MonoBehaviour
                  };
                 break;
 
+            case "Level_50":
+                levelColors = new Color[]
+                 {
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                 };
+                break;
+
             default:
                 Debug.LogError("Nivel no definido.");
                 break;
