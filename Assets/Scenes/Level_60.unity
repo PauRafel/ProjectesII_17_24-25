@@ -2335,7 +2335,7 @@ PrefabInstance:
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: cellPrefab
       value: 
-      objectReference: {fileID: 5090876870165623962, guid: 2f8c783b00333b248810cc50be6ab00c, type: 3}
+      objectReference: {fileID: 5090876870165623962, guid: 42bea879635f0ac45a6092bfc6866775, type: 3}
     - target: {fileID: 2682982670693529717, guid: 498a6af42588faa408afc959baa1eacd, type: 3}
       propertyPath: maxAttempts
       value: 4
