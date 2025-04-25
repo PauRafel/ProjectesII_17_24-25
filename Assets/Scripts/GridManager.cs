@@ -1117,6 +1117,216 @@ public class GridManager : MonoBehaviour
                  };
                 break;
 
+            case "Level_51":
+                levelColors = new Color[]
+                 {
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f),
+                 };
+                break;
+
+            case "Level_52":
+                levelColors = new Color[]
+                 {
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                 };
+                break;
+
+            case "Level_53":
+                levelColors = new Color[]
+                 {
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                 };
+                break;
+
+            case "Level_54":
+                levelColors = new Color[]
+                 {
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                 };
+                break;
+
+            case "Level_55":
+                levelColors = new Color[]
+                 {
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f),
+                 };
+                break;
+
+            case "Level_56":
+                levelColors = new Color[]
+                 {
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f),
+                 };
+                break;
+
+            case "Level_57":
+                levelColors = new Color[]
+                 {
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                 };
+                break;
+
+            case "Level_58":
+                levelColors = new Color[]
+                 {
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                 };
+                break;
+
+            case "Level_59":
+                levelColors = new Color[]
+                 {
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                 };
+                break;
+
+            case "Level_60":
+                levelColors = new Color[]
+                 {
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f),
+                 };
+                break;
+
+            case "Level_61":
+                levelColors = new Color[]
+                 {
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                 };
+                break;
+
+            case "Level_62":
+                levelColors = new Color[]
+                 {
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                 };
+                break;
+
+            case "Level_63":
+                levelColors = new Color[]
+                 {
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                 };
+                break;
+
+            case "Level_64":
+                levelColors = new Color[]
+                 {
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.2549f, 0.2745f, 0.2392f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.2549f, 0.2745f, 0.2392f),
+                   new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.6392f, 0.0431f, 0.2157f), new Color(0.9529f, 0.7882f, 0.3843f), new Color(0.6157f, 0.5529f, 0.9451f), new Color(0.6392f, 0.0431f, 0.2157f),
+                 };
+                break;
+
             default:
                 Debug.LogError("Nivel no definido.");
                 break;
