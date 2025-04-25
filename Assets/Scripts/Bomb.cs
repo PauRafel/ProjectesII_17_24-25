@@ -12,6 +12,13 @@ public class Bomb : MonoBehaviour
     public AudioClip propagationSound;
     private AudioSource audioSource;
 
+    private Animator animator;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>(); 
+    }
+
     public void Initialize(Vector2Int position, GridManager manager)
     {
         gridPosition = position;
@@ -26,12 +33,15 @@ public class Bomb : MonoBehaviour
         if (exploded) return;
         exploded = true;
 
+        animator.SetTrigger("Explosion");
+
+
         StartCoroutine(PropagateExplosion(colorToUse));
     }
 
     private IEnumerator PropagateExplosion(Color colorToUse)
     {
-        gridMgr.StartPropagation(); // <--- Inicia propagación de bomba
+        gridMgr.StartPropagation();
 
         yield return new WaitForSeconds(0.65f);
 
@@ -68,7 +78,6 @@ public class Bomb : MonoBehaviour
         {
             GridCell currentCell = cellsToProcess.Dequeue();
 
-            // Cambiar color con animación y sonido
             currentCell.ChangeColor(colorToUse);
             processedCells.Add(currentCell);
 
@@ -76,7 +85,6 @@ public class Bomb : MonoBehaviour
             int x = coord.x;
             int y = coord.y;
 
-            // Encadenamiento de bombas
             if (currentCell.bomb != null && !currentCell.bomb.exploded)
             {
                 currentCell.bomb.TriggerExplosion(colorToUse);
@@ -105,7 +113,6 @@ public class Bomb : MonoBehaviour
                 }
             }
 
-            // Sonido progresivo
             if (audioSource != null && propagationSound != null)
             {
                 audioSource.pitch = pitch;
@@ -117,10 +124,9 @@ public class Bomb : MonoBehaviour
             delay = Mathf.Max(0.02f, delay);
             pitch += 0.05f;
         }
-        gridMgr.EndPropagation(); // <--- Termina propagación de bomba
+        gridMgr.EndPropagation(); 
 
-        // Eliminar la bomba tras explotar
         linkedCell.bomb = null;
-        Destroy(gameObject);
+        Destroy(gameObject, 1.0f);
     }
 }
