@@ -2,10 +2,11 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
 
 public class TutorialManager : MonoBehaviour
 {
-    public static bool isTutorialActive = true; // Bloquea la interacción mientras el tutorial está activo
+    public static bool isTutorialActive = false;
 
     public GameObject[] tutorialPanels; // Array con los paneles de cada paso
     public Image[] tutorialBorders; // Array con los bordes de cada panel
