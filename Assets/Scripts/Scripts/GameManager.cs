@@ -1,25 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Necesario para manejar escenas
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; // Singleton para acceso global
-    public Color selectedColor = Color.clear; // Color por defecto
+    public static GameManager Instance;
+    public Color selectedColor = Color.clear;
+
+    private const string LEVEL_PREFIX = "Level_";
+    private const char LEVEL_SEPARATOR = '_';
+    private const int EXPECTED_SCENE_NAME_PARTS = 2;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Mantener GameManager entre escenas
-            SceneManager.sceneLoaded += OnSceneLoaded; // Detectar cambio de escena
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        InitializeSingleton();
     }
 
     public Color GetSelectedColor()
@@ -34,41 +29,161 @@ public class GameManager : MonoBehaviour
 
     public bool IsColorSelected()
     {
-        return selectedColor != Color.clear;
+        return !IsColorClear();
     }
 
     public void ClearSelectedColor()
     {
-        selectedColor = Color.clear;
+        ResetSelectedColor();
     }
 
-    // Este método se llama automáticamente cuando se carga una escena nueva
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        ClearSelectedColor(); // Resetear color al cargar cada nivel
-    }
-
-    // Método para cargar el siguiente nivel
     public void LoadNextLevel()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        string[] parts = currentSceneName.Split('_');
+        string currentSceneName = GetCurrentSceneName();
+        int currentLevelNumber = ExtractLevelNumber(currentSceneName);
 
-        if (parts.Length == 2 && int.TryParse(parts[1], out int levelNumber))
+        if (IsValidLevelNumber(currentLevelNumber))
         {
-            string nextLevelName = $"Level_{levelNumber + 1}";
-            if (Application.CanStreamedLevelBeLoaded(nextLevelName))
-            {
-                SceneManager.LoadScene(nextLevelName);
-            }
-            else
-            {
-                Debug.Log("No hay más niveles disponibles. ¡Juego completado!");
-            }
+            LoadLevel(currentLevelNumber + 1);
         }
         else
         {
-            Debug.LogError("El nombre del nivel actual no sigue el formato esperado.");
+            LogInvalidSceneNameError();
         }
+    }
+
+    private void InitializeSingleton()
+    {
+        if (IsSingletonUninitialized())
+        {
+            SetupSingleton();
+        }
+        else
+        {
+            DestroyDuplicate();
+        }
+    }
+
+    private bool IsSingletonUninitialized()
+    {
+        return Instance == null;
+    }
+
+    private void SetupSingleton()
+    {
+        Instance = this;
+        MakePersistent();
+        RegisterSceneLoadCallback();
+    }
+
+    private void MakePersistent()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void RegisterSceneLoadCallback()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void DestroyDuplicate()
+    {
+        Destroy(gameObject);
+    }
+
+    private bool IsColorClear()
+    {
+        return selectedColor == Color.clear;
+    }
+
+    private void ResetSelectedColor()
+    {
+        selectedColor = Color.clear;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        HandleSceneLoad();
+    }
+
+    private void HandleSceneLoad()
+    {
+        ClearSelectedColor();
+    }
+
+    private string GetCurrentSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
+
+    private int ExtractLevelNumber(string sceneName)
+    {
+        string[] sceneNameParts = SplitSceneName(sceneName);
+
+        if (IsValidSceneNameFormat(sceneNameParts))
+        {
+            return ParseLevelNumber(sceneNameParts[1]);
+        }
+
+        return -1;
+    }
+
+    private string[] SplitSceneName(string sceneName)
+    {
+        return sceneName.Split(LEVEL_SEPARATOR);
+    }
+
+    private bool IsValidSceneNameFormat(string[] parts)
+    {
+        return parts.Length == EXPECTED_SCENE_NAME_PARTS;
+    }
+
+    private int ParseLevelNumber(string levelNumberString)
+    {
+        return int.TryParse(levelNumberString, out int levelNumber) ? levelNumber : -1;
+    }
+
+    private bool IsValidLevelNumber(int levelNumber)
+    {
+        return levelNumber > 0;
+    }
+
+    private void LoadLevel(int levelNumber)
+    {
+        string nextLevelName = BuildLevelName(levelNumber);
+
+        if (CanLoadLevel(nextLevelName))
+        {
+            LoadScene(nextLevelName);
+        }
+        else
+        {
+            LogGameCompletedMessage();
+        }
+    }
+
+    private string BuildLevelName(int levelNumber)
+    {
+        return $"{LEVEL_PREFIX}{levelNumber}";
+    }
+
+    private bool CanLoadLevel(string levelName)
+    {
+        return Application.CanStreamedLevelBeLoaded(levelName);
+    }
+
+    private void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    private void LogGameCompletedMessage()
+    {
+        Debug.Log("No hay más niveles disponibles. ¡Juego completado!");
+    }
+
+    private void LogInvalidSceneNameError()
+    {
+        Debug.LogError("El nombre del nivel actual no sigue el formato esperado.");
     }
 }

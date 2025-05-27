@@ -3,30 +3,75 @@ using UnityEngine.UI;
 
 public class ButtonSoundHandler : MonoBehaviour
 {
-    public AudioClip clickSound; // Sonido que se reproducirá en los botones
+    public AudioClip clickSound;
+
+    private const float DEFAULT_VOLUME = 0.7f;
+
     private AudioSource audioSource;
 
-    void Start()
+    private void Start()
     {
-        // Buscar o agregar un AudioSource en el objeto
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false; // No queremos que suene al inicio
-        audioSource.clip = clickSound;
-        audioSource.volume = 0.7f; // Ajustar volumen si es necesario
+        SetupAudioSource();
+        AttachToButton();
+    }
 
-        // Asegurar que el botón tenga una función asignada
-        Button button = GetComponent<Button>();
-        if (button != null)
+    private void SetupAudioSource()
+    {
+        audioSource = CreateAudioSource();
+        ConfigureAudioSource();
+    }
+
+    private AudioSource CreateAudioSource()
+    {
+        return gameObject.AddComponent<AudioSource>();
+    }
+
+    private void ConfigureAudioSource()
+    {
+        audioSource.playOnAwake = false;
+        audioSource.clip = clickSound;
+        audioSource.volume = DEFAULT_VOLUME;
+    }
+
+    private void AttachToButton()
+    {
+        Button button = GetButtonComponent();
+        if (IsButtonValid(button))
         {
-            button.onClick.AddListener(PlaySound);
+            RegisterClickListener(button);
         }
+    }
+
+    private Button GetButtonComponent()
+    {
+        return GetComponent<Button>();
+    }
+
+    private bool IsButtonValid(Button button)
+    {
+        return button != null;
+    }
+
+    private void RegisterClickListener(Button button)
+    {
+        button.onClick.AddListener(PlaySound);
     }
 
     private void PlaySound()
     {
-        if (clickSound != null)
+        if (HasValidSound())
         {
-            audioSource.PlayOneShot(clickSound);
+            PlayClickSound();
         }
+    }
+
+    private bool HasValidSound()
+    {
+        return clickSound != null;
+    }
+
+    private void PlayClickSound()
+    {
+        audioSource.PlayOneShot(clickSound);
     }
 }

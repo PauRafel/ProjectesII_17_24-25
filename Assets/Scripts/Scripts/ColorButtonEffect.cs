@@ -4,76 +4,215 @@ using UnityEngine.UI;
 
 public class ColorButtonEffect : MonoBehaviour
 {
+    private const float SCALE_MULTIPLIER = 1.15f;
+    private const float PULSE_SPEED = 2f;
+    private const float MIN_OUTLINE_ALPHA = 0.3f;
+    private const float MAX_OUTLINE_ALPHA = 0.8f;
+    private const float OUTLINE_DISTANCE = 5f;
+
+    private static readonly Color OUTLINE_COLOR = new Color(1f, 1f, 0f, 1f);
+    private static readonly Vector2 OUTLINE_EFFECT_DISTANCE = new Vector2(OUTLINE_DISTANCE, -OUTLINE_DISTANCE);
+
     private Vector3 originalScale;
     private Outline outlineEffect;
     private Button button;
-    private static ColorButtonEffect selectedButton; // Referencia al botón seleccionado
     private Coroutine pulseCoroutine;
 
-    void Start()
+    private static ColorButtonEffect selectedButton;
+
+    private void Start()
+    {
+        InitializeComponents();
+        SetupOutlineEffect();
+        RegisterButtonCallback();
+    }
+
+    private void InitializeComponents()
+    {
+        StoreOriginalScale();
+        GetComponentReferences();
+        EnsureOutlineExists();
+    }
+
+    private void StoreOriginalScale()
     {
         originalScale = transform.localScale;
+    }
+
+    private void GetComponentReferences()
+    {
         outlineEffect = GetComponent<Outline>();
         button = GetComponent<Button>();
+    }
 
-        if (outlineEffect == null)
+    private void EnsureOutlineExists()
+    {
+        if (IsOutlineEffectMissing())
         {
-            outlineEffect = gameObject.AddComponent<Outline>(); // Agrega un borde si no tiene
+            CreateOutlineEffect();
         }
+    }
 
-        outlineEffect.effectColor = new Color(1f, 1f, 0f, 1f); // Amarillo con algo de transparencia
-        outlineEffect.effectDistance = new Vector2(5, -5); // Tamaño del brillo
-        outlineEffect.enabled = false; // Desactivado por defecto
+    private bool IsOutlineEffectMissing()
+    {
+        return outlineEffect == null;
+    }
 
+    private void CreateOutlineEffect()
+    {
+        outlineEffect = gameObject.AddComponent<Outline>();
+    }
+
+    private void SetupOutlineEffect()
+    {
+        ConfigureOutlineAppearance();
+        DisableOutlineByDefault();
+    }
+
+    private void ConfigureOutlineAppearance()
+    {
+        outlineEffect.effectColor = OUTLINE_COLOR;
+        outlineEffect.effectDistance = OUTLINE_EFFECT_DISTANCE;
+    }
+
+    private void DisableOutlineByDefault()
+    {
+        outlineEffect.enabled = false;
+    }
+
+    private void RegisterButtonCallback()
+    {
         button.onClick.AddListener(SelectButton);
     }
 
     private void SelectButton()
     {
-        if (selectedButton != null)
+        DeselectPreviousButton();
+        SetAsSelectedButton();
+        ApplySelectionEffects();
+        StartPulseAnimation();
+    }
+
+    private void DeselectPreviousButton()
+    {
+        if (HasSelectedButton())
         {
             selectedButton.ResetButton();
         }
+    }
 
+    private bool HasSelectedButton()
+    {
+        return selectedButton != null;
+    }
+
+    private void SetAsSelectedButton()
+    {
         selectedButton = this;
-        transform.localScale = originalScale * 1.15f; // Aumenta el tamaño un 20%
-        outlineEffect.enabled = true; // Activa el brillo
+    }
 
-        // Iniciar animación de parpadeo y pulso
-        if (pulseCoroutine != null)
+    private void ApplySelectionEffects()
+    {
+        ScaleButton();
+        EnableOutline();
+    }
+
+    private void ScaleButton()
+    {
+        transform.localScale = CalculateScaledSize();
+    }
+
+    private Vector3 CalculateScaledSize()
+    {
+        return originalScale * SCALE_MULTIPLIER;
+    }
+
+    private void EnableOutline()
+    {
+        outlineEffect.enabled = true;
+    }
+
+    private void StartPulseAnimation()
+    {
+        StopCurrentPulse();
+        pulseCoroutine = StartCoroutine(PulseEffect());
+    }
+
+    private void StopCurrentPulse()
+    {
+        if (IsPulseActive())
         {
             StopCoroutine(pulseCoroutine);
         }
-        pulseCoroutine = StartCoroutine(PulseEffect());
+    }
+
+    private bool IsPulseActive()
+    {
+        return pulseCoroutine != null;
     }
 
     private void ResetButton()
     {
-        transform.localScale = originalScale; // Restablece el tamaño original
-        outlineEffect.enabled = false; // Desactiva el brillo
+        RestoreOriginalScale();
+        DisableOutline();
+        StopPulseEffect();
+    }
 
-        if (pulseCoroutine != null)
+    private void RestoreOriginalScale()
+    {
+        transform.localScale = originalScale;
+    }
+
+    private void DisableOutline()
+    {
+        outlineEffect.enabled = false;
+    }
+
+    private void StopPulseEffect()
+    {
+        if (IsPulseActive())
         {
             StopCoroutine(pulseCoroutine);
-            pulseCoroutine = null;
+            ClearPulseReference();
         }
+    }
+
+    private void ClearPulseReference()
+    {
+        pulseCoroutine = null;
     }
 
     private IEnumerator PulseEffect()
     {
         while (true)
         {
-            // Animación de parpadeo del borde
-            for (float t = 0; t <= 1; t += Time.deltaTime * 2)
-            {
-                outlineEffect.effectColor = new Color(1f, 1f, 0f, Mathf.Lerp(0.3f, 0.8f, t));
-                yield return null;
-            }
-            for (float t = 0; t <= 1; t += Time.deltaTime * 2)
-            {
-                outlineEffect.effectColor = new Color(1f, 1f, 0f, Mathf.Lerp(0.8f, 0.3f, t));
-                yield return null;
-            }
+            yield return FadeOutlineUp();
+            yield return FadeOutlineDown();
         }
+    }
+
+    private IEnumerator FadeOutlineUp()
+    {
+        return FadeOutline(MIN_OUTLINE_ALPHA, MAX_OUTLINE_ALPHA);
+    }
+
+    private IEnumerator FadeOutlineDown()
+    {
+        return FadeOutline(MAX_OUTLINE_ALPHA, MIN_OUTLINE_ALPHA);
+    }
+
+    private IEnumerator FadeOutline(float startAlpha, float endAlpha)
+    {
+        for (float t = 0; t <= 1; t += Time.deltaTime * PULSE_SPEED)
+        {
+            float currentAlpha = Mathf.Lerp(startAlpha, endAlpha, t);
+            UpdateOutlineAlpha(currentAlpha);
+            yield return null;
+        }
+    }
+
+    private void UpdateOutlineAlpha(float alpha)
+    {
+        outlineEffect.effectColor = new Color(1f, 1f, 0f, alpha);
     }
 }
