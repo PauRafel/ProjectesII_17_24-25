@@ -4,30 +4,44 @@ using UnityEngine;
 
 public class GridCell : MonoBehaviour
 {
-    public Color cellColor = Color.white; // Color inicial
-    private SpriteRenderer spriteRenderer;
-
-    private const float neighborDetectionDistance = 0.5f;
-
-    private AudioSource audioSource;
+    [Header("Cell Configuration")]
+    public Color cellColor = Color.white;
     public AudioClip propagationSound;
 
+    [Header("Connected Components")]
     public Portal linkedPortal;
+    public Bomb bomb;
 
-    public Bomb bomb;  // Nuevo: referencia a una bomba ubicada en esta celda (si la hay)
+    private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
+
+    private const float NEIGHBOR_DETECTION_DISTANCE = 0.5f;
+    private const float CELL_SCALE_MULTIPLIER = 1.25f;
+    private const float VICTORY_SCALE_MULTIPLIER = 1.2f;
+    private const float ANIMATION_DURATION = 0.17f;
+    private const float VICTORY_ANIMATION_DURATION = 0.3f;
+    private const float INITIAL_DELAY = 0.2f;
+    private const float DELAY_MULTIPLIER = 0.88f;
+    private const float MIN_DELAY = 0.02f;
+    private const float PITCH_INCREMENT = 0.05f;
+    private const float MAX_PITCH = 100.0f;
+    private const float INITIAL_PITCH = 1.0f;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        audioSource = gameObject.AddComponent<AudioSource>(); // Agrega un AudioSource dinámicamente
+        InitializeComponents();
+        ApplyInitialColor();
+    }
 
-        if (spriteRenderer == null)
+    void OnMouseDown()
+    {
+        if (ShouldIgnoreInput()) return;
+
+        GridManager gridManager = FindObjectOfType<GridManager>();
+        if (CanProcessClick(gridManager))
         {
-            Debug.LogError($"No se encontró SpriteRenderer en {name}");
-            return;
+            ProcessCellClick(gridManager);
         }
-
-        spriteRenderer.color = cellColor; // Aplicar el color inicial
     }
 
     public void SetColor(Color newColor)
@@ -36,178 +50,11 @@ public class GridCell : MonoBehaviour
         spriteRenderer.color = newColor;
     }
 
-    void OnMouseDown()
-    {
-        if (TutorialManager.isTutorialActive) return;
-
-        if (!GameManager.Instance.IsColorSelected())
-        {
-            return;
-        }
-
-        // Verificar si quedan intentos
-        GridManager gridManager = FindObjectOfType<GridManager>();
-        if (gridManager != null && gridManager.remainingAttempts > 0)
-        {
-            // Obtener el color seleccionado del GameManager
-            Color selectedColor = GameManager.Instance.GetSelectedColor();
-
-            // Si ya es del color seleccionado, no hacemos nada
-            if (cellColor == selectedColor)
-            {
-                return;
-            }
-
-            // Resta un intento
-            gridManager.UseAttempt();
-
-            // Comienza la propagación con retraso
-            StartCoroutine(PropagateColorGradually(selectedColor));
-        }
-    }
-
     public void ChangeColor(Color newColor)
     {
-        cellColor = newColor;
-
-        // Asignar el color una sola vez usando spriteRenderer, que ya tienes cacheado
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = cellColor;
-        }
-
-        // Notificar al portal si hay uno
-        if (linkedPortal != null)
-        {
-            linkedPortal.OnCellColorChanged(newColor);
-        }
-
-        // Ejecutar animación de escala
+        UpdateCellColor(newColor);
+        NotifyLinkedPortal(newColor);
         StartCoroutine(AnimateCell());
-    }
-
-
-    private IEnumerator AnimateCell()
-    {
-        Vector3 originalScale = transform.localScale;
-        Vector3 enlargedScale = originalScale * 1.25f; // Agranda la celda un 20%
-
-        float duration = 0.17f; // Duración de la animación
-        float elapsedTime = 0f;
-
-        // Expandir
-        while (elapsedTime < duration)
-        {
-            transform.localScale = Vector3.Lerp(originalScale, enlargedScale, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.localScale = enlargedScale; // Asegurar que llegue al tamaño final
-
-        elapsedTime = 0f;
-
-        // Volver a tamaño original
-        while (elapsedTime < duration)
-        {
-            transform.localScale = Vector3.Lerp(enlargedScale, originalScale, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.localScale = originalScale; // Asegurar que vuelva al tamaño original
-    }
-
-    public IEnumerator PropagateColorGradually(Color newColor)
-    {
-        GridManager gridManager = FindObjectOfType<GridManager>();
-        if (gridManager != null)
-        {
-            gridManager.StartPropagation(); // Iniciar propagación
-        }
-
-        Queue<GridCell> cellsToProcess = new Queue<GridCell>();
-        HashSet<GridCell> processedCells = new HashSet<GridCell>();
-        cellsToProcess.Enqueue(this);
-
-        Color originalColor = cellColor;
-        float delay = 0.2f; // Tiempo inicial de espera
-        float pitch = 1.0f; // Pitch inicial del sonido
-
-        try
-        {
-            while (cellsToProcess.Count > 0)
-            {
-                GridCell currentCell = cellsToProcess.Dequeue();
-
-                if (currentCell.cellColor != originalColor || processedCells.Contains(currentCell))
-                {
-                    continue;
-                }
-
-                currentCell.ChangeColor(newColor);
-                processedCells.Add(currentCell);
-
-                if (currentCell.linkedPortal != null)
-                {
-                    currentCell.linkedPortal.OnCellColorChanged(newColor);
-                }
-
-                Vector2Int coord = currentCell.GetCellCoordinates();
-                int x = coord.x;
-                int y = coord.y;
-
-                // Arriba
-                if (gridManager.IsWithinBounds(x, y + 1) && gridManager.gridCells[x, y + 1].bomb != null)
-                    gridManager.gridCells[x, y + 1].bomb.TriggerExplosion(newColor);
-
-                // Abajo
-                if (gridManager.IsWithinBounds(x, y - 1) && gridManager.gridCells[x, y - 1].bomb != null)
-                    gridManager.gridCells[x, y - 1].bomb.TriggerExplosion(newColor);
-
-                // Izquierda
-                if (gridManager.IsWithinBounds(x - 1, y) && gridManager.gridCells[x - 1, y].bomb != null)
-                    gridManager.gridCells[x - 1, y].bomb.TriggerExplosion(newColor);
-
-                // Derecha
-                if (gridManager.IsWithinBounds(x + 1, y) && gridManager.gridCells[x + 1, y].bomb != null)
-                    gridManager.gridCells[x + 1, y].bomb.TriggerExplosion(newColor);
-
-
-
-                // **Reproducir sonido con tono progresivo**
-                if (audioSource != null && propagationSound != null)
-                {
-                    audioSource.pitch = pitch; // Aumentar tono
-                    audioSource.PlayOneShot(propagationSound);
-                }
-
-                foreach (GridCell neighbor in GetNeighbors(currentCell))
-                {
-                    if (neighbor.cellColor == originalColor && !processedCells.Contains(neighbor))
-                    {
-                        cellsToProcess.Enqueue(neighbor);
-                    }
-                }
-
-                yield return new WaitForSeconds(delay);
-
-                // **Aceleración de propagación**
-                delay *= 0.88f; // Disminuye el delay en un 12%
-                delay = Mathf.Max(0.02f, delay); // Evita que sea menor a 0.02s
-
-                // **Aumentar tono progresivamente**
-                pitch += 0.05f; // Sube el tono en cada celda
-                pitch = Mathf.Min(100.0f, pitch); // Limita el pitch máximo
-            }
-        }
-        finally
-        {
-            if (gridManager != null)
-            {
-                gridManager.EndPropagation(); // Finalizar propagación
-            }
-        }
     }
 
     public Vector2Int GetCellCoordinates()
@@ -220,23 +67,252 @@ public class GridCell : MonoBehaviour
 
     public Color GetCurrentColor()
     {
-        // Devuelve el color actual de la celda (por ejemplo, del SpriteRenderer o de una variable interna)
         return cellColor;
     }
 
-    List<GridCell> GetNeighbors(GridCell cell)
+    public IEnumerator PropagateColorGradually(Color newColor)
+    {
+        GridManager gridManager = FindObjectOfType<GridManager>();
+        if (gridManager != null)
+        {
+            gridManager.StartPropagation();
+        }
+
+        PropagationData propagationData = InitializePropagationData(newColor);
+
+        try
+        {
+            yield return StartCoroutine(ExecutePropagation(propagationData, gridManager));
+        }
+        finally
+        {
+            if (gridManager != null)
+            {
+                gridManager.EndPropagation();
+            }
+        }
+    }
+
+    public IEnumerator AnimateVictoryEffect()
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 targetScale = originalScale * VICTORY_SCALE_MULTIPLIER;
+
+        yield return StartCoroutine(ScaleToTarget(originalScale, targetScale, VICTORY_ANIMATION_DURATION));
+        yield return StartCoroutine(ScaleToTarget(targetScale, originalScale, VICTORY_ANIMATION_DURATION));
+    }
+
+    private void InitializeComponents()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+
+        if (spriteRenderer == null)
+        {
+            Debug.LogError($"No se encontró SpriteRenderer en {name}");
+        }
+    }
+
+    private void ApplyInitialColor()
+    {
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = cellColor;
+        }
+    }
+
+    private bool ShouldIgnoreInput()
+    {
+        return TutorialManager.isTutorialActive || !GameManager.Instance.IsColorSelected();
+    }
+
+    private bool CanProcessClick(GridManager gridManager)
+    {
+        return gridManager != null && gridManager.remainingAttempts > 0;
+    }
+
+    private void ProcessCellClick(GridManager gridManager)
+    {
+        Color selectedColor = GameManager.Instance.GetSelectedColor();
+
+        if (IsAlreadySelectedColor(selectedColor)) return;
+
+        gridManager.UseAttempt();
+        StartCoroutine(PropagateColorGradually(selectedColor));
+    }
+
+    private bool IsAlreadySelectedColor(Color selectedColor)
+    {
+        return cellColor == selectedColor;
+    }
+
+    private void UpdateCellColor(Color newColor)
+    {
+        cellColor = newColor;
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = cellColor;
+        }
+    }
+
+    private void NotifyLinkedPortal(Color newColor)
+    {
+        if (linkedPortal != null)
+        {
+            linkedPortal.OnCellColorChanged(newColor);
+        }
+    }
+
+    private IEnumerator AnimateCell()
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 enlargedScale = originalScale * CELL_SCALE_MULTIPLIER;
+
+        yield return StartCoroutine(ScaleToTarget(originalScale, enlargedScale, ANIMATION_DURATION));
+        yield return StartCoroutine(ScaleToTarget(enlargedScale, originalScale, ANIMATION_DURATION));
+    }
+
+    private IEnumerator ScaleToTarget(Vector3 fromScale, Vector3 toScale, float duration)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float progress = elapsedTime / duration;
+            transform.localScale = Vector3.Lerp(fromScale, toScale, progress);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localScale = toScale;
+    }
+
+    private PropagationData InitializePropagationData(Color newColor)
+    {
+        return new PropagationData
+        {
+            cellsToProcess = new Queue<GridCell>(),
+            processedCells = new HashSet<GridCell>(),
+            originalColor = cellColor,
+            newColor = newColor,
+            delay = INITIAL_DELAY,
+            pitch = INITIAL_PITCH
+        };
+    }
+
+    private IEnumerator ExecutePropagation(PropagationData data, GridManager gridManager)
+    {
+        data.cellsToProcess.Enqueue(this);
+
+        while (data.cellsToProcess.Count > 0)
+        {
+            GridCell currentCell = data.cellsToProcess.Dequeue();
+
+            if (ShouldSkipCell(currentCell, data)) continue;
+
+            ProcessCurrentCell(currentCell, data, gridManager);
+            QueueNeighboringCells(currentCell, data);
+
+            yield return new WaitForSeconds(data.delay);
+            UpdatePropagationParameters(data);
+        }
+    }
+
+    private bool ShouldSkipCell(GridCell currentCell, PropagationData data)
+    {
+        return currentCell.cellColor != data.originalColor || data.processedCells.Contains(currentCell);
+    }
+
+    private void ProcessCurrentCell(GridCell currentCell, PropagationData data, GridManager gridManager)
+    {
+        currentCell.ChangeColor(data.newColor);
+        data.processedCells.Add(currentCell);
+
+        if (currentCell.linkedPortal != null)
+        {
+            currentCell.linkedPortal.OnCellColorChanged(data.newColor);
+        }
+
+        TriggerBombsInAdjacentCells(currentCell, data.newColor, gridManager);
+        PlayPropagationSound(data.pitch);
+    }
+
+    private void TriggerBombsInAdjacentCells(GridCell currentCell, Color newColor, GridManager gridManager)
+    {
+        Vector2Int coord = currentCell.GetCellCoordinates();
+        int x = coord.x;
+        int y = coord.y;
+
+        Vector2Int[] directions = {
+            new Vector2Int(0, 1),   // Arriba
+            new Vector2Int(0, -1),  // Abajo
+            new Vector2Int(-1, 0),  // Izquierda
+            new Vector2Int(1, 0)    // Derecha
+        };
+
+        foreach (Vector2Int direction in directions)
+        {
+            int newX = x + direction.x;
+            int newY = y + direction.y;
+
+            if (gridManager.IsWithinBounds(newX, newY))
+            {
+                Bomb adjacentBomb = gridManager.gridCells[newX, newY].bomb;
+                if (adjacentBomb != null)
+                {
+                    adjacentBomb.TriggerExplosion(newColor);
+                }
+            }
+        }
+    }
+
+    private void PlayPropagationSound(float pitch)
+    {
+        if (audioSource != null && propagationSound != null)
+        {
+            audioSource.pitch = pitch;
+            audioSource.PlayOneShot(propagationSound);
+        }
+    }
+
+    private void QueueNeighboringCells(GridCell currentCell, PropagationData data)
+    {
+        foreach (GridCell neighbor in GetNeighbors(currentCell))
+        {
+            if (ShouldQueueNeighbor(neighbor, data))
+            {
+                data.cellsToProcess.Enqueue(neighbor);
+            }
+        }
+    }
+
+    private bool ShouldQueueNeighbor(GridCell neighbor, PropagationData data)
+    {
+        return neighbor.cellColor == data.originalColor && !data.processedCells.Contains(neighbor);
+    }
+
+    private void UpdatePropagationParameters(PropagationData data)
+    {
+        data.delay *= DELAY_MULTIPLIER;
+        data.delay = Mathf.Max(MIN_DELAY, data.delay);
+
+        data.pitch += PITCH_INCREMENT;
+        data.pitch = Mathf.Min(MAX_PITCH, data.pitch);
+    }
+
+    private List<GridCell> GetNeighbors(GridCell cell)
     {
         List<GridCell> neighbors = new List<GridCell>();
-
-        // Buscar vecinos por proximidad
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(cell.transform.position, neighborDetectionDistance, LayerMask.GetMask("GridCell"));
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(
+            cell.transform.position,
+            NEIGHBOR_DETECTION_DISTANCE,
+            LayerMask.GetMask("GridCell")
+        );
 
         foreach (Collider2D collider in colliders)
         {
             GridCell neighbor = collider.GetComponent<GridCell>();
-
-            // Evitar agregar la celda actual como vecina
-            if (neighbor != null && neighbor != this)
+            if (IsValidNeighbor(neighbor))
             {
                 neighbors.Add(neighbor);
             }
@@ -245,32 +321,18 @@ public class GridCell : MonoBehaviour
         return neighbors;
     }
 
-    public IEnumerator AnimateVictoryEffect()
+    private bool IsValidNeighbor(GridCell neighbor)
     {
-        Vector3 originalScale = transform.localScale;
-        Vector3 targetScale = originalScale * 1.2f; // Aumenta un 20% el tamaño
-
-        float duration = 0.3f; // Duración de la animación
-        float elapsed = 0f;
-
-        // Aumentar tamaño
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(originalScale, targetScale, elapsed / duration);
-            yield return null;
-        }
-
-        elapsed = 0f;
-
-        // Volver al tamaño normal
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(targetScale, originalScale, elapsed / duration);
-            yield return null;
-        }
+        return neighbor != null && neighbor != this;
     }
 
-
+    private class PropagationData
+    {
+        public Queue<GridCell> cellsToProcess;
+        public HashSet<GridCell> processedCells;
+        public Color originalColor;
+        public Color newColor;
+        public float delay;
+        public float pitch;
+    }
 }

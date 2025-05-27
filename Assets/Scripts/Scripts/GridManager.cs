@@ -9,139 +9,142 @@ using Unity.VisualScripting;
 
 public class GridManager : MonoBehaviour
 {
+    [Header("Grid Configuration")]
     public GameObject cellPrefab;
-
-    [Tooltip("Coordenadas (x,y) de las celdas que tendrán Portales en este nivel (solo niveles 17-32).")]
-    public List<Vector2Int> portalPositions;
-    public GameObject portalPrefab;
-    public GridCell[,] gridCells;
-
-    public GameObject bombPrefab;                // Prefab de la Bomba (asignado vía Inspector)
-    public List<Vector2Int> bombPositions;       // Lista de coordenadas (columna,fila) donde colocar bombas en este nivel
-
     public int rows = 9;
     public int columns = 7;
     public float cellSpacing = -0.3f;
-    public Color[] levelColors; // Colores personalizados para el nivel actual
 
-    public int maxAttempts = 10; // Número máximo de intentos por nivel
+    [Header("Portal System")]
+    [Tooltip("Coordenadas (x,y) de las celdas que tendrán Portales en este nivel (solo niveles 17-64).")]
+    public List<Vector2Int> portalPositions;
+    public GameObject portalPrefab;
+
+    [Header("Bomb System")]
+    public GameObject bombPrefab;
+    public List<Vector2Int> bombPositions;
+
+    [Header("Game Management")]
+    public int maxAttempts = 10;
+    public TextMeshProUGUI attemptsText;
+    public GameObject levelFailedPanel;
+
+    [Header("Visual")]
+    public Color[] levelColors;
+
+    public GridCell[,] gridCells;
     public int remainingAttempts;
-    public TextMeshProUGUI attemptsText; // Referencia al texto del contador de intentos
-    private int activePropagations = 0; // Contador de propagaciones activas
+    private int activePropagations = 0;
     private bool isCheckingRestart = false;
-    public bool finishedPropagations;
-    public GameObject levelFailedPanel; // Panel de Derrota
+    private bool finishedPropagations;
+
+    private const float GRID_OFFSET_X = 1.06f;
+    private const float GRID_OFFSET_Y = 1.74f;
+    private const float ANIMATION_DURATION = 1.0f;
+    private const float CELL_SCALE = 0.06f;
+    private const float FAIL_PANEL_DELAY = 0.5f;
 
     void Start()
     {
-        string levelName = SceneManager.GetActiveScene().name; // Obtiene el nombre de la escena activa
-        SetLevelColors(levelName); // Asigna los colores en función del nombre del nivel
-        GenerateGrid(); // Genera la cuadrícula
+        InitializeGame();
+    }
 
-        remainingAttempts = maxAttempts; // Inicializar los intentos restantes
-        UpdateAttemptsUI(); // Actualizar el texto del UI
-
+    private void InitializeGame()
+    {
+        string levelName = SceneManager.GetActiveScene().name;
+        SetLevelColors(levelName);
+        GenerateGrid();
+        InitializeAttempts();
         InstantiatePortals();
+        InstantiateBombs();
+    }
 
+    private void InitializeAttempts()
+    {
+        remainingAttempts = maxAttempts;
+        UpdateAttemptsUI();
+    }
+
+    private void InstantiateBombs()
+    {
         foreach (Vector2Int bombPos in bombPositions)
         {
-            // Instanciar el prefab de Bomba en la posición correspondiente del mundo
-            GridCell cell = gridCells[bombPos.x, bombPos.y];
-            Vector3 worldPosition = cell.transform.position;  // posición mundial de la celda
-            Bomb newBomb = Instantiate(bombPrefab, worldPosition, Quaternion.identity).GetComponent<Bomb>();
-            // Inicializar la bomba con su posición de grid y referencia al GridManager
-            newBomb.Initialize(bombPos, this);
-            // Vincular la bomba a la celda en la que está colocada
-            cell.bomb = newBomb;
+            CreateBombAtPosition(bombPos);
         }
     }
+
+    private void CreateBombAtPosition(Vector2Int position)
+    {
+        GridCell cell = gridCells[position.x, position.y];
+        Vector3 worldPosition = cell.transform.position;
+        Bomb newBomb = Instantiate(bombPrefab, worldPosition, Quaternion.identity).GetComponent<Bomb>();
+        newBomb.Initialize(position, this);
+        cell.bomb = newBomb;
+    }
+
     public void UseAttempt()
     {
-        if (remainingAttempts > 0)
-        {
-            remainingAttempts--;
-            UpdateAttemptsUI();
+        if (remainingAttempts <= 0) return;
 
-            if (remainingAttempts <= 0)
-            {
-                StartCoroutine(WaitForPropagations());
-            }
+        remainingAttempts--;
+        UpdateAttemptsUI();
+
+        if (remainingAttempts <= 0)
+        {
+            StartCoroutine(WaitForPropagations());
         }
     }
 
     public GridCell GetCellAt(int x, int y)
     {
-        if (x < 0 || x >= columns || y < 0 || y >= rows)
-        {
-            return null;
-        }
-
+        if (!IsWithinBounds(x, y)) return null;
         return gridCells[x, y];
-    }
-
-    private void InstantiatePortals()
-    {
-        // Verificar si este nivel requiere portales (por ejemplo, nivel 17-32)
-        // Si tienes una variable de nivel actual, podrías hacer algo como:
-        // if (currentLevel < 17 || currentLevel > 32) return;
-        // (Asumiendo que portalPositions está vacía en niveles que no aplican, también valdría con comprobar la lista vacía)
-
-        if (portalPositions == null || portalPositions.Count == 0)
-            return; // No hay portales para instanciar en este nivel
-
-        foreach (Vector2Int coord in portalPositions)
-        {
-            // Obtener la celda de esa coordenada (asumiendo que tienes un método o matriz de celdas)
-            GridCell cell = GetCellAt(coord.x, coord.y);
-            if (cell == null)
-            {
-                Debug.LogWarning("Coordenada de Portal fuera de rango: " + coord);
-                continue;
-            }
-
-            // Instanciar el prefab del Portal sobre la posición de la celda
-            Vector3 worldPos = cell.transform.position;
-            GameObject portalGO = Instantiate(portalPrefab, worldPos, Quaternion.identity);
-            // Asegurar que el Portal aparece por encima de la celda (se puede ajustar la posición z o el sorting layer del sprite)
-            portalGO.transform.SetParent(this.transform);  // opcional: hacer hijo del GridManager para organización
-
-            // Configurar el Portal instanciado
-            Portal portal = portalGO.GetComponent<Portal>();
-            if (portal != null)
-            {
-                portal.linkedCell = cell;       // Vincular el Portal con su celda
-                // Registrar en la celda que tiene un portal (para notificar cambios de color)
-                cell.linkedPortal = portal;
-            }
-            else
-            {
-                Debug.LogError("El prefab de Portal no tiene el script Portal adjunto.");
-            }
-        }
     }
 
     public GridCell GetCell(int x, int y)
     {
-        string cellName = $"Cell_{x}_{y}";
+        string cellName = GetCellName(x, y);
         Transform cellTransform = transform.Find(cellName);
-
-        if (cellTransform != null)
-        {
-            return cellTransform.GetComponent<GridCell>();
-        }
-        return null;
+        return cellTransform?.GetComponent<GridCell>();
     }
 
-
-    private IEnumerator WaitForPropagations()
+    private string GetCellName(int x, int y)
     {
-        finishedPropagations = false;
-        while (activePropagations > 0)
+        return $"Cell_{x}_{y}";
+    }
+
+    private void InstantiatePortals()
+    {
+        if (portalPositions == null || portalPositions.Count == 0) return;
+
+        foreach (Vector2Int coord in portalPositions)
         {
-            yield return new WaitForSeconds(0.5f);
+            CreatePortalAtPosition(coord);
         }
-        finishedPropagations = true;
-        Debug.Log("Todas las propagaciones han terminado.");
+    }
+
+    private void CreatePortalAtPosition(Vector2Int position)
+    {
+        GridCell cell = GetCellAt(position.x, position.y);
+        if (cell == null)
+        {
+            Debug.LogWarning($"Coordenada de Portal fuera de rango: {position}");
+            return;
+        }
+
+        GameObject portalGO = Instantiate(portalPrefab, cell.transform.position, Quaternion.identity);
+        portalGO.transform.SetParent(this.transform);
+
+        Portal portal = portalGO.GetComponent<Portal>();
+        if (portal != null)
+        {
+            portal.linkedCell = cell;
+            cell.linkedPortal = portal;
+        }
+        else
+        {
+            Debug.LogError("El prefab de Portal no tiene el script Portal adjunto.");
+        }
     }
 
     public void StartPropagation()
@@ -168,22 +171,128 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    IEnumerator AnimateCellsAppearance(List<GameObject> cells)
+    private IEnumerator WaitForPropagations()
     {
-        float totalDuration = 1.0f; // Duración total de la animación
-        float delayBetweenCells = totalDuration / cells.Count; // Tiempo entre cada celda
+        finishedPropagations = false;
+        while (activePropagations > 0)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        finishedPropagations = true;
+        Debug.Log("Todas las propagaciones han terminado.");
+    }
+
+    private void GenerateGrid()
+    {
+        gridCells = new GridCell[columns, rows];
+
+        if (!ValidateLevelColors()) return;
+
+        List<GameObject> cells = CreateCells();
+        cells = ShuffleCells(cells);
+        StartCoroutine(AnimateCellsAppearance(cells));
+    }
+
+    private bool ValidateLevelColors()
+    {
+        if (levelColors == null || levelColors.Length != rows * columns)
+        {
+            Debug.LogError("El array de colores no coincide con la cantidad de celdas.");
+            return false;
+        }
+        return true;
+    }
+
+    private List<GameObject> CreateCells()
+    {
+        List<GameObject> cells = new List<GameObject>();
+        float offsetX = (columns - 1) / 2f;
+        float offsetY = (rows - 1) / 2f;
+
+        for (int y = 0; y < rows; y++)
+        {
+            for (int x = 0; x < columns; x++)
+            {
+                GameObject cell = CreateCell(x, y, offsetX, offsetY);
+                cells.Add(cell);
+            }
+        }
+        return cells;
+    }
+
+    private GameObject CreateCell(int x, int y, float offsetX, float offsetY)
+    {
+        Vector3 position = CalculateCellPosition(x, y, offsetX, offsetY);
+        GameObject cell = Instantiate(cellPrefab, position, Quaternion.identity);
+
+        ConfigureCell(cell, x, y);
+        AssignCellColor(cell, x, y);
+
+        cell.transform.localScale = Vector3.zero;
+        return cell;
+    }
+
+    private Vector3 CalculateCellPosition(int x, int y, float offsetX, float offsetY)
+    {
+        return new Vector3(
+            x - offsetX + GRID_OFFSET_X + (x * cellSpacing),
+            -(y - offsetY + GRID_OFFSET_Y) - (y * cellSpacing),
+            0
+        );
+    }
+
+    private void ConfigureCell(GameObject cell, int x, int y)
+    {
+        cell.name = GetCellName(x, y);
+        cell.transform.parent = transform;
+
+        GridCell gridCell = cell.GetComponent<GridCell>();
+        if (gridCell != null)
+        {
+            gridCells[x, y] = gridCell;
+        }
+    }
+
+    private void AssignCellColor(GameObject cell, int x, int y)
+    {
+        int index = y * columns + x;
+        Color cellColor = levelColors[index];
+
+        GridCell gridCell = cell.GetComponent<GridCell>();
+        if (gridCell != null)
+        {
+            gridCell.cellColor = cellColor;
+        }
+
+        SpriteRenderer renderer = cell.GetComponent<SpriteRenderer>();
+        if (renderer != null)
+        {
+            renderer.material = new Material(renderer.material);
+            renderer.color = cellColor;
+        }
+    }
+
+    private List<GameObject> ShuffleCells(List<GameObject> cells)
+    {
+        System.Random rnd = new System.Random();
+        return cells.OrderBy(c => rnd.Next()).ToList();
+    }
+
+    private IEnumerator AnimateCellsAppearance(List<GameObject> cells)
+    {
+        float delayBetweenCells = ANIMATION_DURATION / cells.Count;
         System.Random rnd = new System.Random();
 
         foreach (GameObject cell in cells)
         {
-            StartCoroutine(ScaleUpCell(cell, rnd.Next(5, 13) / 100f)); // Variabilidad en el tiempo de escala
-            yield return new WaitForSeconds(delayBetweenCells * UnityEngine.Random.Range(0.25f, 0.75f)); // Variabilidad en aparición
+            StartCoroutine(ScaleUpCell(cell, rnd.Next(5, 13) / 100f));
+            yield return new WaitForSeconds(delayBetweenCells * UnityEngine.Random.Range(0.25f, 0.75f));
         }
     }
 
-    IEnumerator ScaleUpCell(GameObject cell, float duration)
+    private IEnumerator ScaleUpCell(GameObject cell, float duration)
     {
-        Vector3 originalScale = new Vector3(0.06f, 0.06f, 1);
+        Vector3 originalScale = new Vector3(CELL_SCALE, CELL_SCALE, 1);
         Vector3 startScale = Vector3.zero;
         float elapsedTime = 0f;
 
@@ -194,62 +303,7 @@ public class GridManager : MonoBehaviour
             yield return null;
         }
 
-        cell.transform.localScale = originalScale; // Asegurar tamaño final
-    }
-
-    void GenerateGrid()
-    {
-        gridCells = new GridCell[columns, rows];
-
-        if (levelColors == null || levelColors.Length != rows * columns)
-        {
-            Debug.LogError("El array de colores no coincide con la cantidad de celdas.");
-            return;
-        }
-
-        float offsetX = (columns - 1) / 2f;
-        float offsetY = (rows - 1) / 2f;
-
-        List<GameObject> cells = new List<GameObject>();
-
-        for (int y = 0; y < rows; y++)
-        {
-            for (int x = 0; x < columns; x++)
-            {
-                Vector3 position = new Vector3(x - offsetX + 1.06f + (x * cellSpacing), -(y - offsetY + 1.74f) - (y * cellSpacing), 0);
-                GameObject cell = Instantiate(cellPrefab, position, Quaternion.identity);
-                cell.name = $"Cell_{x}_{y}";
-                cell.transform.parent = transform;
-
-                int index = y * columns + x;
-
-                // Asignar color a la celda
-                Color cellColor = levelColors[index];
-                GridCell gridCell = cell.GetComponent<GridCell>();
-                if (gridCell != null)
-                {
-                    gridCell.cellColor = cellColor; // Asignar color inicial
-                    gridCells[x, y] = gridCell;
-                }
-
-                // Instanciar un material único para cada celda
-                SpriteRenderer renderer = cell.GetComponent<SpriteRenderer>();
-                if (renderer != null)
-                {
-                    renderer.material = new Material(renderer.material); // Clonar el material
-                    renderer.color = cellColor; // Aplicar el color
-                }
-                // Inicialmente la escala de la celda será 0(invisible)
-            cell.transform.localScale = Vector3.zero;
-                cells.Add(cell);
-            }
-        }
-        // Revolver aleatoriamente el orden de aparición de las celdas
-        System.Random rnd = new System.Random();
-        cells = cells.OrderBy(c => rnd.Next()).ToList();
-
-        // Iniciar la animación de aparición
-        StartCoroutine(AnimateCellsAppearance(cells));
+        cell.transform.localScale = originalScale;
     }
 
     public Vector3 GridToWorldPosition(int x, int y)
@@ -257,8 +311,11 @@ public class GridManager : MonoBehaviour
         float offsetX = (columns - 1) / 2f;
         float offsetY = (rows - 1) / 2f;
 
-        // Calcular la posición en el mundo basándose en el espaciado de las celdas
-        return new Vector3(x - offsetX + 1.06f + (x * cellSpacing), -(y - offsetY + 1.5f) - (y * cellSpacing), 0);
+        return new Vector3(
+            x - offsetX + GRID_OFFSET_X + (x * cellSpacing),
+            -(y - offsetY + 1.5f) - (y * cellSpacing),
+            0
+        );
     }
 
     public bool IsWithinBounds(int x, int y)
@@ -268,78 +325,81 @@ public class GridManager : MonoBehaviour
 
     public void SetCellColor(int x, int y, Color color)
     {
-        string cellName = $"Cell_{x}_{y}";
+        string cellName = GetCellName(x, y);
         Transform cellTransform = transform.Find(cellName);
 
         if (cellTransform != null)
         {
             GridCell gridCell = cellTransform.GetComponent<GridCell>();
-            if (gridCell != null)
-            {
-                gridCell.SetColor(color); // Asigna el color a la celda
-            }
+            gridCell?.SetColor(color);
         }
     }
 
     public void DestroyCell(int x, int y, Color explosionColor)
     {
-        string cellName = $"Cell_{x}_{y}";
+        string cellName = GetCellName(x, y);
         Transform cellTransform = transform.Find(cellName);
 
         if (cellTransform != null)
         {
             GridCell gridCell = cellTransform.GetComponent<GridCell>();
-            if (gridCell != null)
-            {
-                gridCell.SetColor(explosionColor); // Asigna el color de la explosión
-            }
+            gridCell?.SetColor(explosionColor);
         }
     }
 
-    private IEnumerator ShowFailPanel()
+    private IEnumerator CheckAndRestartLevel()
     {
-        yield return new WaitForSeconds(0.5f); // Espera 0.5 segundos
-        levelFailedPanel.SetActive(true); // Activa el panel de derrota
-    }
-
-    IEnumerator CheckAndRestartLevel()
-    {
-        if (isCheckingRestart)
-        {
-            yield break; // Evitar múltiples llamadas simultáneas
-        }
+        if (isCheckingRestart) yield break;
 
         isCheckingRestart = true;
-
-        // Esperar a que todas las propagaciones terminen
         yield return StartCoroutine(WaitForPropagations());
 
         LevelManager levelManager = FindObjectOfType<LevelManager>();
         if (levelManager != null)
         {
-            bool victory = levelManager.CheckVictoryCondition();
-
-            if (victory)
+            if (HandleVictoryCheck(levelManager))
             {
-                Debug.Log("¡Nivel completado!");
-                levelManager.CompleteLevel(); // Pasar al siguiente nivel
                 isCheckingRestart = false;
-                yield break; //  Salimos de la corrutina para evitar que siga ejecutándose y muestre la derrota
+                yield break;
             }
 
-            if (remainingAttempts <= 0 && finishedPropagations)
-            {
-                Debug.Log("Sin intentos restantes. Mostrando panel de derrota...");
-                StartCoroutine(ShowFailPanel());
-                LevelSoundManager.instance.PlayLoseSound();
-            }
+            HandleDefeatCheck();
         }
 
         isCheckingRestart = false;
     }
+
+    private bool HandleVictoryCheck(LevelManager levelManager)
+    {
+        bool victory = levelManager.CheckVictoryCondition();
+        if (victory)
+        {
+            Debug.Log("¡Nivel completado!");
+            levelManager.CompleteLevel();
+            return true;
+        }
+        return false;
+    }
+
+    private void HandleDefeatCheck()
+    {
+        if (remainingAttempts <= 0 && finishedPropagations)
+        {
+            Debug.Log("Sin intentos restantes. Mostrando panel de derrota...");
+            StartCoroutine(ShowFailPanel());
+            LevelSoundManager.instance.PlayLoseSound();
+        }
+    }
+
+    private IEnumerator ShowFailPanel()
+    {
+        yield return new WaitForSeconds(FAIL_PANEL_DELAY);
+        levelFailedPanel.SetActive(true);
+    }
+
     public IEnumerator AnimateVictory()
     {
-        yield return new WaitForSeconds(1f); // Esperar 1 segundo antes de iniciar la animación
+        yield return new WaitForSeconds(1f);
 
         foreach (GridCell cell in gridCells)
         {
@@ -349,12 +409,10 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(1.5f); // Esperar la animación antes de continuar
+        yield return new WaitForSeconds(1.5f);
     }
 
-
-    // Actualiza el texto del contador de intentos
-    void UpdateAttemptsUI()
+    private void UpdateAttemptsUI()
     {
         if (attemptsText != null)
         {
@@ -364,7 +422,6 @@ public class GridManager : MonoBehaviour
 
     void SetLevelColors(string levelName)
     {
-        // Asigna colores según el nombre del nivel
         switch (levelName)
         {
             case "Level_1":
