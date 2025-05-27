@@ -7,7 +7,6 @@ public class MainMenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        // Cargar el primer nivel
         SceneManager.LoadScene("Level_1");
     }
     public void LevelSelector()
@@ -17,8 +16,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        // Salir del juego (solo funciona en una build)
-        Debug.Log("Quit Game");
+        Debug.Log("Quiting Game");
         Application.Quit();
     }
 }

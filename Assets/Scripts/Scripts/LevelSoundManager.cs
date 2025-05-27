@@ -4,9 +4,9 @@ public class LevelSoundManager : MonoBehaviour
 {
     public static LevelSoundManager instance;
 
-    public AudioClip winSound;   // Sonido de victoria
-    public AudioClip loseSound;  // Sonido de derrota
-    public AudioClip startGameButtonSound; // Sonido btn main menu
+    public AudioClip winSound;  
+    public AudioClip loseSound;  
+    public AudioClip startGameButtonSound; 
 
     private AudioSource audioSource;
 
@@ -15,7 +15,7 @@ public class LevelSoundManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);  // Mantener el objeto entre escenas
+            DontDestroyOnLoad(gameObject); 
             audioSource = gameObject.AddComponent<AudioSource>();
         }
         else

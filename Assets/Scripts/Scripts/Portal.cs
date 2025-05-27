@@ -4,63 +4,163 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+    [Header("Portal Configuration")]
     public GridCell linkedCell;
+
     private Color initialColor;
     private bool isActivated = false;
+    private SpriteRenderer spriteRenderer;
 
     private static List<Portal> activePortals = new List<Portal>();
 
-    void Start()
+    private void Start()
     {
-        activePortals.Add(this);
-        if (linkedCell != null)
-        {
-            initialColor = linkedCell.GetCurrentColor();
-            SpriteRenderer sr = GetComponent<SpriteRenderer>();
-            if (sr != null)
-                sr.color = initialColor;
-        }
-        else
-        {
-            Debug.LogWarning("Portal sin celda vinculada.");
-        }
+        InitializePortal();
+    }
+
+    private void OnDestroy()
+    {
+        CleanupPortal();
     }
 
     public void OnCellColorChanged(Color newColor)
     {
-        if (isActivated) return; 
-        if (newColor.Equals(initialColor)) return; 
+        if (ShouldIgnoreColorChange(newColor))
+            return;
 
         ActivatePortal(newColor);
     }
 
+    private void InitializePortal()
+    {
+        RegisterPortal();
+        CacheComponents();
+        SetupInitialState();
+    }
+
+    private void RegisterPortal()
+    {
+        activePortals.Add(this);
+    }
+
+    private void CacheComponents()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void SetupInitialState()
+    {
+        if (HasValidLinkedCell())
+        {
+            InitializeColorFromLinkedCell();
+        }
+        else
+        {
+            LogMissingLinkedCellWarning();
+        }
+    }
+
+    private bool HasValidLinkedCell()
+    {
+        return linkedCell != null;
+    }
+
+    private void InitializeColorFromLinkedCell()
+    {
+        initialColor = linkedCell.GetCurrentColor();
+        ApplyInitialColorToSprite();
+    }
+
+    private void ApplyInitialColorToSprite()
+    {
+        if (HasSpriteRenderer())
+        {
+            spriteRenderer.color = initialColor;
+        }
+    }
+
+    private bool HasSpriteRenderer()
+    {
+        return spriteRenderer != null;
+    }
+
+    private void LogMissingLinkedCellWarning()
+    {
+        Debug.LogWarning("Portal sin celda vinculada.");
+    }
+
+    private bool ShouldIgnoreColorChange(Color newColor)
+    {
+        return isActivated || newColor.Equals(initialColor);
+    }
+
     private void ActivatePortal(Color colorToPropagate)
     {
-        isActivated = true; 
+        MarkAsActivated();
+        HidePortalSprite();
+        UnlinkFromCell();
+        RemoveFromActivePortals();
+        PropagateColorToOtherPortals(colorToPropagate);
+        DestroyPortal();
+    }
 
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.enabled = false;
+    private void MarkAsActivated()
+    {
+        isActivated = true;
+    }
 
-        if (linkedCell != null)
+    private void HidePortalSprite()
+    {
+        if (HasSpriteRenderer())
+        {
+            spriteRenderer.enabled = false;
+        }
+    }
+
+    private void UnlinkFromCell()
+    {
+        if (HasValidLinkedCell())
         {
             linkedCell.linkedPortal = null;
         }
+    }
 
+    private void RemoveFromActivePortals()
+    {
         activePortals.Remove(this);
+    }
 
-        foreach (Portal otherPortal in new List<Portal>(activePortals))
+    private void PropagateColorToOtherPortals(Color colorToPropagate)
+    {
+        List<Portal> portalsCopy = new List<Portal>(activePortals);
+
+        foreach (Portal portal in portalsCopy)
         {
-            if (!otherPortal.isActivated && otherPortal.linkedCell != null)
+            if (ShouldPropagateToPortal(portal))
             {
-                otherPortal.linkedCell.StartCoroutine(otherPortal.linkedCell.PropagateColorGradually(colorToPropagate));
-
+                StartColorPropagationOnPortal(portal, colorToPropagate);
             }
         }
+    }
 
+    private bool ShouldPropagateToPortal(Portal portal)
+    {
+        return !portal.isActivated && portal.linkedCell != null;
+    }
+
+    private void StartColorPropagationOnPortal(Portal portal, Color colorToPropagate)
+    {
+        portal.linkedCell.StartCoroutine(
+            portal.linkedCell.PropagateColorGradually(colorToPropagate)
+        );
+    }
+
+    private void DestroyPortal()
+    {
         Destroy(gameObject);
     }
 
-    void OnDestroy()
+    private void CleanupPortal()
     {
         activePortals.Remove(this);
     }

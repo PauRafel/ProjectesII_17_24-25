@@ -5,66 +5,133 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool IsPaused = false; // Estado del juego
-    public GameObject pauseMenuUI; // Asignar el Canvas del menú de pausa
+    [Header("Pause Menu Configuration")]
+    public GameObject pauseMenuUI;
 
-    void Update()
+    public static bool IsPaused = false;
+
+    private const float NORMAL_TIME_SCALE = 1f;
+    private const float PAUSED_TIME_SCALE = 0f;
+    private const string MAIN_MENU_SCENE = "MainMenu";
+    private const string LEVEL_SELECTOR_SCENE = "LevelSelector";
+    private const string LEVEL_PREFIX = "Level_";
+
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) // Pausa con la tecla Esc
-        {
-            if (IsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        }
+        HandlePauseInput();
     }
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false); // Ocultar el menú
-        Time.timeScale = 1f; // Reanudar el tiempo del juego
-        IsPaused = false;
+        SetPauseMenuVisibility(false);
+        SetTimeScale(NORMAL_TIME_SCALE);
+        SetPauseState(false);
     }
 
     public void Pause()
     {
-        pauseMenuUI.SetActive(true); // Mostrar el menú
-        Time.timeScale = 0f; // Detener el tiempo del juego
-        IsPaused = true;
+        SetPauseMenuVisibility(true);
+        SetTimeScale(PAUSED_TIME_SCALE);
+        SetPauseState(true);
     }
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f; // Asegurarse de reanudar el tiempo
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ResetTimeScale();
+        LoadCurrentScene();
     }
 
     public void LoadMainMenu()
     {
-        Time.timeScale = 1f; // Asegurarse de reanudar el tiempo
-        SceneManager.LoadScene("MainMenu"); // Cambiar a tu escena de menú principal
+        ResetTimeScale();
+        LoadScene(MAIN_MENU_SCENE);
     }
+
     public void LoadLevelSelector()
     {
-        Time.timeScale = 1f; // Asegurarse de reanudar el tiempo
-        SceneManager.LoadScene("LevelSelector"); // Cambiar a tu escena de menú principal
+        ResetTimeScale();
+        LoadScene(LEVEL_SELECTOR_SCENE);
     }
 
     public void NextLevel()
     {
-        Time.timeScale = 1f;
-        string nextLevelName = "Level_" + (SceneManager.GetActiveScene().buildIndex + 1);
-        if (Application.CanStreamedLevelBeLoaded(nextLevelName))
+        ResetTimeScale();
+        LoadNextLevelOrMainMenu();
+    }
+
+    private void HandlePauseInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(nextLevelName);
+            TogglePause();
+        }
+    }
+
+    private void TogglePause()
+    {
+        if (IsPaused)
+        {
+            Resume();
         }
         else
         {
-            SceneManager.LoadScene("MainMenu");
+            Pause();
         }
+    }
+
+    private void SetPauseMenuVisibility(bool isVisible)
+    {
+        pauseMenuUI.SetActive(isVisible);
+    }
+
+    private void SetTimeScale(float timeScale)
+    {
+        Time.timeScale = timeScale;
+    }
+
+    private void SetPauseState(bool isPaused)
+    {
+        IsPaused = isPaused;
+    }
+
+    private void ResetTimeScale()
+    {
+        SetTimeScale(NORMAL_TIME_SCALE);
+    }
+
+    private void LoadCurrentScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    private void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    private void LoadNextLevelOrMainMenu()
+    {
+        string nextLevelName = GetNextLevelName();
+
+        if (CanLoadLevel(nextLevelName))
+        {
+            LoadScene(nextLevelName);
+        }
+        else
+        {
+            LoadScene(MAIN_MENU_SCENE);
+        }
+    }
+
+    private string GetNextLevelName()
+    {
+        int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        return LEVEL_PREFIX + nextLevelIndex;
+    }
+
+    private bool CanLoadLevel(string levelName)
+    {
+        return Application.CanStreamedLevelBeLoaded(levelName);
     }
 }

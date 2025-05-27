@@ -6,57 +6,96 @@ using UnityEngine.UI;
 
 public class SwipeController : MonoBehaviour, IEndDragHandler
 {
-    [SerializeField] int maxPage;
-    int currentPage;
-    Vector3 targetPos;
-    [SerializeField] Vector3 pageStep;
-    [SerializeField] RectTransform levelPagesRect;
+    [Header("Page Configuration")]
+    [SerializeField] private int maxPage;
+    [SerializeField] private Vector3 pageStep;
+    [SerializeField] private RectTransform levelPagesRect;
 
-    [SerializeField] float tweenTime;
-    [SerializeField] LeanTweenType tweenType;
+    [Header("Animation Settings")]
+    [SerializeField] private float tweenTime;
+    [SerializeField] private LeanTweenType tweenType;
 
-    [SerializeField] Button previousBtn, nextBtn;
+    [Header("Navigation Buttons")]
+    [SerializeField] private Button previousBtn;
+    [SerializeField] private Button nextBtn;
 
-    float dragThreshould;
+    private int currentPage;
+    private Vector3 targetPos;
+    private float dragThreshold;
+
+    private const int FIRST_PAGE = 1;
+    private const float DRAG_THRESHOLD_DIVISOR = 15f;
 
     private void Awake()
     {
-        currentPage = 1;
-        targetPos = levelPagesRect.localPosition;
-        dragThreshould = Screen.width / 15;
+        InitializeController();
     }
 
     public void Next()
     {
-        if (currentPage < maxPage)
+        if (CanNavigateNext())
         {
-            currentPage++;
-            targetPos += pageStep;
-            MovePage();
-        }
-    }
-    public void Previous()
-    {
-        if (currentPage > 1)
-        {
-            currentPage--;
-            targetPos -= pageStep;
-            MovePage();
+            NavigateToNextPage();
         }
     }
 
-    void MovePage()
+    public void Previous()
     {
-        levelPagesRect.LeanMoveLocal(targetPos, tweenTime).setEase(tweenType);
-        UpdateArrowButton();
+        if (CanNavigatePrevious())
+        {
+            NavigateToPreviousPage();
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (Mathf.Abs(eventData.position.x-eventData.pressPosition.x) > dragThreshould)
+        ProcessDragGesture(eventData);
+    }
+
+    private void InitializeController()
+    {
+        currentPage = FIRST_PAGE;
+        targetPos = levelPagesRect.localPosition;
+        dragThreshold = Screen.width / DRAG_THRESHOLD_DIVISOR;
+    }
+
+    private bool CanNavigateNext()
+    {
+        return currentPage < maxPage;
+    }
+
+    private bool CanNavigatePrevious()
+    {
+        return currentPage > FIRST_PAGE;
+    }
+
+    private void NavigateToNextPage()
+    {
+        currentPage++;
+        targetPos += pageStep;
+        MovePage();
+    }
+
+    private void NavigateToPreviousPage()
+    {
+        currentPage--;
+        targetPos -= pageStep;
+        MovePage();
+    }
+
+    private void MovePage()
+    {
+        levelPagesRect.LeanMoveLocal(targetPos, tweenTime).setEase(tweenType);
+        UpdateNavigationButtons();
+    }
+
+    private void ProcessDragGesture(PointerEventData eventData)
+    {
+        float dragDistance = Mathf.Abs(eventData.position.x - eventData.pressPosition.x);
+
+        if (IsDragThresholdExceeded(dragDistance))
         {
-            if(eventData.position.x>eventData.pressPosition.x) Previous();
-            else Next();
+            HandleSwipeNavigation(eventData);
         }
         else
         {
@@ -64,11 +103,56 @@ public class SwipeController : MonoBehaviour, IEndDragHandler
         }
     }
 
-    void UpdateArrowButton()
+    private bool IsDragThresholdExceeded(float dragDistance)
+    {
+        return dragDistance > dragThreshold;
+    }
+
+    private void HandleSwipeNavigation(PointerEventData eventData)
+    {
+        bool isSwipeRight = eventData.position.x > eventData.pressPosition.x;
+
+        if (isSwipeRight)
+        {
+            Previous();
+        }
+        else
+        {
+            Next();
+        }
+    }
+
+    private void UpdateNavigationButtons()
+    {
+        EnableAllButtons();
+        DisableButtonsAtBoundaries();
+    }
+
+    private void EnableAllButtons()
     {
         nextBtn.interactable = true;
         previousBtn.interactable = true;
-        if (currentPage == 1) previousBtn.interactable = false;
-        else if (currentPage == maxPage) nextBtn.interactable = false;
+    }
+
+    private void DisableButtonsAtBoundaries()
+    {
+        if (IsAtFirstPage())
+        {
+            previousBtn.interactable = false;
+        }
+        else if (IsAtLastPage())
+        {
+            nextBtn.interactable = false;
+        }
+    }
+
+    private bool IsAtFirstPage()
+    {
+        return currentPage == FIRST_PAGE;
+    }
+
+    private bool IsAtLastPage()
+    {
+        return currentPage == maxPage;
     }
 }

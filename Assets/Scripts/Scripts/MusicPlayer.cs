@@ -4,55 +4,124 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    public AudioClip[] playlist;  // Lista de canciones
+    [Header("Music Configuration")]
+    public AudioClip[] playlist;
+
     private AudioSource audioSource;
     private int currentTrackIndex = 0;
 
-    private static MusicPlayer instance; // Singleton para que no se destruya
+    private static MusicPlayer instance;
 
-    void Awake()
+    private const int FIRST_TRACK_INDEX = 0;
+
+    private void Awake()
     {
-        // Asegurar que solo haya un MusicPlayer
-        if (instance == null)
+        InitializeSingleton();
+    }
+
+    private void Update()
+    {
+        HandleTrackProgression();
+    }
+
+    private void InitializeSingleton()
+    {
+        if (ShouldCreateInstance())
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            CreatePersistentInstance();
+            SetupAudioSystem();
         }
         else
         {
-            Destroy(gameObject);
-            return;
-        }
-
-        audioSource = GetComponent<AudioSource>();
-
-        if (playlist.Length > 0)
-        {
-            PlayTrack(currentTrackIndex);
+            DestroyDuplicateInstance();
         }
     }
 
-    void Update()
+    private bool ShouldCreateInstance()
     {
-        // Si la canción ha terminado, reproducir la siguiente
-        if (!audioSource.isPlaying)
+        return instance == null;
+    }
+
+    private void CreatePersistentInstance()
+    {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void DestroyDuplicateInstance()
+    {
+        Destroy(gameObject);
+    }
+
+    private void SetupAudioSystem()
+    {
+        CacheAudioSource();
+        StartPlaylistIfAvailable();
+    }
+
+    private void CacheAudioSource()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void StartPlaylistIfAvailable()
+    {
+        if (HasPlaylistTracks())
+        {
+            PlayTrack(FIRST_TRACK_INDEX);
+        }
+    }
+
+    private bool HasPlaylistTracks()
+    {
+        return playlist.Length > 0;
+    }
+
+    private void HandleTrackProgression()
+    {
+        if (ShouldAdvanceToNextTrack())
         {
             NextTrack();
         }
     }
 
-    void PlayTrack(int index)
+    private bool ShouldAdvanceToNextTrack()
     {
-        if (index >= 0 && index < playlist.Length)
+        return !audioSource.isPlaying;
+    }
+
+    private void PlayTrack(int index)
+    {
+        if (IsValidTrackIndex(index))
         {
-            audioSource.clip = playlist[index];
-            audioSource.Play();
+            SetCurrentTrack(index);
+            StartPlayback();
         }
     }
 
-    void NextTrack()
+    private bool IsValidTrackIndex(int index)
+    {
+        return index >= 0 && index < playlist.Length;
+    }
+
+    private void SetCurrentTrack(int index)
+    {
+        audioSource.clip = playlist[index];
+    }
+
+    private void StartPlayback()
+    {
+        audioSource.Play();
+    }
+
+    private void NextTrack()
+    {
+        AdvanceTrackIndex();
+        PlayTrack(currentTrackIndex);
+    }
+
+    private void AdvanceTrackIndex()
     {
         currentTrackIndex = (currentTrackIndex + 1) % playlist.Length;
-        PlayTrack(currentTrackIndex);
     }
 }

@@ -7,7 +7,6 @@ public class RestartButtonHandler : MonoBehaviour
 {
     public void RestartLevel()
     {
-        // Recargar la escena actual
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
